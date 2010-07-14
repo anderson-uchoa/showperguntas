@@ -1,5 +1,0 @@
-c:\users\ricardo\documents\visual studio 2010\projects\ShowPerduntas\ShowPerduntas\bin\ShowPerduntas.dll
-c:\users\ricardo\documents\visual studio 2010\projects\ShowPerduntas\ShowPerduntas\bin\ShowPerduntas.pdb
-c:\users\ricardo\documents\visual studio 2010\projects\ShowPerduntas\ShowPerduntas\obj\Debug\ResolveAssemblyReference.cache
-c:\users\ricardo\documents\visual studio 2010\projects\ShowPerduntas\ShowPerduntas\obj\Debug\ShowPerduntas.dll
-c:\users\ricardo\documents\visual studio 2010\projects\ShowPerduntas\ShowPerduntas\obj\Debug\ShowPerduntas.pdb
