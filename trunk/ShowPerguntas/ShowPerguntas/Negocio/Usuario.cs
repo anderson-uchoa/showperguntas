@@ -8,11 +8,12 @@ namespace ShowPerguntas.Negocio
 {
     public class Usuario
     {
-        protected int ID=0;
+        protected int ID = 0;
         protected String nome = "";
         protected String sobrenome = "";
         protected String login = "";
         protected String senha = "";
+        //protected String email = ""; - Implementar
 
         public Usuario()
         {

@@ -3,3 +3,8 @@ c:\users\ricardo\documents\visual studio 2010\projects\ShowPerguntas\ShowPergunt
 c:\users\ricardo\documents\visual studio 2010\projects\ShowPerguntas\ShowPerguntas\obj\Debug\ResolveAssemblyReference.cache
 c:\users\ricardo\documents\visual studio 2010\projects\ShowPerguntas\ShowPerguntas\obj\Debug\ShowPerguntas.dll
 c:\users\ricardo\documents\visual studio 2010\projects\ShowPerguntas\ShowPerguntas\obj\Debug\ShowPerguntas.pdb
+C:\ShowPerguntas\ShowPerguntas\ShowPerguntas\bin\ShowPerguntas.dll
+C:\ShowPerguntas\ShowPerguntas\ShowPerguntas\bin\ShowPerguntas.pdb
+C:\ShowPerguntas\ShowPerguntas\ShowPerguntas\obj\Debug\ResolveAssemblyReference.cache
+C:\ShowPerguntas\ShowPerguntas\ShowPerguntas\obj\Debug\ShowPerguntas.dll
+C:\ShowPerguntas\ShowPerguntas\ShowPerguntas\obj\Debug\ShowPerguntas.pdb

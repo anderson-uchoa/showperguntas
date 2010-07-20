@@ -7,5 +7,20 @@ namespace ShowPerguntas.Negocio
 {
     public class Regras
     {
+
+        public void aplicarRegrasFacil()
+        {
+            //TODO
+        }
+
+        public void aplicarRegrasMedio()
+        {
+            //TODO
+        }
+
+        public void aplicarRegrasDificil()
+        {
+            //TODO
+        }
     }
 }
