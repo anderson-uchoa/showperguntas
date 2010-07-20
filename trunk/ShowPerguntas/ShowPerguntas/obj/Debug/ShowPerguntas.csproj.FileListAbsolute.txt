@@ -1,0 +1,5 @@
+c:\users\ricardo\documents\visual studio 2010\projects\ShowPerguntas\ShowPerguntas\bin\ShowPerguntas.dll
+c:\users\ricardo\documents\visual studio 2010\projects\ShowPerguntas\ShowPerguntas\bin\ShowPerguntas.pdb
+c:\users\ricardo\documents\visual studio 2010\projects\ShowPerguntas\ShowPerguntas\obj\Debug\ResolveAssemblyReference.cache
+c:\users\ricardo\documents\visual studio 2010\projects\ShowPerguntas\ShowPerguntas\obj\Debug\ShowPerguntas.dll
+c:\users\ricardo\documents\visual studio 2010\projects\ShowPerguntas\ShowPerguntas\obj\Debug\ShowPerguntas.pdb
