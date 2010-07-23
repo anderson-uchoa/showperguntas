@@ -56,6 +56,7 @@
     <Content Include="Dados\ShowPerguntas.edmx.sql" />
     <Content Include="Interface\AdicionarPergunta.aspx" />
     <Content Include="Interface\AdministradorMenu.aspx" />
+    <Content Include="Interface\CadastroJogador.aspx" />
     <Content Include="Interface\GerenciadorPerguntas.aspx" />
     <Content Include="Interface\Home.aspx" />
     <Content Include="Interface\JogadorMenu.aspx" />
@@ -89,6 +90,13 @@
     </Compile>
     <Compile Include="Interface\AdministradorMenu.aspx.designer.cs">
       <DependentUpon>AdministradorMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\CadastroJogador.aspx.cs">
+      <DependentUpon>CadastroJogador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\CadastroJogador.aspx.designer.cs">
+      <DependentUpon>CadastroJogador.aspx</DependentUpon>
     </Compile>
     <Compile Include="Interface\GerenciadorPerguntas.aspx.cs">
       <DependentUpon>GerenciadorPerguntas.aspx</DependentUpon>
