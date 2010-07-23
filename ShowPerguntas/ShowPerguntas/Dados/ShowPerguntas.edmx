@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ShowPerguntas.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ShowPerguntasStoreContainer">
+    <EntitySet Name="Perguntas" EntityType="ShowPerguntas.Store.Perguntas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Rankings" EntityType="ShowPerguntas.Store.Rankings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Temas" EntityType="ShowPerguntas.Store.Temas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuarios" EntityType="ShowPerguntas.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_PerguntaTema" Association="ShowPerguntas.Store.FK_PerguntaTema">
+      <End Role="Temas" EntitySet="Temas" />
+      <End Role="Perguntas" EntitySet="Perguntas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RankingUsuario" Association="ShowPerguntas.Store.FK_RankingUsuario">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Rankings" EntitySet="Rankings" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Perguntas">
+    <Key>
+      <PropertyRef Name="IdPergunta" />
+    </Key>
+    <Property Name="IdPergunta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="enunciado" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="dificuldade" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="alternativaCorreta" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="alternativaIncorreta1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="alternativaIncorreta2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="alternativaIncorreta3" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="alternativaIncorreta4" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="vezesRespondidaAltCorreta" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="vezesRespondidaAltIncorreta1" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="vezesRespondidaAltIncorreta2" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="vezesRespondidaAltIncorreta3" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="vezesRespondidaAltIncorreta4" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="Tema_IdTema" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rankings">
+    <Key>
+      <PropertyRef Name="IdRanking" />
+    </Key>
+    <Property Name="IdRanking" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pontuacaoMaxima" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UsuarioIdUsuario" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Temas">
+    <Key>
+      <PropertyRef Name="IdTema" />
+    </Key>
+    <Property Name="IdTema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descricao" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sobrenome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="login" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="senha" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="dataCadastro" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_PerguntaTema">
+    <End Role="Temas" Type="ShowPerguntas.Store.Temas" Multiplicity="1" />
+    <End Role="Perguntas" Type="ShowPerguntas.Store.Perguntas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Temas">
+        <PropertyRef Name="IdTema" />
+      </Principal>
+      <Dependent Role="Perguntas">
+        <PropertyRef Name="Tema_IdTema" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RankingUsuario">
+    <End Role="Usuarios" Type="ShowPerguntas.Store.Usuarios" Multiplicity="0..1" />
+    <End Role="Rankings" Type="ShowPerguntas.Store.Rankings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Rankings">
+        <PropertyRef Name="UsuarioIdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ShowPerguntas" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Show_de_PerguntasEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Perguntas" EntityType="ShowPerguntas.Pergunta" />
+          <EntitySet Name="Rankings" EntityType="ShowPerguntas.Ranking" />
+          <EntitySet Name="Temas" EntityType="ShowPerguntas.Tema" />
+          <EntitySet Name="Usuarios" EntityType="ShowPerguntas.Usuario" />
+          <AssociationSet Name="FK_PerguntaTema" Association="ShowPerguntas.FK_PerguntaTema">
+            <End Role="Temas" EntitySet="Temas" />
+            <End Role="Perguntas" EntitySet="Perguntas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RankingUsuario" Association="ShowPerguntas.FK_RankingUsuario">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Rankings" EntitySet="Rankings" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Pergunta">
+          <Key>
+            <PropertyRef Name="IdPergunta" />
+          </Key>
+          <Property Name="IdPergunta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="enunciado" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="dificuldade" Type="String" Nullable="false" />
+          <Property Name="alternativaCorreta" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="alternativaIncorreta1" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="alternativaIncorreta2" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="alternativaIncorreta3" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="alternativaIncorreta4" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="vezesRespondidaAltCorreta" Type="Int32" Nullable="false" DefaultValue="0" />
+          <Property Name="vezesRespondidaAltIncorreta1" Type="Int32" Nullable="false" DefaultValue="0" />
+          <Property Name="vezesRespondidaAltIncorreta2" Type="Int32" Nullable="false" DefaultValue="0" />
+          <Property Name="vezesRespondidaAltIncorreta3" Type="Int32" Nullable="false" DefaultValue="0" />
+          <Property Name="vezesRespondidaAltIncorreta4" Type="Int32" Nullable="false" DefaultValue="0" />
+          <Property Name="Tema_IdTema" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Tema" Relationship="ShowPerguntas.FK_PerguntaTema" FromRole="Perguntas" ToRole="Temas" />
+        </EntityType>
+        <EntityType Name="Ranking">
+          <Key>
+            <PropertyRef Name="IdRanking" />
+          </Key>
+          <Property Name="IdRanking" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pontuacaoMaxima" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="UsuarioIdUsuario" Type="Int32" />
+          <NavigationProperty Name="Usuario" Relationship="ShowPerguntas.FK_RankingUsuario" FromRole="Rankings" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Tema">
+          <Key>
+            <PropertyRef Name="IdTema" />
+          </Key>
+          <Property Name="IdTema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Perguntas" Relationship="ShowPerguntas.FK_PerguntaTema" FromRole="Temas" ToRole="Perguntas" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="sobrenome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="login" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="senha" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="dataCadastro" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Rankings" Relationship="ShowPerguntas.FK_RankingUsuario" FromRole="Usuarios" ToRole="Rankings" />
+        </EntityType>
+        <Association Name="FK_PerguntaTema">
+          <End Role="Temas" Type="ShowPerguntas.Tema" Multiplicity="1" />
+          <End Role="Perguntas" Type="ShowPerguntas.Pergunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Temas">
+              <PropertyRef Name="IdTema" />
+            </Principal>
+            <Dependent Role="Perguntas">
+              <PropertyRef Name="Tema_IdTema" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RankingUsuario">
+          <End Role="Usuarios" Type="ShowPerguntas.Usuario" Multiplicity="0..1" />
+          <End Role="Rankings" Type="ShowPerguntas.Ranking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Rankings">
+              <PropertyRef Name="UsuarioIdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ShowPerguntasStoreContainer" CdmEntityContainer="Show_de_PerguntasEntities">
+    <EntitySetMapping Name="Perguntas">
+      <EntityTypeMapping TypeName="IsTypeOf(ShowPerguntas.Pergunta)">
+        <MappingFragment StoreEntitySet="Perguntas">
+          <ScalarProperty Name="IdPergunta" ColumnName="IdPergunta" />
+          <ScalarProperty Name="enunciado" ColumnName="enunciado" />
+          <ScalarProperty Name="dificuldade" ColumnName="dificuldade" />
+          <ScalarProperty Name="alternativaCorreta" ColumnName="alternativaCorreta" />
+          <ScalarProperty Name="alternativaIncorreta1" ColumnName="alternativaIncorreta1" />
+          <ScalarProperty Name="alternativaIncorreta2" ColumnName="alternativaIncorreta2" />
+          <ScalarProperty Name="alternativaIncorreta3" ColumnName="alternativaIncorreta3" />
+          <ScalarProperty Name="alternativaIncorreta4" ColumnName="alternativaIncorreta4" />
+          <ScalarProperty Name="vezesRespondidaAltCorreta" ColumnName="vezesRespondidaAltCorreta" />
+          <ScalarProperty Name="vezesRespondidaAltIncorreta1" ColumnName="vezesRespondidaAltIncorreta1" />
+          <ScalarProperty Name="vezesRespondidaAltIncorreta2" ColumnName="vezesRespondidaAltIncorreta2" />
+          <ScalarProperty Name="vezesRespondidaAltIncorreta3" ColumnName="vezesRespondidaAltIncorreta3" />
+          <ScalarProperty Name="vezesRespondidaAltIncorreta4" ColumnName="vezesRespondidaAltIncorreta4" />
+          <ScalarProperty Name="Tema_IdTema" ColumnName="Tema_IdTema" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rankings">
+      <EntityTypeMapping TypeName="IsTypeOf(ShowPerguntas.Ranking)">
+        <MappingFragment StoreEntitySet="Rankings">
+          <ScalarProperty Name="IdRanking" ColumnName="IdRanking" />
+          <ScalarProperty Name="pontuacaoMaxima" ColumnName="pontuacaoMaxima" />
+          <ScalarProperty Name="UsuarioIdUsuario" ColumnName="UsuarioIdUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Temas">
+      <EntityTypeMapping TypeName="IsTypeOf(ShowPerguntas.Tema)">
+        <MappingFragment StoreEntitySet="Temas">
+          <ScalarProperty Name="IdTema" ColumnName="IdTema" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="IsTypeOf(ShowPerguntas.Usuario)">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="sobrenome" ColumnName="sobrenome" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="dataCadastro" ColumnName="dataCadastro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ShowPerguntas">
+        <EntityTypeShape EntityType="ShowPerguntas.Pergunta" Width="2.25" PointX="7.375" PointY="0.5" Height="3.9033007812500005" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShowPerguntas.Ranking" Width="1.5" PointX="3" PointY="1.25" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShowPerguntas.Tema" Width="1.5" PointX="5.125" PointY="1.625" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShowPerguntas.Usuario" Width="1.5" PointX="0.75" PointY="1" Height="2.3648893229166656" IsExpanded="true" />
+        <AssociationConnector Association="ShowPerguntas.FK_PerguntaTema" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.625" PointY="2.422841796875" />
+          <ConnectorPoint PointX="7.375" PointY="2.422841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="ShowPerguntas.FK_RankingUsuario" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.1439925130208337" />
+          <ConnectorPoint PointX="3" PointY="2.1439925130208337" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
