@@ -8,3 +8,8 @@ C:\Users\Fernanda\Desktop\PCS 2034\ShowPerguntas\ShowPerguntas\bin\ShowPerguntas
 C:\Users\Fernanda\Desktop\PCS 2034\ShowPerguntas\ShowPerguntas\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Fernanda\Desktop\PCS 2034\ShowPerguntas\ShowPerguntas\obj\Debug\ShowPerguntas.dll
 C:\Users\Fernanda\Desktop\PCS 2034\ShowPerguntas\ShowPerguntas\obj\Debug\ShowPerguntas.pdb
+C:\Users\Quarto\Documents\Visual Studio 2010\projeto\ShowPerguntas\ShowPerguntas\bin\ShowPerguntas.dll
+C:\Users\Quarto\Documents\Visual Studio 2010\projeto\ShowPerguntas\ShowPerguntas\bin\ShowPerguntas.pdb
+C:\Users\Quarto\Documents\Visual Studio 2010\projeto\ShowPerguntas\ShowPerguntas\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Quarto\Documents\Visual Studio 2010\projeto\ShowPerguntas\ShowPerguntas\obj\Debug\ShowPerguntas.dll
+C:\Users\Quarto\Documents\Visual Studio 2010\projeto\ShowPerguntas\ShowPerguntas\obj\Debug\ShowPerguntas.pdb

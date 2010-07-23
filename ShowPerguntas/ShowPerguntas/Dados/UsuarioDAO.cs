@@ -7,7 +7,7 @@ namespace ShowPerguntas.Dados
 {
     public class UsuarioDAO
     {
-        public Usuario BuscarUsuario( String login)
+        public Usuario BuscarUsuario(String login)
         {
             using (var _context = new Show_de_PerguntasEntities())
             {
@@ -15,13 +15,12 @@ namespace ShowPerguntas.Dados
             }
         }
 
-        public Boolean existeLogin(String nome)
+        public Boolean Inserir(String N, String SN, String L, String S)
         {
-            //deve existir uma função que verifica se existe usuário com esse nome, caso sim retorna true, senão, false
-            return true;
+           return true;// executar String de inserção
         }
-        
-        
+
+
 
         public List<Usuario> BuscarUsuarios()
         {
@@ -31,7 +30,6 @@ namespace ShowPerguntas.Dados
                 return result;
             }
         }
-
 
         public List<Usuario> BuscarJogadores()
         {
