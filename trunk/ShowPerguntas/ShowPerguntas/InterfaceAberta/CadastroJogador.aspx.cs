@@ -22,12 +22,16 @@ namespace ShowPerguntas.Interface
           
         protected void SalvarJogador_C(object sender, EventArgs e)
         {
+            ErroLogin.Visible = false;
+            ErroSenha.Visible = false;
             //verifica se a senha e confirmasenha são iguais
             if (senha.Text.Equals(confirmeSenha.Text))
             {           
                 //verifica se logi já existe
-                if(Usuario.ExisteLogin(nome.Text))
+                if(Usuario.LoginOcupado(login.Text))
                 {
+                    senha.Text = "";
+                    confirmeSenha.Text = "";
                     ErroLogin.Visible = true;
                 }
                 else
@@ -35,8 +39,8 @@ namespace ShowPerguntas.Interface
                     //essa função deve cadastrar o jogador e retornar TRUE se der certo
                     if (Usuario.CadastrarJogador(nome.Text, sobrenome.Text, login.Text, senha.Text))
                     {
-                    //Jogador cadastrado com sucesso PARABÉNS, agora faça logi para confirmar o cadastro!
-                       Response.Redirect("~/Interface/Home.aspx");
+                    //Jogador cadastrado com sucesso PARABÉNS, você será redirecionado para tela de login para confirmar o cadastro!
+                     Response.Redirect("~/Interface/Home.aspx");
                     }
                     else
                     {
@@ -51,5 +55,6 @@ namespace ShowPerguntas.Interface
                 ErroSenha.Visible = true;
              }
           }
+
     }
 }

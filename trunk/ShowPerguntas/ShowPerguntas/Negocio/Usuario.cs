@@ -42,17 +42,24 @@ namespace ShowPerguntas.Negocio
         }
 
 
-        public static Boolean ExisteLogin(String Login)
+        public static Boolean LoginOcupado(String L)
         {
-            //TODO
-            //chama função de UsuarioDAO.cs que verifica se existe o usuário
-            return true;
+            UsuarioDAO test = new UsuarioDAO();
+            Dados.Usuario user = test.BuscarUsuario(L);
+            if (user != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public static Boolean CadastrarJogador(String Nome, String SobreNome, String Login, String Senha)
         {
-            //TODO
-            return true;
+            UsuarioDAO novoUser = new UsuarioDAO();
+            return novoUser.Inserir(Nome, SobreNome, Login, Senha);
         }
         
 
