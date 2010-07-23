@@ -81,12 +81,12 @@ GO
 
 -- Creating table 'Usuarios'
 CREATE TABLE [dbo].[Usuarios] (
-    [IdUsuario] int IDENTITY(1,1) NOT NULL,
+    [IdUsuario] int IDENTITY(0,1) NOT NULL,
     [nome] nvarchar(max)  NOT NULL,
     [sobrenome] nvarchar(max)  NOT NULL,
     [login] nvarchar(max)  NOT NULL,
     [senha] nvarchar(max)  NOT NULL,
-    [dataCadastro] datetime  NOT NULL
+    [dataCadastro] datetime NOT NULL default getdate()
 );
 GO
 
