@@ -8,10 +8,21 @@
 </head>
 <body>
     <form id="home" runat="server">
-    <div>
-        <asp:Login ID="Login" runat="server" LoginButtonText="Entrar" OnAuthenticate="Login_Authenticate" UserNameLabelText="Login" PasswordLabelText="Senha" DisplayRememberMe="false" >
+    <div style="width: 941px">
+        <asp:Login ID="Login" runat="server" LoginButtonText="Entrar" 
+            OnAuthenticate="Login_Authenticate" UserNameLabelText="Login:  " 
+            PasswordLabelText="Senha:  " DisplayRememberMe="false" 
+            FailureText="Login ou senha incorretos. Tente novamente!" 
+            TitleText="Acesse sua conta!" Width="220px" >
+            <TextBoxStyle Width="150px" />
         </asp:Login>
+        <br />
+    
+        Ainda não é um jogador cadastrado?&nbsp;  
+        <asp:Button ID="BotaoCadastro" runat="server" Text="Cadastre-se Agora!" 
+            onclick="BotaoCadastroClick" />
     </div>
+    <div>
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
         DataKeyNames="IdUsuario" DataSourceID="ShowPerguntas">
         <Columns>
@@ -31,6 +42,7 @@
         DefaultContainerName="Show_de_PerguntasEntities" EnableFlattening="False" 
         EntitySetName="Usuarios">
     </asp:EntityDataSource>
+    </div>
     </form>    
 </body>
 </html>

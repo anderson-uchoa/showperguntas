@@ -7,6 +7,7 @@
     <title></title>
 </head>
 <body>
+<a href="logout.aspx">Sair</a>
     <form id="form1" runat="server">
     <asp:Menu ID="Menu1" runat="server" DataSourceID="ShowPerguntasSiteMap" 
         MaximumDynamicDisplayLevels="1">

@@ -41,6 +41,21 @@ namespace ShowPerguntas.Negocio
             }
         }
 
+
+        public static Boolean ExisteLogin(String Login)
+        {
+            //TODO
+            //chama função de UsuarioDAO.cs que verifica se existe o usuário
+            return true;
+        }
+
+        public static Boolean CadastrarJogador(String Nome, String SobreNome, String Login, String Senha)
+        {
+            //TODO
+            return true;
+        }
+        
+
         public int getID()
         {
             return this.ID;

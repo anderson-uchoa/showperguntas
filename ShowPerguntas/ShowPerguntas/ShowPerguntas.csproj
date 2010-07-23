@@ -56,11 +56,12 @@
     <Content Include="Dados\ShowPerguntas.edmx.sql" />
     <Content Include="Interface\AdicionarPergunta.aspx" />
     <Content Include="Interface\AdministradorMenu.aspx" />
-    <Content Include="Interface\CadastroJogador.aspx" />
+    <Content Include="InterfaceAberta\CadastroJogador.aspx" />
     <Content Include="Interface\GerenciadorPerguntas.aspx" />
     <Content Include="Interface\Home.aspx" />
     <Content Include="Interface\JogadorMenu.aspx" />
     <Content Include="Interface\ListarPerguntas.aspx" />
+    <Content Include="Interface\logout.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -91,11 +92,11 @@
     <Compile Include="Interface\AdministradorMenu.aspx.designer.cs">
       <DependentUpon>AdministradorMenu.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Interface\CadastroJogador.aspx.cs">
+    <Compile Include="InterfaceAberta\CadastroJogador.aspx.cs">
       <DependentUpon>CadastroJogador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Interface\CadastroJogador.aspx.designer.cs">
+    <Compile Include="InterfaceAberta\CadastroJogador.aspx.designer.cs">
       <DependentUpon>CadastroJogador.aspx</DependentUpon>
     </Compile>
     <Compile Include="Interface\GerenciadorPerguntas.aspx.cs">
@@ -126,6 +127,13 @@
     <Compile Include="Interface\ListarPerguntas.aspx.designer.cs">
       <DependentUpon>ListarPerguntas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Interface\logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Negocio\Administrador.cs" />
     <Compile Include="Negocio\Ajuda.cs" />
     <Compile Include="Negocio\Jogador.cs" />
@@ -148,6 +156,8 @@
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="InterfaceAberta\Web2.config" />
+    <Content Include="Interface\Web1.config" />
     <None Include="ShowPerguntas.xsc">
       <DependentUpon>ShowPerguntas.xsd</DependentUpon>
     </None>

@@ -8,5 +8,6 @@ namespace ShowPerguntas.Negocio
 {
     public class Jogador: Usuario
     {
+        
     }
 }

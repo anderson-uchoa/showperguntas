@@ -13,7 +13,7 @@ namespace ShowPerguntas.Interface
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+ 
         }
 
         protected void Login_Authenticate(object sender, AuthenticateEventArgs e)
@@ -37,12 +37,22 @@ namespace ShowPerguntas.Interface
                         Session["tipo"] = "Jogador";
                         Login.DestinationPageUrl = "~/Interface/JogadorMenu.aspx";
                     }
-                    FormsAuthentication.RedirectFromLoginPage(Login.UserName, true);
+                    FormsAuthentication.RedirectFromLoginPage(Login.UserName, false);
                 }
             }
             catch
             {
             }       
         }
+
+
+
+        protected void BotaoCadastroClick(object sender, EventArgs e)
+        {
+            Response.Redirect("~/InterfaceAberta/CadastroJogador.aspx");
+        }
+
+
+
     }
 }

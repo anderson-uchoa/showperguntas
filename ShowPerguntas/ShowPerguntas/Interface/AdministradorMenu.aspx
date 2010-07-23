@@ -13,9 +13,8 @@
     <title>Menu Administrador</title>
 </head>
 <body>
-    Ola administrador!
     <form id="Administrador" runat="server">
-        <div>
+    Ola administrador! <a href="logout.aspx">Sair</a>&nbsp;<div>
             <asp:Button ID="GerenciarPerguntas" runat="server" Text="Gerenciar Perguntas" 
                 onclick="Button1_Click"  />
         </div>    

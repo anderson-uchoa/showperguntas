@@ -14,24 +14,14 @@ namespace ShowPerguntas.Dados
                 return _context.Usuarios.FirstOrDefault(u => u.login == login);
             }
         }
-        
-        
-        public Usuario BuscarAdministrador()
-        {
-            using (var _context = new Show_de_PerguntasEntities())
-            {
-                 return _context.Usuarios.FirstOrDefault(u => u.IdUsuario == 0);
-            }
-        }
 
-        public Usuario BuscarJogador(String login)
+        public Boolean existeLogin(String nome)
         {
-            using (var _context = new Show_de_PerguntasEntities())
-            {
-                var result = _context.Usuarios.FirstOrDefault(u => u.login == login);
-                return (Usuario) result;
-            }
+            //deve existir uma função que verifica se existe usuário com esse nome, caso sim retorna true, senão, false
+            return true;
         }
+        
+        
 
         public List<Usuario> BuscarUsuarios()
         {
@@ -41,6 +31,7 @@ namespace ShowPerguntas.Dados
                 return result;
             }
         }
+
 
         public List<Usuario> BuscarJogadores()
         {
