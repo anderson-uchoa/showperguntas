@@ -13,8 +13,9 @@
     <title>Menu Jogador</title>
 </head>
 <body>
-    Ola Jogador!
     <form id="Jogador" runat="server">
+    Ola Jogador! <a href="logout.aspx">Sair</a>
+
     <div>
         
     </div>
