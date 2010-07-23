@@ -67,6 +67,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dados\PerguntaDAO.cs" />
     <Compile Include="Dados\ShowPerguntas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -123,6 +124,8 @@
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="ShowPerguntas.xsc">
       <DependentUpon>ShowPerguntas.xsd</DependentUpon>
     </None>

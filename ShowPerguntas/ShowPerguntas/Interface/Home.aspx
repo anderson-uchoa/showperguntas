@@ -9,7 +9,8 @@
 <body>
     <form id="home" runat="server">
     <div>
-        <asp:Login ID="Login" runat="server" LoginButtonText="Entrar" OnAuthenticate="Login_Authenticate" UserNameLabelText="Login" PasswordLabelText="Senha" DisplayRememberMe="false" >
+        <asp:Login ID="Login" runat="server" LoginButtonText="Entrar" OnAuthenticate="Login_Authenticate" UserNameLabelText="Login"
+        PasswordLabelText="Senha" DisplayRememberMe="false" >
         </asp:Login>
     </div>
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
@@ -29,7 +30,8 @@
     <asp:EntityDataSource ID="ShowPerguntas" runat="server" 
         ConnectionString="name=Show_de_PerguntasEntities" 
         DefaultContainerName="Show_de_PerguntasEntities" EnableFlattening="False" 
-        EntitySetName="Usuarios">
+        EntitySetName="Usuarios" EnableDelete="True" EnableInsert="True" 
+        EnableUpdate="True" EntityTypeFilter="Usuario">
     </asp:EntityDataSource>
     </form>    
 </body>
