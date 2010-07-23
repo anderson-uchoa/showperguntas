@@ -7,13 +7,11 @@ namespace ShowPerguntas.Dados
 {
     public class PerguntaDAO
     {
-
         public Pergunta buscarPerguntaID(int id)
         {
             using (var _context = new Show_de_PerguntasEntities())
             {
-                return _context.Perguntas.FirstOrDefault(u => u.IdPergunta == id);
-                
+                return _context.Perguntas.FirstOrDefault(u => u.IdPergunta == id);           
             }
         }
 
