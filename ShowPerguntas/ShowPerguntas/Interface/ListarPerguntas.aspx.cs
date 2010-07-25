@@ -11,7 +11,13 @@ namespace ShowPerguntas.Interface
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+         
         }
+
+        protected void VoltarButton(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Interface/GerenciadorPerguntas.aspx");
+        }
+
     }
 }

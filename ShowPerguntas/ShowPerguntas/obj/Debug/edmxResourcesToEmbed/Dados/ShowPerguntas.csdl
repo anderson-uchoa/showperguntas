@@ -20,7 +20,7 @@
     </Key>
     <Property Name="IdPergunta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="enunciado" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-    <Property Name="dificuldade" Type="String" Nullable="false" />
+    <Property Name="dificuldade" Type="Int32" Nullable="false" />
     <Property Name="alternativaCorreta" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="alternativaIncorreta1" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="alternativaIncorreta2" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
