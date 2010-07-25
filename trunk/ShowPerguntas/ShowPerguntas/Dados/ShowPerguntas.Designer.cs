@@ -200,7 +200,7 @@ namespace ShowPerguntas.Dados
         /// <param name="alternativaIncorreta3">Initial value of the alternativaIncorreta3 property.</param>
         /// <param name="alternativaIncorreta4">Initial value of the alternativaIncorreta4 property.</param>
         /// <param name="tema_IdTema">Initial value of the Tema_IdTema property.</param>
-        public static Pergunta CreatePergunta(global::System.Int32 idPergunta, global::System.String enunciado, global::System.String dificuldade, global::System.String alternativaCorreta, global::System.String alternativaIncorreta1, global::System.String alternativaIncorreta2, global::System.String alternativaIncorreta3, global::System.String alternativaIncorreta4, global::System.Int32 tema_IdTema)
+        public static Pergunta CreatePergunta(global::System.Int32 idPergunta, global::System.String enunciado, global::System.Int32 dificuldade, global::System.String alternativaCorreta, global::System.String alternativaIncorreta1, global::System.String alternativaIncorreta2, global::System.String alternativaIncorreta3, global::System.String alternativaIncorreta4, global::System.Int32 tema_IdTema)
         {
             Pergunta pergunta = new Pergunta();
             pergunta.IdPergunta = idPergunta;
@@ -274,7 +274,7 @@ namespace ShowPerguntas.Dados
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String dificuldade
+        public global::System.Int32 dificuldade
         {
             get
             {
@@ -284,13 +284,13 @@ namespace ShowPerguntas.Dados
             {
                 OndificuldadeChanging(value);
                 ReportPropertyChanging("dificuldade");
-                _dificuldade = StructuralObject.SetValidValue(value, false);
+                _dificuldade = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("dificuldade");
                 OndificuldadeChanged();
             }
         }
-        private global::System.String _dificuldade;
-        partial void OndificuldadeChanging(global::System.String value);
+        private global::System.Int32 _dificuldade;
+        partial void OndificuldadeChanging(global::System.Int32 value);
         partial void OndificuldadeChanged();
     
         /// <summary>

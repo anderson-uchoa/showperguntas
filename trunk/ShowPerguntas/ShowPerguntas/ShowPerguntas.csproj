@@ -57,6 +57,7 @@
     <Content Include="Interface\AdicionarPergunta.aspx" />
     <Content Include="Interface\AdministradorMenu.aspx" />
     <Content Include="InterfaceAberta\CadastroJogador.aspx" />
+    <Content Include="Interface\ExibirPergunta.aspx" />
     <Content Include="Interface\GerenciadorPerguntas.aspx" />
     <Content Include="Interface\Home.aspx" />
     <Content Include="Interface\JogadorMenu.aspx" />
@@ -77,6 +78,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ShowPerguntas.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Dados\TemaDAO.cs" />
     <Compile Include="Dados\UsuarioDAO.cs" />
     <Compile Include="Interface\AdicionarPergunta.aspx.cs">
       <DependentUpon>AdicionarPergunta.aspx</DependentUpon>
@@ -98,6 +100,13 @@
     </Compile>
     <Compile Include="InterfaceAberta\CadastroJogador.aspx.designer.cs">
       <DependentUpon>CadastroJogador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\ExibirPergunta.aspx.cs">
+      <DependentUpon>ExibirPergunta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\ExibirPergunta.aspx.designer.cs">
+      <DependentUpon>ExibirPergunta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Interface\GerenciadorPerguntas.aspx.cs">
       <DependentUpon>GerenciadorPerguntas.aspx</DependentUpon>

@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 07/19/2010 09:22:44
--- Generated from EDMX file: C:\Users\Ricardo\documents\visual studio 2010\projects\ShowPerguntas\ShowPerguntas\Dados\ShowPerguntas.edmx
+-- Date Created: 07/23/2010 16:33:50
+-- Generated from EDMX file: C:\Users\Ricardo\Documents\POLI\2010-2\PCS2034 - Laboratorio de Engenharia de Software I\ShowPerguntas\ShowPerguntas\ShowPerguntas\Dados\ShowPerguntas.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -49,17 +49,17 @@ GO
 CREATE TABLE [dbo].[Perguntas] (
     [IdPergunta] int IDENTITY(1,1) NOT NULL,
     [enunciado] nvarchar(max)  NOT NULL,
-    [dificuldade] nvarchar(max)  NOT NULL,
+    [dificuldade] int  NOT NULL,
     [alternativaCorreta] nvarchar(max)  NOT NULL,
     [alternativaIncorreta1] nvarchar(max)  NOT NULL,
     [alternativaIncorreta2] nvarchar(max)  NOT NULL,
     [alternativaIncorreta3] nvarchar(max)  NOT NULL,
     [alternativaIncorreta4] nvarchar(max)  NOT NULL,
-    [vezesRespondidaAltCorreta] int  NOT NULL,
-    [vezesRespondidaAltIncorreta1] int  NOT NULL,
-    [vezesRespondidaAltIncorreta2] int  NOT NULL,
-    [vezesRespondidaAltIncorreta3] int  NOT NULL,
-    [vezesRespondidaAltIncorreta4] int  NOT NULL,
+    [vezesRespondidaAltCorreta] int  NOT NULL DEFAULT 0,
+    [vezesRespondidaAltIncorreta1] int  NOT NULL DEFAULT 0,
+    [vezesRespondidaAltIncorreta2] int  NOT NULL DEFAULT 0,
+    [vezesRespondidaAltIncorreta3] int  NOT NULL DEFAULT 0,
+    [vezesRespondidaAltIncorreta4] int  NOT NULL DEFAULT 0,
     [Tema_IdTema] int  NOT NULL
 );
 GO
@@ -86,7 +86,7 @@ CREATE TABLE [dbo].[Usuarios] (
     [sobrenome] nvarchar(max)  NOT NULL,
     [login] nvarchar(max)  NOT NULL,
     [senha] nvarchar(max)  NOT NULL,
-    [dataCadastro] datetime NOT NULL default getdate()
+    [dataCadastro] datetime  NOT NULL DEFAULT GETDATE()
 );
 GO
 
