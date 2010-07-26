@@ -8,14 +8,12 @@ namespace ShowPerguntas.Negocio
     public class Rodada
     {
         public Pergunta P;
-        public int tempo;
         public int dificuldade;
-        public Rodada(int dificuldade, int tempo)
+
+        public Rodada(int dificuldade, int[] listaIds)
         {
             this.dificuldade = dificuldade;
-            //P = new Pergunta(dificuldade);
-            this.tempo = tempo;
-
+            P = new Pergunta(dificuldade, listaIds);
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using ShowPerguntas.Negocio.Defines;
+using ShowPerguntas.Negocio;
 
 namespace ShowPerguntas.Negocio
 {
@@ -41,20 +41,25 @@ namespace ShowPerguntas.Negocio
         {
             if (qntPerguntas[Defines.FACIL] > 0)
             {
-                rodada = new Rodada(Defines.FACIL, this.tempo);
+                rodada = new Rodada(Defines.FACIL, IDPerguntas);
                 qntPerguntas[Defines.FACIL] -= 1;
             }
             else if (qntPerguntas[Defines.MEDIO] > 0)
             {
-                rodada = new Rodada(Defines.MEDIO, this.tempo);
+                rodada = new Rodada(Defines.MEDIO, IDPerguntas);
                 qntPerguntas[Defines.MEDIO] -= 1;
             }
             else if (qntPerguntas[Defines.DIFICIL] > 0)
             {
-                rodada = new Rodada(Defines.DIFICIL, this.tempo);
+                rodada = new Rodada(Defines.DIFICIL, IDPerguntas);
                 qntPerguntas[Defines.DIFICIL] -= 1;
             }
 
+        }
+
+        public void pararPartida()
+        {
+            //TODO
         }
     }
 }
