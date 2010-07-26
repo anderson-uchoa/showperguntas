@@ -71,5 +71,22 @@ namespace ShowPerguntas.Dados
             }
         }
 
+        public List<Pergunta> BuscarPerguntaPorDificuldade(int dif)
+        {
+            try
+            {
+                using (var _context = new Show_de_PerguntasEntities())
+                {
+                    var result = (from p in _context.Perguntas where p.dificuldade.Equals(dif) select p).ToList();
+                    return result;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+                //throw;
+            }
+        }
+
     }
 }

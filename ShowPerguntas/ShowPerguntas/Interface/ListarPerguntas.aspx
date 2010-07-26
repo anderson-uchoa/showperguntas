@@ -9,7 +9,28 @@
 <body>
     <form id="form1" runat="server">
         <div>    
-            
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True"
+                AllowSorting="True" AutoGenerateColumns="False" 
+                DataSourceID="ShowPerguntas" 
+                onselectedindexchanged="GridView1_SelectedIndexChanged">
+                <Columns>
+                    <asp:BoundField DataField="IdPergunta" HeaderText="IdPergunta" ReadOnly="True" 
+                        SortExpression="IdPergunta" />
+                    <asp:BoundField DataField="enunciado" HeaderText="enunciado" ReadOnly="True" 
+                        SortExpression="enunciado" />
+                    <asp:BoundField DataField="dificuldade" HeaderText="dificuldade" 
+                        ReadOnly="True" SortExpression="dificuldade" />
+                    <asp:CommandField 
+                        ShowSelectButton="True" SortExpression="IdPergunta" />
+                </Columns>
+            </asp:GridView>
+            <asp:EntityDataSource ID="ShowPerguntas" runat="server"
+                ConnectionString="name=Show_de_PerguntasEntities" 
+                DefaultContainerName="Show_de_PerguntasEntities" EnableFlattening="False" 
+                EntitySetName="Perguntas" 
+                Select="it.[IdPergunta], it.[enunciado], it.[dificuldade]" 
+                OrderBy="it.[IdPergunta]">
+            </asp:EntityDataSource>
         </div>
         <div>
             <asp:Button ID="Voltar" runat="server" Text="Voltar" OnClick="VoltarButton" />
