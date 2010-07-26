@@ -43,7 +43,7 @@
       <PropertyRef Name="IdRanking" />
     </Key>
     <Property Name="IdRanking" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="pontuacaoMaxima" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="pontuacaoMaxima" Type="int" Nullable="false" />
     <Property Name="UsuarioIdUsuario" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="Temas">
@@ -131,7 +131,7 @@
             <PropertyRef Name="IdRanking" />
           </Key>
           <Property Name="IdRanking" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="pontuacaoMaxima" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="pontuacaoMaxima" Type="Int32" Nullable="false" />
           <Property Name="UsuarioIdUsuario" Type="Int32" />
           <NavigationProperty Name="Usuario" Relationship="ShowPerguntas.FK_RankingUsuario" FromRole="Rankings" ToRole="Usuarios" />
         </EntityType>

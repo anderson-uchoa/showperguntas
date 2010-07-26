@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 07/23/2010 16:33:50
+-- Date Created: 07/26/2010 12:18:36
 -- Generated from EDMX file: C:\Users\Ricardo\Documents\POLI\2010-2\PCS2034 - Laboratorio de Engenharia de Software I\ShowPerguntas\ShowPerguntas\ShowPerguntas\Dados\ShowPerguntas.edmx
 -- --------------------------------------------------
 
@@ -55,11 +55,11 @@ CREATE TABLE [dbo].[Perguntas] (
     [alternativaIncorreta2] nvarchar(max)  NOT NULL,
     [alternativaIncorreta3] nvarchar(max)  NOT NULL,
     [alternativaIncorreta4] nvarchar(max)  NOT NULL,
-    [vezesRespondidaAltCorreta] int  NOT NULL DEFAULT 0,
-    [vezesRespondidaAltIncorreta1] int  NOT NULL DEFAULT 0,
-    [vezesRespondidaAltIncorreta2] int  NOT NULL DEFAULT 0,
-    [vezesRespondidaAltIncorreta3] int  NOT NULL DEFAULT 0,
-    [vezesRespondidaAltIncorreta4] int  NOT NULL DEFAULT 0,
+    [vezesRespondidaAltCorreta] int  NOT NULL,
+    [vezesRespondidaAltIncorreta1] int  NOT NULL,
+    [vezesRespondidaAltIncorreta2] int  NOT NULL,
+    [vezesRespondidaAltIncorreta3] int  NOT NULL,
+    [vezesRespondidaAltIncorreta4] int  NOT NULL,
     [Tema_IdTema] int  NOT NULL
 );
 GO
@@ -67,7 +67,7 @@ GO
 -- Creating table 'Rankings'
 CREATE TABLE [dbo].[Rankings] (
     [IdRanking] int IDENTITY(1,1) NOT NULL,
-    [pontuacaoMaxima] nvarchar(max)  NOT NULL,
+    [pontuacaoMaxima] int  NOT NULL,
     [UsuarioIdUsuario] int  NULL
 );
 GO
