@@ -38,7 +38,7 @@
       <PropertyRef Name="IdRanking" />
     </Key>
     <Property Name="IdRanking" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="pontuacaoMaxima" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="pontuacaoMaxima" Type="int" Nullable="false" />
     <Property Name="UsuarioIdUsuario" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="Temas">
