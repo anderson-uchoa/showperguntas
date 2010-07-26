@@ -617,7 +617,7 @@ namespace ShowPerguntas.Dados
         /// </summary>
         /// <param name="idRanking">Initial value of the IdRanking property.</param>
         /// <param name="pontuacaoMaxima">Initial value of the pontuacaoMaxima property.</param>
-        public static Ranking CreateRanking(global::System.Int32 idRanking, global::System.String pontuacaoMaxima)
+        public static Ranking CreateRanking(global::System.Int32 idRanking, global::System.Int32 pontuacaoMaxima)
         {
             Ranking ranking = new Ranking();
             ranking.IdRanking = idRanking;
@@ -660,7 +660,7 @@ namespace ShowPerguntas.Dados
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String pontuacaoMaxima
+        public global::System.Int32 pontuacaoMaxima
         {
             get
             {
@@ -670,13 +670,13 @@ namespace ShowPerguntas.Dados
             {
                 OnpontuacaoMaximaChanging(value);
                 ReportPropertyChanging("pontuacaoMaxima");
-                _pontuacaoMaxima = StructuralObject.SetValidValue(value, false);
+                _pontuacaoMaxima = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("pontuacaoMaxima");
                 OnpontuacaoMaximaChanged();
             }
         }
-        private global::System.String _pontuacaoMaxima;
-        partial void OnpontuacaoMaximaChanging(global::System.String value);
+        private global::System.Int32 _pontuacaoMaxima;
+        partial void OnpontuacaoMaximaChanging(global::System.Int32 value);
         partial void OnpontuacaoMaximaChanged();
     
         /// <summary>

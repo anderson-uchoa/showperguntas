@@ -8,7 +8,7 @@ namespace ShowPerguntas.Negocio
 {
     public class Usuario
     {
-        protected int ID=0;
+        protected int IdUsuario;
         protected String nome = "";
         protected String sobrenome = "";
         protected String login = "";
@@ -30,7 +30,7 @@ namespace ShowPerguntas.Negocio
             Dados.Usuario usr = usrDAO.BuscarUsuario(login);
             if (usr.login.Equals(login) && usr.senha.Equals(senha))
             {
-                this.ID = usr.IdUsuario;
+                this.IdUsuario = usr.IdUsuario;
                 this.nome = usr.nome;
                 this.sobrenome = usr.sobrenome;
                 return true;
@@ -56,16 +56,29 @@ namespace ShowPerguntas.Negocio
             }
         }
 
-        public static Boolean CadastrarJogador(String Nome, String SobreNome, String Login, String Senha)
+        public static Boolean CadastrarJogador(String nome, String sobrenome, String login, String senha)
         {
-            UsuarioDAO novoUser = new UsuarioDAO();
-            return novoUser.Inserir(Nome, SobreNome, Login, Senha);
+            try
+            {
+                UsuarioDAO uDAO = new UsuarioDAO();
+                uDAO.nome = nome;
+                uDAO.sobrenome = sobrenome;
+                uDAO.login = login;
+                uDAO.senha = senha;
+                uDAO.InserirUsuario();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                // throw;
+            }
         }
         
 
         public int getID()
         {
-            return this.ID;
+            return this.IdUsuario;
         }
 
     }

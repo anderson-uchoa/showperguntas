@@ -7,6 +7,16 @@ namespace ShowPerguntas.Dados
 {
     public class UsuarioDAO
     {
+        #region Atributos
+
+            public int IdUsuario;
+            public String nome;
+            public String sobrenome;
+            public String login;
+            public String senha;
+
+        #endregion
+        
         public Usuario BuscarUsuario(String login)
         {
             using (var _context = new Show_de_PerguntasEntities())
@@ -15,12 +25,29 @@ namespace ShowPerguntas.Dados
             }
         }
 
-        public Boolean Inserir(String N, String SN, String L, String S)
+        public Boolean InserirUsuario()
         {
-           return true;// executar String de inserção
+            try
+            {
+                using (var _context = new Show_de_PerguntasEntities())
+                {
+                    Usuario u = new Usuario();
+                    u.IdUsuario = 3;
+                    u.nome = this.nome;
+                    u.sobrenome = this.sobrenome;
+                    u.login = this.login;
+                    u.senha = this.senha;
+                    _context.AddToUsuarios(u); 
+                    _context.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+                // throw;
+            }
         }
-
-
 
         public List<Usuario> BuscarUsuarios()
         {

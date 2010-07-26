@@ -19,42 +19,30 @@ namespace ShowPerguntas.Interface
         {
 
         }
-          
+
         protected void SalvarJogador_C(object sender, EventArgs e)
         {
             ErroLogin.Visible = false;
-            ErroSenha.Visible = false;
-            //verifica se a senha e confirmasenha são iguais
-            if (senha.Text.Equals(confirmeSenha.Text))
-            {           
-                //verifica se logi já existe
-                if(Usuario.LoginOcupado(login.Text))
+            //verifica se logi já existe
+            if (Usuario.LoginOcupado(loginTextBox.Text))
+            {
+                senhaTextBox.Text = "";
+                confirmeSenhaTextBox.Text = "";
+                ErroLogin.Visible = true;
+            }
+            else
+            {
+                //essa função deve cadastrar o jogador e retornar TRUE se der certo
+                if (Usuario.CadastrarJogador(nomeTextBox.Text, sobrenomeTextBox.Text, loginTextBox.Text, senhaTextBox.Text))
                 {
-                    senha.Text = "";
-                    confirmeSenha.Text = "";
-                    ErroLogin.Visible = true;
+                    //Jogador cadastrado com sucesso PARABÉNS, você será redirecionado para tela de login para confirmar o cadastro!
+                    Response.Redirect("~/Interface/Home.aspx");
                 }
                 else
-                {               
-                    //essa função deve cadastrar o jogador e retornar TRUE se der certo
-                    if (Usuario.CadastrarJogador(nome.Text, sobrenome.Text, login.Text, senha.Text))
-                    {
-                    //Jogador cadastrado com sucesso PARABÉNS, você será redirecionado para tela de login para confirmar o cadastro!
-                     Response.Redirect("~/Interface/Home.aspx");
-                    }
-                    else
-                    {
-                        //houve algum problema
-                    }
+                {
+                    //houve algum problema
                 }
-             }
-             else
-             {
-                senha.Text = "";
-                confirmeSenha.Text = "";
-                ErroSenha.Visible = true;
-             }
-          }
-
+            }
+        }
     }
 }
