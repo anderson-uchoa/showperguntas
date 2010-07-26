@@ -14,7 +14,7 @@ namespace ShowPerguntas.Negocio
 
         public String enunciado;
 
-        public SampleCollection<String> alternativas = new SampleCollection<String>();       
+        public SampleCollection<String> alternativas = new SampleCollection<String>();
 
         public SampleCollection<int> estatisticas = new SampleCollection<int>();
 
@@ -40,6 +40,28 @@ namespace ShowPerguntas.Negocio
             this.alternativas.array[4] = aI4;
             this.tema = t;
             this.dificuldade = d;
+        }
+
+        public Pergunta(int dificuldade, int[] listaIds)
+        {
+            int contador = 0;
+            int numero;
+            List<Dados.Pergunta> p = (new PerguntaDAO()).BuscarPerguntaPorDificuldade(dificuldade);
+            Random r = new Random();
+            while(contador < 500)
+            {
+                numero = r.Next(p.Count);
+                for (int i = 0; i < listaIds.Length; ++i)
+                {
+                    if (p[numero].IdPergunta == listaIds[i])
+                        i = listaIds.Length;
+                    else if(i == listaIds.Length - 1)
+                        setarAtributos(p[numero]);
+                    contador = 500;
+                }
+
+                contador++;
+            }
         }
 
         #endregion
@@ -72,7 +94,7 @@ namespace ShowPerguntas.Negocio
                     case "1":
                         pDAO.dificuldade = 1;
                         break;
-                    case "3":
+                    case "2":
                         pDAO.dificuldade = 2;
                         break;
                     default:
@@ -87,6 +109,35 @@ namespace ShowPerguntas.Negocio
                 // throw;
             }
             
+        }
+
+        public void setarAtributos(Dados.Pergunta p)
+        {
+                 
+            idPergunta = p.IdPergunta;
+            enunciado = p.enunciado;
+
+            alternativas[0] = p.alternativaCorreta;
+            alternativas[1] = p.alternativaIncorreta1;
+            alternativas[2] = p.alternativaIncorreta2;
+            alternativas[3] = p.alternativaIncorreta3;
+            alternativas[4] = p.alternativaIncorreta4;
+
+            estatisticas[0] = p.vezesRespondidaAltCorreta;
+            estatisticas[1] = p.vezesRespondidaAltIncorreta1;
+            estatisticas[2] = p.vezesRespondidaAltIncorreta2;
+            estatisticas[3] = p.vezesRespondidaAltIncorreta3;
+            estatisticas[4] = p.vezesRespondidaAltIncorreta4;
+
+            /*
+             * Aqui teremos que pegar os temas de verdade a partir do id que a pergunta possui do tema...
+             * Essa brincadeira aqui tem que sair!!!!!
+             */
+            Random r = new Random();
+            int numero = r.Next(5);
+            string[] temas = new string[5] { "Minha sogra é...", "O bara é...", "O Felipe Melo é...",
+                        "Corinthiano é...", "Quem não chora, não ..."};
+            tema = temas[numero];
         }
         
         #endregion       
