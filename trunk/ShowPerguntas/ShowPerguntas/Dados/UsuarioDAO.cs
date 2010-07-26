@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data;
 
 namespace ShowPerguntas.Dados
 {
@@ -14,6 +15,7 @@ namespace ShowPerguntas.Dados
             public String sobrenome;
             public String login;
             public String senha;
+            public DateTime data;
 
         #endregion
         
@@ -32,11 +34,11 @@ namespace ShowPerguntas.Dados
                 using (var _context = new Show_de_PerguntasEntities())
                 {
                     Usuario u = new Usuario();
-                    u.IdUsuario = 3;
                     u.nome = this.nome;
                     u.sobrenome = this.sobrenome;
                     u.login = this.login;
                     u.senha = this.senha;
+                    u.dataCadastro = DateTime.Now;
                     _context.AddToUsuarios(u); 
                     _context.SaveChanges();
                     return true;

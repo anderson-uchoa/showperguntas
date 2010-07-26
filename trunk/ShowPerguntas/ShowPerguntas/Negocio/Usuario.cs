@@ -24,6 +24,14 @@ namespace ShowPerguntas.Negocio
             this.senha = password;
         }
 
+        public Usuario(String n, String sn, String l, String s)
+        {
+            this.nome = n;
+            this.sobrenome = sn;
+            this.login = l;
+            this.senha = s;
+        }
+
         public Boolean LoginUsuario()        
         {
             UsuarioDAO usrDAO = new UsuarioDAO();
@@ -56,7 +64,7 @@ namespace ShowPerguntas.Negocio
             }
         }
 
-        public static Boolean CadastrarJogador(String nome, String sobrenome, String login, String senha)
+        public Boolean CadastrarJogador()
         {
             try
             {
