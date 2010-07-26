@@ -145,6 +145,7 @@
     </Compile>
     <Compile Include="Negocio\Administrador.cs" />
     <Compile Include="Negocio\Ajuda.cs" />
+    <Compile Include="Negocio\Defines.cs" />
     <Compile Include="Negocio\Jogador.cs" />
     <Compile Include="Negocio\Partida.cs" />
     <Compile Include="Negocio\Pergunta.cs" />
