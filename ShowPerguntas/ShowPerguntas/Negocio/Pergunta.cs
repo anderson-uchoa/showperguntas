@@ -42,6 +42,9 @@ namespace ShowPerguntas.Negocio
             this.dificuldade = d;
         }
 
+        
+
+
         public Pergunta(int dificuldade, int[] listaIds)
         {
             int contador = 0;

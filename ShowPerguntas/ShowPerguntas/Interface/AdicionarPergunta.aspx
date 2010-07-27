@@ -87,7 +87,7 @@
                         <asp:TableCell></asp:TableCell>
                         <asp:TableCell>
                             <asp:Button ID="buttonSalvar" runat="server" onclick="Salvar" Text="Salvar" />
-                            <asp:Button ID="buttonCancelar" runat="server" onclick="Cancelar" Text="Cancelar"  />
+                            <asp:Button ID="buttonCancelar" runat="server" onclick="Cancelar" Text="Cancelar" CausesValidation="false"/>
                          </asp:TableCell>
                     </asp:TableFooterRow>                    
                 </asp:Table>

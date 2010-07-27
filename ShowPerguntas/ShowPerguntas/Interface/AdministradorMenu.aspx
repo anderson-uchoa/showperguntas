@@ -18,7 +18,7 @@
             <asp:Button ID="GerenciarPerguntas" runat="server" Text="Gerenciar Perguntas" 
                 onclick="Button1_Click"  />
         </div>    
-        <asp:Menu ID="Menu1" runat="server" DataSourceID="ShowPerguntasSiteMap" MaximumDynamicDisplayLevels="1" >
+        <asp:Menu ID="Menu1" runat="server" DataSourceID="ShowPerguntasSiteMap" MaximumDynamicDisplayLevels="2" >
         </asp:Menu>
         <asp:SiteMapDataSource ID="ShowPerguntasSiteMap" runat="server" StartFromCurrentNode="true"/>
     </form>

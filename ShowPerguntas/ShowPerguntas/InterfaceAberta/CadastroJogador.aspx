@@ -62,7 +62,7 @@
             </asp:TableRow>
             </asp:Table>
         <asp:Button ID="SalvarJogador" runat="server" onclick="SalvarJogador_C" Text="Salvar" />
-        <asp:Button ID="Cancelar" runat="server" onclick="Cancelar_C" Text="Cancelar" />
+        <asp:Button ID="Cancelar" runat="server" onclick="Cancelar_C" Text="Cancelar" CausesValidation="false" />
     </div>
     </form>
 </body>
