@@ -63,7 +63,9 @@
     <Content Include="Interface\JogadorMenu.aspx" />
     <Content Include="Interface\ListarPerguntas.aspx" />
     <Content Include="Interface\logout.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
