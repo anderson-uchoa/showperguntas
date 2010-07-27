@@ -14,11 +14,11 @@
                 Preencha todos os campos para adicionar uma nova pergunta:
             </div>
             <div>                
-                <asp:Table ID="Table" runat="server" Width="1114px">
+                <asp:Table ID="Table" runat="server" Width="787px">
                     <asp:TableRow ID="Enunciado">
                         <asp:TableCell>Enunciado</asp:TableCell>
                         <asp:TableCell ID="Collum1">
-                            <asp:TextBox ID="EnunciadoTextBox" Width="800" TextMode="MultiLine" Rows="2" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="EnunciadoTextBox" Width="500" TextMode="MultiLine" Rows="2" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="EnunciadoRequiredFieldValidator" runat="server" ControlToValidate="EnunciadoTextBox" 
                                     ErrorMessage="Preencher o enunciado"></asp:RequiredFieldValidator> 
                         </asp:TableCell>
@@ -46,7 +46,7 @@
                     <asp:TableRow ID="AlternativaCorreta">
                         <asp:TableCell>Alternativa Correta</asp:TableCell>
                         <asp:TableCell ID="TableCell3">
-                            <asp:TextBox ID="AlternativaCorretaTextBox" Width="800" TextMode="MultiLine" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="AlternativaCorretaTextBox" Width="500" TextMode="MultiLine" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="AlternativaCorretaTextBox" 
                                 ErrorMessage="Preencher a alternativa"></asp:RequiredFieldValidator>
                         </asp:TableCell>
@@ -54,7 +54,7 @@
                     <asp:TableRow ID="AlternativaIncorreta1">
                         <asp:TableCell>Alternativa Incorreta 1</asp:TableCell>
                         <asp:TableCell ID="TableCell4">
-                            <asp:TextBox ID="AlternativaIncorreta1TextBox" Width="800" TextMode="MultiLine" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="AlternativaIncorreta1TextBox" Width="500" TextMode="MultiLine" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="AlternativaIncorreta1TextBox" 
                                 ErrorMessage="Preencher a alternativa"></asp:RequiredFieldValidator>
                         </asp:TableCell>
@@ -62,7 +62,7 @@
                     <asp:TableRow ID="AlternativaIncorreta2">
                         <asp:TableCell>Alternativa Incorreta 2</asp:TableCell>
                         <asp:TableCell ID="TableCell5">
-                            <asp:TextBox ID="AlternativaIncorreta2TextBox" Width="800" TextMode="MultiLine" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="AlternativaIncorreta2TextBox" Width="500" TextMode="MultiLine" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="AlternativaIncorreta2TextBox" 
                                 ErrorMessage="Preencher a alternativa"></asp:RequiredFieldValidator>
                         </asp:TableCell>
@@ -70,7 +70,7 @@
                     <asp:TableRow ID="AlternativaIncorreta3">
                         <asp:TableCell>Alternativa Incorreta 3</asp:TableCell>
                         <asp:TableCell ID="TableCell6">
-                            <asp:TextBox ID="AlternativaIncorreta3TextBox" Width="800" TextMode="MultiLine" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="AlternativaIncorreta3TextBox" Width="500" TextMode="MultiLine" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="AlternativaIncorreta3TextBox" 
                                 ErrorMessage="Preencher a alternativa"></asp:RequiredFieldValidator>
                         </asp:TableCell>
@@ -78,7 +78,7 @@
                     <asp:TableRow ID="AlternativaIncorreta4">
                         <asp:TableCell>Alternativa Incorreta 4</asp:TableCell>
                         <asp:TableCell ID="TableCell7">
-                            <asp:TextBox ID="AlternativaIncorreta4TextBox" Width="800" TextMode="MultiLine" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="AlternativaIncorreta4TextBox" Width="500" TextMode="MultiLine" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="AlternativaIncorreta4TextBox" 
                                 ErrorMessage="Preencher a alternativa"></asp:RequiredFieldValidator>
                         </asp:TableCell>
