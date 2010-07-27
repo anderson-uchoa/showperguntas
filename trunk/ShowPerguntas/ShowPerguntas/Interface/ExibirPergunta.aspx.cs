@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using ShowPerguntas.Negocio;
 
 namespace ShowPerguntas.Interface
 {
@@ -23,12 +24,20 @@ namespace ShowPerguntas.Interface
                 {
                     DificuldadeDropdownlist.Items.Add(new ListItem(names[i], Convert.ToInt32(values.GetValue(i)).ToString()));
                 }
+
             }
-            EnunciadoTextBox.Text= "";
-            AlternativaIncorreta1TextBox.Text = "";
-            AlternativaIncorreta2TextBox.Text = "";
-            AlternativaIncorreta3TextBox.Text = "";
-            AlternativaIncorreta4TextBox.Text = "";
+            Pergunta perguntaSelecionada = new Pergunta();
+            Dados.Pergunta perguntaEditavel = perguntaSelecionada.BuscarPerguntaPorId(id);
+
+            EnunciadoTextBox.Text = perguntaEditavel.enunciado;
+            DificuldadeDropdownlist.SelectedIndex = perguntaEditavel.dificuldade;
+           // TemaDropdownlist.SelectedValue = perguntaEditavel.Tema;
+            AlternativaCorretaTextBox.Text = perguntaEditavel.alternativaCorreta;
+            AlternativaIncorreta1TextBox.Text = perguntaEditavel.alternativaIncorreta1;
+            AlternativaIncorreta2TextBox.Text = perguntaEditavel.alternativaIncorreta2;
+            AlternativaIncorreta3TextBox.Text = perguntaEditavel.alternativaIncorreta3;
+            AlternativaIncorreta4TextBox.Text = perguntaEditavel.alternativaIncorreta4;
+
 
         } 
         
