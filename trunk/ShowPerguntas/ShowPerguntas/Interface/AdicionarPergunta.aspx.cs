@@ -18,7 +18,6 @@ namespace ShowPerguntas.Interface
             {
                 string[] names = Enum.GetNames(typeof(Dificuldades));
                 Array values = Enum.GetValues(typeof(Dificuldades));
-
                 for (int i = 0; i <= names.Length - 1; i++)
                 {
                     DificuldadeDropdownlist.Items.Add(new ListItem(names[i], Convert.ToInt32(values.GetValue(i)).ToString()));
@@ -39,7 +38,6 @@ namespace ShowPerguntas.Interface
             {
                 Response.Redirect("~/Interface/Home.aspx");
             }
-
         }
 
         protected void Cancelar(object sender, EventArgs e)
