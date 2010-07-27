@@ -24,14 +24,6 @@ namespace ShowPerguntas.Negocio
             this.senha = password;
         }
 
-        public Usuario(String n, String sn, String l, String s)
-        {
-            this.nome = n;
-            this.sobrenome = sn;
-            this.login = l;
-            this.senha = s;
-        }
-
         public Boolean LoginUsuario()        
         {
             UsuarioDAO usrDAO = new UsuarioDAO();
@@ -62,27 +54,7 @@ namespace ShowPerguntas.Negocio
             {
                 return false;
             }
-        }
-
-        public Boolean CadastrarJogador()
-        {
-            try
-            {
-                UsuarioDAO uDAO = new UsuarioDAO();
-                uDAO.nome = nome;
-                uDAO.sobrenome = sobrenome;
-                uDAO.login = login;
-                uDAO.senha = senha;
-                uDAO.InserirUsuario();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-                // throw;
-            }
-        }
-        
+        }        
 
         public int getID()
         {

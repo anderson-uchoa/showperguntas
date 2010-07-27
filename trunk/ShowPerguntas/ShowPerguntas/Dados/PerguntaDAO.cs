@@ -28,21 +28,19 @@ namespace ShowPerguntas.Dados
 
         public List<Pergunta> BuscarPergunta()
         {
-            using (var _context = new Show_de_PerguntasEntities())
+            try
             {
-                return _context.Perguntas.ToList();
+                using (var _context = new Show_de_PerguntasEntities())
+                {
+                    return _context.Perguntas.ToList();
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+                // throw;
             }
         }
-
-        //public Pergunta BuscarProximaPergunta()
-        //{
-        //    using (var _context = new Show_de_PerguntasEntities())
-        //    {
-        //        return _context.Perguntas.
-
-        //    }
-
-        //}
 
         public Boolean InserirPergunta()
         {
@@ -85,6 +83,22 @@ namespace ShowPerguntas.Dados
             {
                 return null;
                 //throw;
+            }
+        }
+
+        public Pergunta BuscarPerguntaPorId(int id)
+        {
+            try
+            {
+                using (var _context = new Show_de_PerguntasEntities())
+                {
+                    return (from p in _context.Perguntas where p.IdPergunta.Equals(id) select p).First();
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+                // throw;
             }
         }
 
