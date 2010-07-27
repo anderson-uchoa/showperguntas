@@ -67,6 +67,14 @@ namespace ShowPerguntas.Dados
                 var result = (from u in _context.Usuarios where u.IdUsuario > 0 select u).ToList();
                 return result;
             }
-        }   
+        }
+
+        public Usuario BuscarJogadorPorId(int id)
+        {
+            using (var _context = new Show_de_PerguntasEntities())
+            {
+                return (from u in _context.Usuarios where u.IdUsuario.Equals(id) select u).First();
+            }
+        }
     }
 }

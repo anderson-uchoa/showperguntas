@@ -132,11 +132,11 @@
                     SortExpression="Tema_IdTema" />
             </Columns>
         </asp:GridView>
-        <asp:EntityDataSource ID="EntityDataSource1" runat="server" 
+        <%--<asp:EntityDataSource ID="EntityDataSource1" runat="server" 
             ConnectionString="name=Show_de_PerguntasEntities" 
             DefaultContainerName="Show_de_PerguntasEntities" EnableFlattening="False" 
             EnableUpdate="True" EntitySetName="Perguntas" Where="it.[IdPergunta] = 2" >
-        </asp:EntityDataSource>
+        </asp:EntityDataSource>--%>
 <%// Where="it.[IdPergunta] = @teste"
   //   <whereparameters>
   //      <asp:ControlParameter ControlID="costLimit" DbType="Int32" 

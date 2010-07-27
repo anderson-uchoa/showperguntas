@@ -114,6 +114,11 @@ namespace ShowPerguntas.Negocio
             
         }
 
+        public Dados.Pergunta BuscarPerguntaPorId(int id)
+        {
+            return (new PerguntaDAO()).BuscarPerguntaPorId(id);
+        }
+
         public void setarAtributos(Dados.Pergunta p)
         {
                  

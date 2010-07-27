@@ -32,9 +32,9 @@ namespace ShowPerguntas.Interface
             }
             else
             {
-                Usuario user = new Usuario(nomeTextBox.Text, sobrenomeTextBox.Text, loginTextBox.Text, senhaTextBox.Text);
+                Jogador j = new Jogador(nomeTextBox.Text, sobrenomeTextBox.Text, loginTextBox.Text, senhaTextBox.Text);
                 //essa função deve cadastrar o jogador e retornar TRUE se der certo
-                if (user.CadastrarJogador())
+                if (j.CadastrarJogador())
                 {
                     //Jogador cadastrado com sucesso PARABÉNS, você será redirecionado para tela de login para confirmar o cadastro!
                     Response.Redirect("~/Interface/Home.aspx");
