@@ -14,7 +14,7 @@ namespace ShowPerguntas.Negocio
         public int[] ajuda;
         public int[] pontuacao;
         public int tempo;
-        public int[] IDPerguntas;
+        public int[] IdPerguntas;
         public int[] qntPerguntas;
 
         public void novaPartida(int dificuldade)
@@ -41,17 +41,17 @@ namespace ShowPerguntas.Negocio
         {
             if (qntPerguntas[Defines.FACIL] > 0)
             {
-                rodada = new Rodada(Defines.FACIL, IDPerguntas);
+                rodada = new Rodada(Defines.FACIL, IdPerguntas);
                 qntPerguntas[Defines.FACIL] -= 1;
             }
             else if (qntPerguntas[Defines.MEDIO] > 0)
             {
-                rodada = new Rodada(Defines.MEDIO, IDPerguntas);
+                rodada = new Rodada(Defines.MEDIO, IdPerguntas);
                 qntPerguntas[Defines.MEDIO] -= 1;
             }
             else if (qntPerguntas[Defines.DIFICIL] > 0)
             {
-                rodada = new Rodada(Defines.DIFICIL, IDPerguntas);
+                rodada = new Rodada(Defines.DIFICIL, IdPerguntas);
                 qntPerguntas[Defines.DIFICIL] -= 1;
             }
 

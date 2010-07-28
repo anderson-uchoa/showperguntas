@@ -10,14 +10,13 @@
 <body>
     <form id="Formulario" runat="server">
     <div>
-        <asp:Table ID="Table" runat="server" Width="893px" Height="314px" 
-            BorderWidth="0px" GridLines="Vertical">
+        <asp:Table ID="Table" runat="server" Width="763px" Height="314px">
             <asp:TableRow ID="Enunciado">
                 <asp:TableCell>Enunciado</asp:TableCell>
                 <asp:TableCell ID="Collum1">
                     <asp:TextBox ID="EnunciadoTextBox" Width="500" TextMode="MultiLine" Rows="2" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="EnunciadoRequiredFieldValidator" runat="server" ControlToValidate="EnunciadoTextBox"
-                        ErrorMessage="Preencher o enunciado"></asp:RequiredFieldValidator>
+                        ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>                    
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow ID="Dificuldade">
@@ -26,23 +25,22 @@
                     <asp:DropDownList ID="DificuldadeDropdownlist" runat="server">
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator ID="DificuldadeRequiredFieldValidator" runat="server"
-                        ControlToValidate="DificuldadeDropdownlist" ErrorMessage="Seleciona a dificuldade"></asp:RequiredFieldValidator>
+                        ControlToValidate="DificuldadeDropdownlist" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow ID="Tema">
                 <asp:TableCell>Tema</asp:TableCell>
                 <asp:TableCell ID="TableCell2">
-                    <asp:DropDownList ID="TemaDropdownlist" runat="server" DataSourceID="ShowPerguntas2"
-                        DataTextField="descricao" DataValueField="descricao">
-                    </asp:DropDownList>
+                    <asp:DropDownList ID="TemaDropdownlist" runat="server" DataSourceID="ShowPerguntas2" 
+                                DataTextField="descricao" DataValueField="IdTema"></asp:DropDownList>
                     <asp:EntityDataSource ID="ShowPerguntas2" runat="server" ConnectionString="name=Show_de_PerguntasEntities" 
-                                DefaultContainerName="Show_de_PerguntasEntities" EnableFlattening="False" 
-                                EntitySetName="Temas" Select="it.[descricao]"></asp:EntityDataSource>
+                         DefaultContainerName="Show_de_PerguntasEntities" EnableFlattening="False" 
+                                EntitySetName="Temas"></asp:EntityDataSource>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TemaDropdownlist"
-                        ErrorMessage="Selecionar o tema"></asp:RequiredFieldValidator>
+                        ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </asp:TableCell>
                 <asp:TableCell>
-                vezes respondida
+                    Estatistica
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow ID="AlternativaCorreta">
@@ -50,45 +48,45 @@
                 <asp:TableCell ID="TableCell3">
                     <asp:TextBox ID="AlternativaCorretaTextBox" Width="500" TextMode="MultiLine" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="AlternativaCorretaTextBox"
-                        ErrorMessage="Preencher a alternativa"></asp:RequiredFieldValidator>
+                        ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </asp:TableCell>
-                <asp:TableCell><asp:TextBox ID="ACestat" Width="50" runat="server"></asp:TextBox></asp:TableCell>
+                <asp:TableCell><asp:TextBox ID="EstatisticACTextBox" Width="50" Enabled="false" runat="server"></asp:TextBox></asp:TableCell>
             </asp:TableRow>
             <asp:TableRow ID="AlternativaIncorreta1">
                 <asp:TableCell>Alternativa Incorreta 1</asp:TableCell>
                 <asp:TableCell ID="TableCell4">
                     <asp:TextBox ID="AlternativaIncorreta1TextBox" Width="500" TextMode="MultiLine" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="AlternativaIncorreta1TextBox"
-                        ErrorMessage="Preencher a alternativa"></asp:RequiredFieldValidator>
+                        ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </asp:TableCell>
-                 <asp:TableCell><asp:TextBox ID="TextBox1" Width="50" runat="server"></asp:TextBox></asp:TableCell>
+                 <asp:TableCell><asp:TextBox ID="EstatisticAI1TextBox" Width="50" Enabled="false" runat="server"></asp:TextBox></asp:TableCell>
             </asp:TableRow>
             <asp:TableRow ID="AlternativaIncorreta2">
                 <asp:TableCell>Alternativa Incorreta 2</asp:TableCell>
                 <asp:TableCell ID="TableCell5">
                     <asp:TextBox ID="AlternativaIncorreta2TextBox" Width="500" TextMode="MultiLine" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="AlternativaIncorreta2TextBox"
-                        ErrorMessage="Preencher a alternativa"></asp:RequiredFieldValidator>
+                        ErrorMessage="*" ForeColor="Red" ></asp:RequiredFieldValidator>
                 </asp:TableCell>
-                 <asp:TableCell><asp:TextBox ID="TextBox2" Width="50" runat="server"></asp:TextBox></asp:TableCell>
+                 <asp:TableCell><asp:TextBox ID="EstatisticAI2TextBox" Width="50" Enabled="false" runat="server"></asp:TextBox></asp:TableCell>
             </asp:TableRow>
             <asp:TableRow ID="AlternativaIncorreta3">
                 <asp:TableCell>Alternativa Incorreta 3</asp:TableCell>
                 <asp:TableCell ID="TableCell6">
                     <asp:TextBox ID="AlternativaIncorreta3TextBox" Width="500" TextMode="MultiLine" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="AlternativaIncorreta3TextBox"
-                        ErrorMessage="Preencher a alternativa"></asp:RequiredFieldValidator>
+                        ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </asp:TableCell>
-                 <asp:TableCell><asp:TextBox ID="TextBox3" Width="50" runat="server"></asp:TextBox></asp:TableCell>
+                 <asp:TableCell><asp:TextBox ID="EstatisticAI3TextBox" Width="50" Enabled="false" runat="server"></asp:TextBox></asp:TableCell>
             </asp:TableRow>
             <asp:TableRow ID="AlternativaIncorreta4">
                 <asp:TableCell>Alternativa Incorreta 4</asp:TableCell>
                 <asp:TableCell ID="TableCell7">
                     <asp:TextBox ID="AlternativaIncorreta4TextBox" Width="500" TextMode="MultiLine" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="AlternativaIncorreta4TextBox"
-                        ErrorMessage="Preencher a alternativa"></asp:RequiredFieldValidator>
+                        ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </asp:TableCell>
-                 <asp:TableCell><asp:TextBox ID="TextBox4" Width="50" runat="server"></asp:TextBox></asp:TableCell>
+                 <asp:TableCell><asp:TextBox ID="EstatisticAI4TextBox" Width="50" Enabled="false" runat="server"></asp:TextBox></asp:TableCell>
             </asp:TableRow>
             <asp:TableFooterRow>
                 <asp:TableCell></asp:TableCell>

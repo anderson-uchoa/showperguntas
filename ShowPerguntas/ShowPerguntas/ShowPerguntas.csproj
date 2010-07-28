@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Dados\ShowPerguntas.edmx.sql" />
+    <Content Include="InterfaceAberta\Regras.aspx" />
     <Content Include="Interface\AdicionarPergunta.aspx" />
     <Content Include="Interface\AdministradorMenu.aspx" />
     <Content Include="InterfaceAberta\CadastroJogador.aspx" />
@@ -82,6 +83,13 @@
     </Compile>
     <Compile Include="Dados\TemaDAO.cs" />
     <Compile Include="Dados\UsuarioDAO.cs" />
+    <Compile Include="InterfaceAberta\Regras.aspx.cs">
+      <DependentUpon>Regras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InterfaceAberta\Regras.aspx.designer.cs">
+      <DependentUpon>Regras.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Interface\AdicionarPergunta.aspx.cs">
       <DependentUpon>AdicionarPergunta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

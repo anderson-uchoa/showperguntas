@@ -25,28 +25,31 @@ namespace ShowPerguntas.Interface
                     DificuldadeDropdownlist.Items.Add(new ListItem(names[i], Convert.ToInt32(values.GetValue(i)).ToString()));
                 }
 
-            }
-            Pergunta perguntaSelecionada = new Pergunta();
-            Dados.Pergunta perguntaEditavel = perguntaSelecionada.BuscarPerguntaPorId(id);
+                Pergunta perguntaSelecionada = new Pergunta();
+                Dados.Pergunta perguntaEditavel = perguntaSelecionada.BuscarPerguntaPorId(id);
 
-            EnunciadoTextBox.Text = perguntaEditavel.enunciado;
-            DificuldadeDropdownlist.SelectedIndex = perguntaEditavel.dificuldade;
-           // TemaDropdownlist.SelectedValue = perguntaEditavel.Tema;
-            AlternativaCorretaTextBox.Text = perguntaEditavel.alternativaCorreta;
-            AlternativaIncorreta1TextBox.Text = perguntaEditavel.alternativaIncorreta1;
-            AlternativaIncorreta2TextBox.Text = perguntaEditavel.alternativaIncorreta2;
-            AlternativaIncorreta3TextBox.Text = perguntaEditavel.alternativaIncorreta3;
-            AlternativaIncorreta4TextBox.Text = perguntaEditavel.alternativaIncorreta4;
-
-
+                EnunciadoTextBox.Text = perguntaEditavel.enunciado;
+                DificuldadeDropdownlist.SelectedIndex = perguntaEditavel.dificuldade;
+                TemaDropdownlist.SelectedValue = Convert.ToString(perguntaEditavel.Tema_IdTema);
+                AlternativaCorretaTextBox.Text = perguntaEditavel.alternativaCorreta;
+                AlternativaIncorreta1TextBox.Text = perguntaEditavel.alternativaIncorreta1;
+                AlternativaIncorreta2TextBox.Text = perguntaEditavel.alternativaIncorreta2;
+                AlternativaIncorreta3TextBox.Text = perguntaEditavel.alternativaIncorreta3;
+                AlternativaIncorreta4TextBox.Text = perguntaEditavel.alternativaIncorreta4;
+                EstatisticACTextBox.Text = Convert.ToString(perguntaEditavel.vezesRespondidaAltCorreta);
+                EstatisticAI1TextBox.Text = Convert.ToString(perguntaEditavel.vezesRespondidaAltIncorreta1);
+                EstatisticAI2TextBox.Text = Convert.ToString(perguntaEditavel.vezesRespondidaAltIncorreta2);
+                EstatisticAI3TextBox.Text = Convert.ToString(perguntaEditavel.vezesRespondidaAltIncorreta3);
+                EstatisticAI4TextBox.Text = Convert.ToString(perguntaEditavel.vezesRespondidaAltIncorreta4);
+            }  
         } 
         
         protected void Salvar(object sender, EventArgs e)
-         {
-         }
+        {
+        }
         
         public void Cancelar(object sender, EventArgs e)
-         {
-         }
+        {
+        }
     }
 }
