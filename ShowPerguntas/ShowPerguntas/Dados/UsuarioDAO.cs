@@ -51,6 +51,28 @@ namespace ShowPerguntas.Dados
             }
         }
 
+        public Boolean AtualizarUsuario()
+        {
+            try
+            {
+                using (var _context = new Show_de_PerguntasEntities())
+                {
+                    Usuario user = (from u in _context.Usuarios where u.IdUsuario.Equals(this.IdUsuario) select u).First();
+                    user.nome = this.nome;
+                    user.sobrenome = this.sobrenome;
+                    user.login = this.login;
+                    user.senha = this.senha;
+                    _context.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                // throw;
+            }
+        }
+
         public List<Usuario> BuscarUsuarios()
         {
             using (var _context = new Show_de_PerguntasEntities())
@@ -69,12 +91,26 @@ namespace ShowPerguntas.Dados
             }
         }
 
-        public Usuario BuscarJogadorPorId(int id)
+        public Boolean BuscarJogadorPorId(int id)
         {
-            using (var _context = new Show_de_PerguntasEntities())
-            {
-                return (from u in _context.Usuarios where u.IdUsuario.Equals(id) select u).First();
-            }
+            try 
+	        {
+	            using (var _context = new Show_de_PerguntasEntities())
+                {
+                    Usuario user = (from u in _context.Usuarios where u.IdUsuario.Equals(id) select u).First();
+                    this.IdUsuario = user.IdUsuario;
+                    this.nome = user.nome;
+                    this.sobrenome = user.sobrenome;
+                    this.login = user.login;
+                    this.senha = user.senha;           
+                }
+                return true;
+	        }
+	        catch (Exception)
+	        {
+                return false;
+		        //throw;
+	        }            
         }
     }
 }

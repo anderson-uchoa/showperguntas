@@ -15,12 +15,25 @@ namespace ShowPerguntas.Interface
             
         }
 
+        protected void MudarDificuldade(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                if (e.Row.Cells[3].Text.Equals("0"))
+                    e.Row.Cells[3].Text = "Fácil";
+                else if (e.Row.Cells[3].Text.Equals("1"))
+                    e.Row.Cells[3].Text = "Médio";
+                else if (e.Row.Cells[3].Text.Equals("2"))
+                    e.Row.Cells[3].Text = "Difícil";   
+            }
+        }
+
         protected void VoltarButton(object sender, EventArgs e)
         {
             Response.Redirect("~/Interface/GerenciadorPerguntas.aspx");
         }
 
-        public void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        public void Selecionar(object sender, EventArgs e)
         {
             ExibirPergunta.id = Convert.ToInt32(GridView1.SelectedRow.Cells[1].Text);
             Response.Redirect("~/Interface/ExibirPergunta.aspx");

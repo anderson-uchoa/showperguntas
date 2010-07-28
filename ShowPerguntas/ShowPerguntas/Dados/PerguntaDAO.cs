@@ -69,6 +69,32 @@ namespace ShowPerguntas.Dados
             }
         }
 
+        public Boolean AtualizarPergunta()
+        {
+            try
+            {
+                using (var _context = new Show_de_PerguntasEntities())
+                {
+                    Pergunta pergunta = (from p in _context.Perguntas where p.IdPergunta.Equals(this.idPergunta) select p).First();
+                    pergunta.enunciado = this.enunciado;
+                    pergunta.Tema_IdTema = this.idTema;
+                    pergunta.dificuldade = this.dificuldade;
+                    pergunta.alternativaCorreta = this.alternativaCorreta;
+                    pergunta.alternativaIncorreta1 = this.alternativaIncorreta1;
+                    pergunta.alternativaIncorreta2 = this.alternativaIncorreta2;
+                    pergunta.alternativaIncorreta3 = this.alternativaIncorreta3;
+                    pergunta.alternativaIncorreta4 = this.alternativaIncorreta4;
+                    _context.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                //throw;
+            }
+        }
+
         public List<Pergunta> BuscarPerguntaPorDificuldade(int dif)
         {
             try
@@ -86,21 +112,36 @@ namespace ShowPerguntas.Dados
             }
         }
 
-        public Pergunta BuscarPerguntaPorId(int id)
+        public Boolean BuscarPerguntaPorId(int id)
         {
             try
             {
                 using (var _context = new Show_de_PerguntasEntities())
                 {
-                    return (from p in _context.Perguntas where p.IdPergunta.Equals(id) select p).First();
+                    Pergunta pergunta = (from p in _context.Perguntas where p.IdPergunta.Equals(id) select p).First();
+                    this.idPergunta = pergunta.IdPergunta;
+                    this.enunciado = pergunta.enunciado;
+                    this.dificuldade = pergunta.dificuldade;
+                    this.alternativaCorreta = pergunta.alternativaCorreta;
+                    this.alternativaIncorreta1 = pergunta.alternativaIncorreta1;
+                    this.alternativaIncorreta2 = pergunta.alternativaIncorreta2;
+                    this.alternativaIncorreta3 = pergunta.alternativaIncorreta3;
+                    this.alternativaIncorreta4 = pergunta.alternativaIncorreta4;
+                    this.estatisticaAltCorreta = pergunta.vezesRespondidaAltCorreta;
+                    this.estatisticaAltIncorreta1 = pergunta.vezesRespondidaAltIncorreta1;
+                    this.estatisticaAltIncorreta2 = pergunta.vezesRespondidaAltIncorreta2;
+                    this.estatisticaAltIncorreta3 = pergunta.vezesRespondidaAltIncorreta3;
+                    this.estatisticaAltIncorreta4 = pergunta.vezesRespondidaAltIncorreta4;
+                    this.idTema = pergunta.Tema_IdTema;
+                    return true;
                 }
             }
             catch (Exception)
             {
-                return null;
+                return false;
                 // throw;
             }
         }
-
+        // return (from p in _context.Perguntas where p.IdPergunta.Equals(id) select p).First();
     }
 }
