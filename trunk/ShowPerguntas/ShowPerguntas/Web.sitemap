@@ -9,5 +9,7 @@
       </siteMapNode>
       <siteMapNode url="~/Interface/JogadorMenu.aspx" title="JogadorMenu"  description="JogadorMenu" >
       </siteMapNode>
+        <siteMapNode url="~/InterfaceAberta/Regras.aspx" title="Regras do Jogo" description="RegrasJogo">        
+      </siteMapNode>
     </siteMapNode>
 </siteMap>

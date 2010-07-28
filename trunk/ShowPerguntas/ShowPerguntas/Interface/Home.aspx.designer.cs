@@ -39,7 +39,15 @@ namespace ShowPerguntas.Interface {
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BotaoCadastro;
         
-       
+        /// <summary>
+        /// BotaoRegras control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BotaoRegras;
+        
         /// <summary>
         /// GridView1 control.
         /// </summary>

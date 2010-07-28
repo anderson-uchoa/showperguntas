@@ -52,7 +52,10 @@ namespace ShowPerguntas.Interface
             Response.Redirect("~/InterfaceAberta/CadastroJogador.aspx");
         }
 
-
+        protected void BotaoRegrasClick(object sender, EventArgs e)
+        {
+            Response.Redirect("~/InterfaceAberta/Regras.aspx");
+        }
 
     }
 }

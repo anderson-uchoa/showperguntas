@@ -175,13 +175,13 @@ namespace ShowPerguntas.Interface {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
-        /// ACestat control.
+        /// EstatisticACTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ACestat;
+        protected global::System.Web.UI.WebControls.TextBox EstatisticACTextBox;
         
         /// <summary>
         /// AlternativaIncorreta1 control.
@@ -220,13 +220,13 @@ namespace ShowPerguntas.Interface {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
         
         /// <summary>
-        /// TextBox1 control.
+        /// EstatisticAI1TextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox EstatisticAI1TextBox;
         
         /// <summary>
         /// AlternativaIncorreta2 control.
@@ -265,13 +265,13 @@ namespace ShowPerguntas.Interface {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
         
         /// <summary>
-        /// TextBox2 control.
+        /// EstatisticAI2TextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox EstatisticAI2TextBox;
         
         /// <summary>
         /// AlternativaIncorreta3 control.
@@ -310,13 +310,13 @@ namespace ShowPerguntas.Interface {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
         
         /// <summary>
-        /// TextBox3 control.
+        /// EstatisticAI3TextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox EstatisticAI3TextBox;
         
         /// <summary>
         /// AlternativaIncorreta4 control.
@@ -355,13 +355,13 @@ namespace ShowPerguntas.Interface {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
         
         /// <summary>
-        /// TextBox4 control.
+        /// EstatisticAI4TextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox EstatisticAI4TextBox;
         
         /// <summary>
         /// buttonSalvar control.

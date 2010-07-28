@@ -14,7 +14,7 @@
                 Preencha todos os campos para adicionar uma nova pergunta:
             </div>
             <div>                
-                <asp:Table ID="Table" runat="server" Width="787px">
+                <asp:Table ID="Table" runat="server" Width="835px">
                     <asp:TableRow ID="Enunciado">
                         <asp:TableCell>Enunciado</asp:TableCell>
                         <asp:TableCell ID="Collum1">
@@ -35,10 +35,10 @@
                         <asp:TableCell>Tema</asp:TableCell>
                         <asp:TableCell ID="TableCell2">
                            <asp:DropDownList ID="TemaDropdownlist" runat="server" DataSourceID="ShowPerguntas2" 
-                                DataTextField="descricao" DataValueField="descricao"></asp:DropDownList>
+                                DataTextField="descricao" DataValueField="IdTema"></asp:DropDownList>
                            <asp:EntityDataSource ID="ShowPerguntas2" runat="server" ConnectionString="name=Show_de_PerguntasEntities" 
                                 DefaultContainerName="Show_de_PerguntasEntities" EnableFlattening="False" 
-                                EntitySetName="Temas" Select="it.[descricao]"></asp:EntityDataSource>
+                                EntitySetName="Temas"></asp:EntityDataSource>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TemaDropdownlist" 
                                 ErrorMessage="Selecionar o tema"></asp:RequiredFieldValidator> 
                         </asp:TableCell>
@@ -91,7 +91,7 @@
                          </asp:TableCell>
                     </asp:TableFooterRow>                    
                 </asp:Table>
-            </div>                          
+            </div>            
         </div>        
     </form>
 </body>

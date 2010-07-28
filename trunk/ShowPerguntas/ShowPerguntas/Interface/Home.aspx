@@ -9,7 +9,7 @@
 <body>
     <form id="home" runat="server">
     <div style="width: 941px">
-        <asp:Login ID="Login" runat="server" LoginButtonText="Entrar" 
+        <asp:Login ID="Login" runat="server" LoginButtonText="Entrar"
             OnAuthenticate="Login_Authenticate" UserNameLabelText="Login:  " 
             PasswordLabelText="Senha:  " DisplayRememberMe="false" 
             FailureText="Login ou senha incorretos. Tente novamente!" 
@@ -19,8 +19,9 @@
         <br />
     
         Ainda não é um jogador cadastrado?&nbsp;  
-        <asp:Button ID="BotaoCadastro" runat="server" Text="Cadastre-se Agora!" 
-            onclick="BotaoCadastroClick" />
+        <asp:Button ID="BotaoCadastro" runat="server" Text="Cadastre-se Agora!" OnClick="BotaoCadastroClick" />
+        <br />
+        <asp:Button ID="BotaoRegras" runat="server" Text="Regras" OnClick="BotaoRegrasClick"/>
     </div>
     <div>
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
