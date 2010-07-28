@@ -12,36 +12,30 @@
 
             <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
                 AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="IdPergunta" 
-                DataSourceID="perguntas" 
-                onselectedindexchanged="GridView1_SelectedIndexChanged" 
+                DataSourceID="perguntas"
+                onselectedindexchanged="Selecionar" 
+                OnRowDataBound="MudarDificuldade"
                 RowHeaderColumn="IdPergunta">
                 <Columns>
                     <asp:CommandField ShowSelectButton="True" />
-                    <asp:BoundField DataField="IdPergunta" HeaderText="IdPergunta" 
+                    <asp:BoundField DataField="IdPergunta" HeaderText="Id Pergunta" 
                         SortExpression="IdPergunta" ReadOnly="True" />
                     <asp:BoundField DataField="enunciado" HeaderText="enunciado" 
                         SortExpression="enunciado" />
                     <asp:BoundField DataField="dificuldade" HeaderText="dificuldade" 
                         SortExpression="dificuldade" />
-                    <asp:BoundField DataField="alternativaCorreta" HeaderText="alternativaCorreta" 
-                        SortExpression="alternativaCorreta" />
-                    <asp:BoundField DataField="alternativaIncorreta1" 
-                        HeaderText="alternativaIncorreta1" SortExpression="alternativaIncorreta1" />
-                    <asp:BoundField DataField="alternativaIncorreta2" 
-                        HeaderText="alternativaIncorreta2" SortExpression="alternativaIncorreta2" />
-                    <asp:BoundField DataField="alternativaIncorreta3" 
-                        HeaderText="alternativaIncorreta3" SortExpression="alternativaIncorreta3" />
-                    <asp:BoundField DataField="alternativaIncorreta4" 
-                        HeaderText="alternativaIncorreta4" SortExpression="alternativaIncorreta4" />
-                    <asp:BoundField DataField="Tema_IdTema" HeaderText="Tema_IdTema" 
-                        SortExpression="Tema_IdTema" />
-                    <asp:BoundField DataField="Tema" HeaderText="Tema" SortExpression="Tema" />
+                    <asp:TemplateField HeaderText="Temas" SortExpression="Temas"> 
+                      <ItemTemplate> 
+                        <asp:Label ID="Tema" runat="server" Text='<%# Eval("Tema.descricao") %>'> 
+                        </asp:Label> 
+                      </ItemTemplate> 
+                    </asp:TemplateField> 
                 </Columns>
             </asp:GridView>
             <asp:EntityDataSource ID="perguntas" runat="server" 
                 ConnectionString="name=Show_de_PerguntasEntities" 
                 DefaultContainerName="Show_de_PerguntasEntities" EnableFlattening="False" 
-                EntitySetName="Perguntas">
+                EntitySetName="Perguntas" Include="Tema">
             </asp:EntityDataSource>
         </div>
         <div>

@@ -8,7 +8,7 @@ namespace ShowPerguntas.Negocio
 {
     public class Pergunta
     {
-        #region Attributes   
+        #region Attributes
  
         public int idPergunta;
 
@@ -32,6 +32,19 @@ namespace ShowPerguntas.Negocio
 
         public Pergunta(String e, String aC, String aI1, String aI2, String aI3, String aI4, String t, String d)
         {
+            this.enunciado = e;
+            this.alternativas[0] = aC;
+            this.alternativas[1] = aI1;
+            this.alternativas[2] = aI2;
+            this.alternativas[3] = aI3;
+            this.alternativas[4] = aI4;
+            this.tema = t;
+            this.dificuldade = d;
+        }
+
+        public Pergunta(int id, String e, String aC, String aI1, String aI2, String aI3, String aI4, String t, String d)
+        {
+            this.idPergunta = id;
             this.enunciado = e;
             this.alternativas[0] = aC;
             this.alternativas[1] = aI1;
@@ -96,20 +109,7 @@ namespace ShowPerguntas.Negocio
                 pDAO.alternativaIncorreta2 = this.alternativas[2];
                 pDAO.alternativaIncorreta3 = this.alternativas[3];
                 pDAO.alternativaIncorreta4 = this.alternativas[4];
-                switch (this.dificuldade)
-                {
-                    case "0":
-                        pDAO.dificuldade = 0;
-                        break;
-                    case "1":
-                        pDAO.dificuldade = 1;
-                        break;
-                    case "2":
-                        pDAO.dificuldade = 2;
-                        break;
-                    default:
-                        return false;
-                }
+                pDAO.dificuldade = Convert.ToInt32(this.dificuldade);
                 pDAO.InserirPergunta();
                 return true;
             }
@@ -121,9 +121,61 @@ namespace ShowPerguntas.Negocio
             
         }
 
-        public Dados.Pergunta BuscarPerguntaPorId(int id)
+        public Boolean AtualizarPergunta()
         {
-            return (new PerguntaDAO()).BuscarPerguntaPorId(id);
+            try
+            {
+                PerguntaDAO pDAO = new PerguntaDAO();
+                pDAO.idPergunta = this.idPergunta;
+                pDAO.enunciado = this.enunciado;
+                pDAO.idTema = Convert.ToInt32(this.tema);
+                pDAO.alternativaCorreta = this.alternativas[0];
+                pDAO.alternativaIncorreta1 = this.alternativas[1];
+                pDAO.alternativaIncorreta2 = this.alternativas[2];
+                pDAO.alternativaIncorreta3 = this.alternativas[3];
+                pDAO.alternativaIncorreta4 = this.alternativas[4];
+                pDAO.dificuldade = Convert.ToInt32(this.dificuldade);                
+                return pDAO.AtualizarPergunta(); ;
+            }
+            catch (Exception)
+            {
+                return false;
+                //throw;
+            }
+        }
+
+        public Boolean BuscarPerguntaPorId(int id)
+        {
+            try
+            {
+                PerguntaDAO pDAO = new PerguntaDAO();
+                if (pDAO.BuscarPerguntaPorId(id))
+                {
+                    this.idPergunta = pDAO.idPergunta;
+                    this.enunciado = pDAO.enunciado;
+                    this.dificuldade = Convert.ToString(pDAO.dificuldade);
+                    this.alternativas[0] = pDAO.alternativaCorreta;
+                    this.alternativas[1] = pDAO.alternativaIncorreta1;
+                    this.alternativas[2] = pDAO.alternativaIncorreta2;
+                    this.alternativas[3] = pDAO.alternativaIncorreta3;
+                    this.alternativas[4] = pDAO.alternativaIncorreta4;
+                    this.estatisticas[0] = pDAO.estatisticaAltCorreta;
+                    this.estatisticas[1] = pDAO.estatisticaAltIncorreta1;
+                    this.estatisticas[2] = pDAO.estatisticaAltIncorreta2;
+                    this.estatisticas[3] = pDAO.estatisticaAltIncorreta3;
+                    this.estatisticas[4] = pDAO.estatisticaAltIncorreta4;
+                    this.tema = Convert.ToString(pDAO.idTema);
+                    return true;
+                }
+                else
+                    return false;
+            }
+            catch (Exception)
+            {
+                return false;
+                //throw;
+            }            
+            //return (new PerguntaDAO()).BuscarPerguntaPorId(id);
         }
 
         public void setarAtributos(Dados.Pergunta p)
@@ -143,17 +195,7 @@ namespace ShowPerguntas.Negocio
             this.estatisticas[1] = p.vezesRespondidaAltIncorreta1;
             this.estatisticas[2] = p.vezesRespondidaAltIncorreta2;
             this.estatisticas[3] = p.vezesRespondidaAltIncorreta3;
-            this.estatisticas[4] = p.vezesRespondidaAltIncorreta4;
-
-            /*
-             * Aqui teremos que pegar os temas de verdade a partir do id que a pergunta possui do tema...
-             * Essa brincadeira aqui tem que sair!!!!!
-             */
-            Random r = new Random();
-            int numero = r.Next(5);
-            string[] temas = new string[5] { "Minha sogra é...", "O bara é...", "O Felipe Melo é...",
-                        "Corinthiano é...", "Quem não chora, não ..."};
-            tema = temas[numero];
+            this.estatisticas[4] = p.vezesRespondidaAltIncorreta4;           
         }
         
         #endregion       
