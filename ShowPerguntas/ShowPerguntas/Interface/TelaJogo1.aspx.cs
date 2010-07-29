@@ -7,11 +7,15 @@ using System.Web.UI.WebControls;
 
 namespace ShowPerguntas.Interface
 {
-    public partial class MostrarPergunta : System.Web.UI.Page
+    public partial class TelaJogo1 : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(PreviousPage.partida == null)
+                Label1.Text = "Deu Pau";
+            else
+                Label1.Text = "É isso aí!";
         }
     }
 }
