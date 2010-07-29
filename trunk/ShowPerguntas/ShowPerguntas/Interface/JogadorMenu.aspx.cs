@@ -40,5 +40,10 @@ namespace ShowPerguntas.Interface
             }
         }
 
+        protected void VisualizarPerfil_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Interface/Perfil.aspx");
+        }
+
     }
 }

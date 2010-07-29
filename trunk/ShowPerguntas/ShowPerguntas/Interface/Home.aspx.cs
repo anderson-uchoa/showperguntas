@@ -35,9 +35,10 @@ namespace ShowPerguntas.Interface
                     else
                     {
                         Session["tipo"] = "Jogador";
+                        Session["Id"] = Convert.ToString(usr.getID());
                         Login.DestinationPageUrl = "~/Interface/JogadorMenu.aspx";
                     }
-                    FormsAuthentication.RedirectFromLoginPage(Login.UserName, false);
+                    FormsAuthentication.RedirectFromLoginPage("tietadoagreste", true);
                 }
             }
             catch

@@ -5,8 +5,9 @@
 <% if (Session["tipo"].Equals("Administrador")) 
    {
        Response.Redirect("~/Interface/AdministradorMenu.aspx");
-   } 
+   }
 %>
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -20,7 +21,13 @@
         
         <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Novo Jogo" />
         
+        <br />
+        
         <asp:Button ID="Button2" runat="server" onclick="Button2_Click" Text="Mostrar Ranking" />
+        
+        <br />
+        <asp:Button ID="VisualizarPerfil" runat="server" Text="Visualizar Perfil" 
+            onclick="VisualizarPerfil_Click" />
         
     </div>
     </form>

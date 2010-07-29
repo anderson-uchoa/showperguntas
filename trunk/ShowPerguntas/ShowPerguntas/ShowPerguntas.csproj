@@ -64,6 +64,7 @@
     <Content Include="Interface\JogadorMenu.aspx" />
     <Content Include="Interface\ListarPerguntas.aspx" />
     <Content Include="Interface\logout.aspx" />
+    <Content Include="Interface\Perfil.aspx" />
     <Content Include="Interface\TelaJogo1.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -153,6 +154,13 @@
     </Compile>
     <Compile Include="Interface\logout.aspx.designer.cs">
       <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Interface\TelaJogo1.aspx.cs">
       <DependentUpon>TelaJogo1.aspx</DependentUpon>

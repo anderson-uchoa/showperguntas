@@ -6,7 +6,6 @@
 <head runat="server">
     <title>Exibir Pergunta</title>
 </head>
-<%Response.Write(id); %>
 <body>
     <form id="Formulario" runat="server">
     <div>

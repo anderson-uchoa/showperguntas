@@ -53,11 +53,11 @@ namespace ShowPerguntas.Negocio
             try
             {
                 UsuarioDAO uDAO = new UsuarioDAO();
-                this.IdUsuario = uDAO.IdUsuario;
-                this.nome = uDAO.nome;
-                this.sobrenome = uDAO.sobrenome;
-                this.login = uDAO.login;
-                this.senha = uDAO.senha;
+                uDAO.IdUsuario = this.IdUsuario;
+                uDAO.nome = this.nome;
+                uDAO.sobrenome = this.sobrenome;
+                uDAO.login = this.login;
+                uDAO.senha = this.senha;
                 return uDAO.AtualizarUsuario();
             }
             catch (Exception)
@@ -79,6 +79,8 @@ namespace ShowPerguntas.Negocio
                     this.sobrenome = uDAO.sobrenome;
                     this.login = uDAO.login;
                     this.senha = uDAO.senha;
+                    this.dataCadastroString = uDAO.ToString();
+                    this.dataCadatro = uDAO.data;
                     return true;
                 }
                 else
