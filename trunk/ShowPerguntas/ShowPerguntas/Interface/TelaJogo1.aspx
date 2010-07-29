@@ -12,6 +12,14 @@
     
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     
+        <br />
+        <h1>Você já ganhou por volta de: D$
+        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label> &nbsp;(dinheiros)</h1>
+        <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Silvio, Proxima Pergunta" />
+    
+        <asp:Button ID="Button2" runat="server" Text="Nah... Sou maricas" 
+            onclick="Button2_Click" />
+    
     </div>
     </form>
 </body>

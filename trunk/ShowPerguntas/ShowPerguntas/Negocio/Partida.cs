@@ -13,7 +13,8 @@ namespace ShowPerguntas.Negocio
         protected int dificuldade;
         protected int nivel;
         public int[] ajuda;
-        public int[] pontuacao;
+        public int[] pontuacaoNivel;
+        public int pontuacao;
         public int tempo;
         public int[] IdPerguntas;
         public int[] qntPerguntas;
@@ -21,6 +22,7 @@ namespace ShowPerguntas.Negocio
 
         public void novaPartida(int dificuldade)
         {
+            status = true;
             this.dificuldade = dificuldade;
             switch (dificuldade)
             {
@@ -62,6 +64,7 @@ namespace ShowPerguntas.Negocio
         public void pararPartida()
         {
             //TODO
+            status = false;
         }
 
         public bool estaAtivo()
