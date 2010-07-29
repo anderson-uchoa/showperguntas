@@ -89,7 +89,7 @@ namespace ShowPerguntas.Negocio
 		        return false;
 		        //throw;
 	        }
-            return (new UsuarioDAO()).BuscarJogadorPorId(id);
+            //return (new UsuarioDAO()).BuscarJogadorPorId(id);
         }
     }
 }

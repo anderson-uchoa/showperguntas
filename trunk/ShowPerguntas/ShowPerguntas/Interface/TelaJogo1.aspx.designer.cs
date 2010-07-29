@@ -10,33 +10,36 @@
 namespace ShowPerguntas.Interface {
     
     
-    public partial class JogadorMenu {
+    public partial class TelaJogo1 {
         
         /// <summary>
-        /// Jogador control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm Jogador;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Button1 control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Button2 control.
+        /// PreviousPage property.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Auto-generated property.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        public new Interface.JogadorMenu PreviousPage {
+            get {
+                return ((Interface.JogadorMenu)(base.PreviousPage));
+            }
+        }
     }
 }

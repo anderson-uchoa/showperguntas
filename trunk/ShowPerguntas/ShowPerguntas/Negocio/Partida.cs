@@ -8,6 +8,7 @@ namespace ShowPerguntas.Negocio
 {
     public class Partida
     {
+        protected bool status;
         protected Rodada rodada;
         protected int dificuldade;
         protected int nivel;
@@ -16,6 +17,7 @@ namespace ShowPerguntas.Negocio
         public int tempo;
         public int[] IdPerguntas;
         public int[] qntPerguntas;
+
 
         public void novaPartida(int dificuldade)
         {
@@ -60,6 +62,11 @@ namespace ShowPerguntas.Negocio
         public void pararPartida()
         {
             //TODO
+        }
+
+        public bool estaAtivo()
+        {
+            return status;
         }
     }
 }
