@@ -50,7 +50,6 @@ namespace ShowPerguntas.Interface
             Pergunta pergunta = new Pergunta(id, EnunciadoTextBox.Text, AlternativaCorretaTextBox.Text, AlternativaIncorreta1TextBox.Text,
                 AlternativaIncorreta2TextBox.Text, AlternativaIncorreta3TextBox.Text, AlternativaIncorreta4TextBox.Text, TemaDropdownlist.SelectedValue,
                 DificuldadeDropdownlist.SelectedValue);
-            Response.Write(pergunta.enunciado);
             if (pergunta.AtualizarPergunta())
             {
                 Response.Redirect("~/Interface/ListarPerguntas.aspx");
@@ -63,6 +62,7 @@ namespace ShowPerguntas.Interface
         
         public void Cancelar(object sender, EventArgs e)
         {
+            Response.Write("~/Interface/ListarPerguntas.aspx");
         }
     }
 }
