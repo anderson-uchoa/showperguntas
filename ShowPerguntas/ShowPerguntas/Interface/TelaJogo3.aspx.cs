@@ -13,15 +13,11 @@ namespace ShowPerguntas.Interface
         protected void Page_Load(object sender, EventArgs e)
         {
             partida = (Negocio.Partida) Session["partida"];
-            /*
             if (partida.estaAtivo())
             { }
             else
-            {
-                caminho = gerarCaminho();
-                GameOver.DescriptionUrl = caminho;
-            }*/
-            GameOver.ImageUrl = gerarCaminho();
+                GameOver.DescriptionUrl = gerarCaminho();
+            
         }
 
         public String gerarCaminho(){

@@ -9,7 +9,7 @@ namespace ShowPerguntas.Negocio
     {
         public Pergunta P;
         public int dificuldade;
-
+        int[] vetor;
         public Rodada(int dificuldade, int[] listaIds)
         {
             this.dificuldade = dificuldade;
@@ -31,10 +31,10 @@ namespace ShowPerguntas.Negocio
         protected String[] embaralharAlternativas()
         {
             bool repetido;
-            int[] vetor = new int[5];
             int i, j;
             Random rand = new Random();
-            
+            vetor = new int[5];
+
             String[] alt = new String[6];
             
             for (i = 0; i < 5; ++i)
@@ -56,6 +56,14 @@ namespace ShowPerguntas.Negocio
             for (i = 0; i < 5; ++i)
                 alt[vetor[i]+1] = P.alternativas[i];
             return alt;
+        }
+
+        public bool responder(int escolha)
+        {
+            if (vetor[0] == escolha)
+                return true;
+            else
+                return false;
         }
     }
 }

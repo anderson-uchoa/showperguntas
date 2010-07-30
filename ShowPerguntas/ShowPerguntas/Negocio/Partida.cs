@@ -92,5 +92,10 @@ namespace ShowPerguntas.Negocio
         {
             return rodada.colocarPergunta();
         }
+
+        public void responder(int escolha)
+        {
+            status = rodada.responder(escolha);
+        }
     }
 }
