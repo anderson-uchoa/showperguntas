@@ -16,7 +16,7 @@ namespace ShowPerguntas.Interface
             if (partida.estaAtivo())
             { }
             else
-                GameOver.DescriptionUrl = gerarCaminho();
+                GameOver.ImageUrl = gerarCaminho();
             
         }
 
