@@ -20,6 +20,8 @@ namespace ShowPerguntas.Interface
                     nomeTextBox.Text = jog.nome;
                     sobrenomeTextBox.Text = jog.sobrenome;
                     loginTextBox.Text = jog.login;
+                    if(!jog.dataCadastroString.Equals(""))
+                        usuarioDesdeLabel.Text = jog.dataCadastroString;
                     Session["senha"] = jog.senha;
                 }
             }

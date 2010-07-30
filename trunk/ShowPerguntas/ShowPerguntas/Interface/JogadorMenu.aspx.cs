@@ -21,8 +21,9 @@ namespace ShowPerguntas.Interface
         {
             partida = new Negocio.Partida();
             partida.novaPartida(0);
-            Server.Transfer("~/Interface/TelaJogo1.aspx");
-            //Response.Redirect("~/Interface/TelaJogo1.aspx");
+            Session["partida"] = partida;
+            Response.Redirect("~/Interface/TelaJogo1.aspx");
+            
         }
 
         protected void mostrarRanking_Click(object sender, EventArgs e)
@@ -33,16 +34,6 @@ namespace ShowPerguntas.Interface
         protected void BotaoRegrasClick(object sender, EventArgs e)
         {
             Response.Redirect("~/InterfaceAberta/Regras.aspx");
-        }
-
-        public Negocio.Partida partidaAtual
-        {
-            get {
-                if (partida != null)
-                    return partida;
-                else
-                    return null;
-            }
         }
 
         protected void VisualizarPerfil_Click(object sender, EventArgs e)
