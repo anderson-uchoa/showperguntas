@@ -4,12 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using ShowPerguntas.Negocio;
 
 namespace ShowPerguntas.Interface
 {
     public partial class TelaJogo1 : System.Web.UI.Page
     {
-        public Negocio.Partida partida;
+        public Partida partida;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             partida = PreviousPage.partida;
@@ -31,7 +33,7 @@ namespace ShowPerguntas.Interface
             Server.Transfer("~/Interface/Responder.aspx");
         }
 
-        public Negocio.Partida partidaAtual
+        public Partida partidaAtual
         {
             get
             {

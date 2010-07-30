@@ -27,7 +27,7 @@ namespace ShowPerguntas.Interface
 
         protected void mostrarRanking_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/Interface/ExibirRanking.aspx");
         }
 
         protected void BotaoRegrasClick(object sender, EventArgs e)

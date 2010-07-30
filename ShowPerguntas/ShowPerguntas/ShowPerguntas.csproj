@@ -59,6 +59,7 @@
     <Content Include="Interface\AdministradorMenu.aspx" />
     <Content Include="InterfaceAberta\CadastroJogador.aspx" />
     <Content Include="Interface\ExibirPergunta.aspx" />
+    <Content Include="Interface\ExibirRanking.aspx" />
     <Content Include="Interface\GerenciadorPerguntas.aspx" />
     <Content Include="Interface\Home.aspx" />
     <Content Include="Interface\JogadorMenu.aspx" />
@@ -78,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dados\PerguntaDAO.cs" />
+    <Compile Include="Dados\RankingDAO.cs" />
     <Compile Include="Dados\ShowPerguntas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,6 +121,13 @@
     </Compile>
     <Compile Include="Interface\ExibirPergunta.aspx.designer.cs">
       <DependentUpon>ExibirPergunta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\ExibirRanking.aspx.cs">
+      <DependentUpon>ExibirRanking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\ExibirRanking.aspx.designer.cs">
+      <DependentUpon>ExibirRanking.aspx</DependentUpon>
     </Compile>
     <Compile Include="Interface\GerenciadorPerguntas.aspx.cs">
       <DependentUpon>GerenciadorPerguntas.aspx</DependentUpon>

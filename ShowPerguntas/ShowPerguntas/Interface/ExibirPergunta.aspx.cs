@@ -62,7 +62,7 @@ namespace ShowPerguntas.Interface
         
         public void Cancelar(object sender, EventArgs e)
         {
-            Response.Write("~/Interface/ListarPerguntas.aspx");
+            Response.Redirect("~/Interface/ListarPerguntas.aspx");
         }
     }
 }

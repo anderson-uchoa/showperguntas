@@ -142,6 +142,5 @@ namespace ShowPerguntas.Dados
                 // throw;
             }
         }
-        // return (from p in _context.Perguntas where p.IdPergunta.Equals(id) select p).First();
     }
 }
