@@ -84,6 +84,11 @@ namespace ShowPerguntas.Dados
                     pergunta.alternativaIncorreta2 = this.alternativaIncorreta2;
                     pergunta.alternativaIncorreta3 = this.alternativaIncorreta3;
                     pergunta.alternativaIncorreta4 = this.alternativaIncorreta4;
+                    pergunta.vezesRespondidaAltCorreta = this.estatisticaAltCorreta;
+                    pergunta.vezesRespondidaAltIncorreta1 = this.estatisticaAltIncorreta1;
+                    pergunta.vezesRespondidaAltIncorreta2 = this.estatisticaAltIncorreta2;
+                    pergunta.vezesRespondidaAltIncorreta3 = this.estatisticaAltIncorreta3;
+                    pergunta.vezesRespondidaAltIncorreta4 = this.estatisticaAltIncorreta4;
                     _context.SaveChanges();
                 }
                 return true;

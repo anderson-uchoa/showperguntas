@@ -94,6 +94,9 @@
                     <asp:Button ID="buttonCancelar" runat="server" OnClick="Cancelar" Text="Cancelar"
                         CausesValidation="false" />
                 </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Button ID="buttonZerarEstatisticas" runat="server" OnClick="ZerarEstatisticas" Text="Zerar Estatisticas" />                    
+                </asp:TableCell>
             </asp:TableFooterRow>
         </asp:Table>
     </div>
