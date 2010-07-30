@@ -13,7 +13,7 @@ namespace ShowPerguntas.Interface
     {
         protected void Page_Load(object sender, EventArgs e)
         {
- 
+            Session["tipo"] = "";
         }
 
         protected void Login_Authenticate(object sender, AuthenticateEventArgs e)
@@ -28,12 +28,13 @@ namespace ShowPerguntas.Interface
                 {
                     e.Authenticated = true;
                     if (usr.getID() == 0)
-                    {
+                    {                        
                         Session["tipo"] = "Administrador";
                         Login.DestinationPageUrl = "~/Interface/AdministradorMenu.aspx";
                     }
                     else
                     {
+                        Session["nome"] = usr.nome;
                         Session["tipo"] = "Jogador";
                         Session["Id"] = Convert.ToString(usr.getID());
                         Login.DestinationPageUrl = "~/Interface/JogadorMenu.aspx";
@@ -55,6 +56,7 @@ namespace ShowPerguntas.Interface
 
         protected void BotaoRegrasClick(object sender, EventArgs e)
         {
+            
             Response.Redirect("~/InterfaceAberta/Regras.aspx");
         }
 

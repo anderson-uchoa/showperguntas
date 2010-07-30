@@ -33,7 +33,7 @@ namespace ShowPerguntas.Negocio
             p.tempo = 18;
             p.ajuda = new int[] { 1, 1, 1 };
             p.qntPerguntas = new int[] { 2, 2, 6 };
-
         }
+
     }
 }

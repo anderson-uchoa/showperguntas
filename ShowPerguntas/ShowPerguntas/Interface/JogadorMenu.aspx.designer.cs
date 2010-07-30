@@ -22,22 +22,31 @@ namespace ShowPerguntas.Interface {
         protected global::System.Web.UI.HtmlControls.HtmlForm Jogador;
         
         /// <summary>
-        /// Button1 control.
+        /// titulo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Table titulo;
         
         /// <summary>
-        /// Button2 control.
+        /// novoJogo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button novoJogo;
+        
+        /// <summary>
+        /// mostrarRanking control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button mostrarRanking;
         
         /// <summary>
         /// VisualizarPerfil control.
@@ -47,5 +56,14 @@ namespace ShowPerguntas.Interface {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button VisualizarPerfil;
+        
+        /// <summary>
+        /// BotaoRegras control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BotaoRegras;
     }
 }

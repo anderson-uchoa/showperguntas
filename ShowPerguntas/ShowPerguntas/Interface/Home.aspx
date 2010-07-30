@@ -7,23 +7,50 @@
     <title>Show de Perguntas</title>
 </head>
 <body>
-    <form id="home" runat="server">
-    <div style="width: 941px">
-        <asp:Login ID="Login" runat="server" LoginButtonText="Entrar"
-            OnAuthenticate="Login_Authenticate" UserNameLabelText="Login:  " 
-            PasswordLabelText="Senha:  " DisplayRememberMe="false" 
-            FailureText="Login ou senha incorretos. Tente novamente!" 
-            TitleText="Acesse sua conta!" Width="220px" >
-            <TextBoxStyle Width="150px" />
-        </asp:Login>
-        <br />
+<center><h1>Bem Vindo ao sensacional!</h1></center>
+<br />
+<center><h1>Show de Perguntas</h1></center>
+
+ <form id="home" runat="server">
+ <br />
+ <br />
+<asp:Table ID="TableLogin" runat="server" HorizontalAlign="Center" Width="384px" 
+     Height="151px" BackColor="#EAEAEA" BorderStyle="Groove">
+    <asp:TableRow>
+        <asp:TableCell VerticalAlign="Middle"  HorizontalAlign="Center" >
+            <asp:Login ID="Login" runat="server" LoginButtonText="Entrar"
+                OnAuthenticate="Login_Authenticate" UserNameLabelText="Login:  " 
+                PasswordLabelText="Senha:  " DisplayRememberMe="false" 
+                FailureText="Login ou senha incorretos. Tente novamente!" 
+                TitleText="Acesse sua conta!" Width="220px" >
+                <TextBoxStyle Width="130px" />
+            </asp:Login>
+        </asp:TableCell>
+    </asp:TableRow>
+</asp:Table>
+<asp:Table ID="tabelaOpcoes" runat="server" HorizontalAlign="Center" 
+     Width="385px" Height="75px">
+    <asp:TableRow>
+        <asp:TableCell>Ainda não é um jogador cadastrado?</asp:TableCell>
+        <asp:TableCell>
+            <asp:Button ID="BotaoCadastro" runat="server" Text="Cadastre-se Agora!" OnClick="BotaoCadastroClick" Width="150" /> 
+        </asp:TableCell>
+    </asp:TableRow>
+    <asp:TableRow>
+        <asp:TableCell>Quer saber como o Jogo funciona?</asp:TableCell>
+        <asp:TableCell>
+            <asp:Button ID="BotaoRegras" runat="server" Text="Consulte as Regras!" OnClick="BotaoRegrasClick" Width="150"/>
+        </asp:TableCell>
+    </asp:TableRow>
+</asp:Table>
     
-        Ainda não é um jogador cadastrado?&nbsp;  
-        <asp:Button ID="BotaoCadastro" runat="server" Text="Cadastre-se Agora!" OnClick="BotaoCadastroClick" />
-        <br />
-        <asp:Button ID="BotaoRegras" runat="server" Text="Regras" OnClick="BotaoRegrasClick"/>
-    </div>
-    <div>
+    
+
+
+    <br />
+    <br />
+    <br />
+    <br />
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
         DataKeyNames="IdUsuario" DataSourceID="ShowPerguntas">
         <Columns>
@@ -43,7 +70,8 @@
         DefaultContainerName="Show_de_PerguntasEntities" EnableFlattening="False" 
         EntitySetName="Usuarios">
     </asp:EntityDataSource>
-    </div>
-    </form>    
+    </form>   
+    
+     
 </body>
 </html>
