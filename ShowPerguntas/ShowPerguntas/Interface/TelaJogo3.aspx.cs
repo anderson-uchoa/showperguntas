@@ -13,14 +13,16 @@ namespace ShowPerguntas.Interface
         protected void Page_Load(object sender, EventArgs e)
         {
             partida = (Negocio.Partida) Session["partida"];
+            //Random rand = new Random();
             if (partida.estaAtivo())
             { }
             else
-                GameOver.ImageUrl = gerarCaminho();
-            
+                GameOver.ImageUrl = gerarCaminho(); // GameOver.ImageUrl = "~/Imagens/GameOver" + Convert.ToString( rand.Next(1,6)) + ".jpg";
         }
+      
 
-        public String gerarCaminho(){
+        public String gerarCaminho()
+        {
             String caminho;
             Random rand = new Random();
             int numero = rand.Next(1,6);
