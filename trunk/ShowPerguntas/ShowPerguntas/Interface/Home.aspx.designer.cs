@@ -22,6 +22,15 @@ namespace ShowPerguntas.Interface {
         protected global::System.Web.UI.HtmlControls.HtmlForm home;
         
         /// <summary>
+        /// TableLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table TableLogin;
+        
+        /// <summary>
         /// Login control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace ShowPerguntas.Interface {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Login Login;
+        
+        /// <summary>
+        /// tabelaOpcoes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table tabelaOpcoes;
         
         /// <summary>
         /// BotaoCadastro control.

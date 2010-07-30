@@ -12,8 +12,13 @@ namespace ShowPerguntas.Interface
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            String af;
+            af = Convert.ToString(Session["Tipo"]);
+            Session.Clear();
+            String s;
+            s = Convert.ToString(Session["Tipo"]);
             FormsAuthentication.SignOut();
-            Response.Redirect("Home.aspx");
+            Response.Redirect("~/Interface/Home.aspx");
         }
     }
 }
