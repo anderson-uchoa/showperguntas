@@ -79,7 +79,7 @@ namespace ShowPerguntas.Negocio
                     this.sobrenome = uDAO.sobrenome;
                     this.login = uDAO.login;
                     this.senha = uDAO.senha;
-                    this.dataCadastroString = uDAO.ToString();
+                    this.dataCadastroString = uDAO.data.ToString();
                     this.dataCadatro = uDAO.data;
                     return true;
                 }

@@ -9,6 +9,7 @@ namespace ShowPerguntas.Negocio
     public static class Defines
     {
         public const string regras = "Cara, esse e um jogo massa onde você deve fazer muitos pontos respondendo às perguntas. Da um iniciar partida aew!";
+        public const int QNTPERGUNTAS = 10;
 
         public const int FACIL = 0;
         public const int MEDIO = 1;

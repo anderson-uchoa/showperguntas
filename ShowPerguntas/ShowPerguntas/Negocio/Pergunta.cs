@@ -57,14 +57,14 @@ namespace ShowPerguntas.Negocio
         
         public Pergunta(int dificuldade, int[] listaIds)
         {
-            int contador = 0;
+            int i, contador = 0;
             int numero;
             List<Dados.Pergunta> p = (new PerguntaDAO()).BuscarPerguntaPorDificuldade(dificuldade);
             Random r = new Random();
             while(contador < 500)
             {
                 numero = r.Next(p.Count);
-                for (int i = 0; i < listaIds.Length; ++i)
+                for (i = 0; i < listaIds.Length; ++i)
                 {
                     if (p[numero].IdPergunta == listaIds[i])
                         i = listaIds.Length;
@@ -183,7 +183,13 @@ namespace ShowPerguntas.Negocio
                  
             this.idPergunta = p.IdPergunta;
             this.enunciado = p.enunciado;
-            this.tema = p.Tema.descricao;
+            /*
+             * Nao sei por que isso nao da certo, alguem pode arrumar???
+             * =/
+             * Acho que e por que nao fizemos o TEMA DAO...
+             */
+            //this.tema = p.Tema.descricao;
+            
 
             this.alternativas[0] = p.alternativaCorreta;
             this.alternativas[1] = p.alternativaIncorreta1;

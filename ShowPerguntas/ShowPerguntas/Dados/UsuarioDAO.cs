@@ -102,7 +102,8 @@ namespace ShowPerguntas.Dados
                     this.nome = user.nome;
                     this.sobrenome = user.sobrenome;
                     this.login = user.login;
-                    this.senha = user.senha;           
+                    this.senha = user.senha;
+                    this.data = user.dataCadastro;
                 }
                 return true;
 	        }

@@ -9,7 +9,7 @@ namespace ShowPerguntas.Negocio
     public class Partida
     {
         protected bool status;
-        protected Rodada rodada;
+        public Rodada rodada;
         protected int dificuldade;
         protected int nivel;
         public int[] ajuda;
@@ -22,8 +22,12 @@ namespace ShowPerguntas.Negocio
 
         public void novaPartida(int dificuldade)
         {
+            int i;
             status = true;
             this.dificuldade = dificuldade;
+            IdPerguntas = new int[Defines.QNTPERGUNTAS];
+            for (i = 0; i < IdPerguntas.Length; ++i)
+                IdPerguntas[i] = -1;
             switch (dificuldade)
             {
                 case Defines.FACIL:
@@ -39,10 +43,12 @@ namespace ShowPerguntas.Negocio
                     //Exception??
                     break;
             }
+            novaRodada();
         }
 
         public void novaRodada()
         {
+            int i;
             if (qntPerguntas[Defines.FACIL] > 0)
             {
                 rodada = new Rodada(Defines.FACIL, IdPerguntas);
@@ -58,6 +64,16 @@ namespace ShowPerguntas.Negocio
                 rodada = new Rodada(Defines.DIFICIL, IdPerguntas);
                 qntPerguntas[Defines.DIFICIL] -= 1;
             }
+            else
+                pararPartida();
+
+            if(status != false)
+                for (i = 0; i < IdPerguntas.Length; ++i)
+                    if (IdPerguntas[i] == -1)
+                    {
+                        IdPerguntas[i] = rodada.P.idPergunta;
+                        i = IdPerguntas.Length;
+                    }
 
         }
 
@@ -70,6 +86,11 @@ namespace ShowPerguntas.Negocio
         public bool estaAtivo()
         {
             return status;
+        }
+
+        public String[] colocarPergunta() 
+        {
+            return rodada.colocarPergunta();
         }
     }
 }
