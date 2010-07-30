@@ -10,7 +10,7 @@
 namespace ShowPerguntas.Interface {
     
     
-    public partial class GerenciadorPerguntas {
+    public partial class GerenciadorJogadores {
         
         /// <summary>
         /// form1 control.

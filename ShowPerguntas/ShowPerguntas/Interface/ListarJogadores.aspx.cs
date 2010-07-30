@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace ShowPerguntas.Interface
 {
-    public partial class GerenciadorPerguntas : System.Web.UI.Page
+    public partial class ListarJogadores : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,7 +16,7 @@ namespace ShowPerguntas.Interface
 
         protected void Voltar(object sender, EventArgs e)
         {
-            Response.Redirect("~/Interface/AdministradorMenu.aspx");
+            Response.Redirect("~/Interface/GerenciadorJogadores.aspx");
         }
     }
 }

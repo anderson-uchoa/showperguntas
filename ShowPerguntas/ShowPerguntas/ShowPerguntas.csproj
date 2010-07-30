@@ -60,9 +60,11 @@
     <Content Include="InterfaceAberta\CadastroJogador.aspx" />
     <Content Include="Interface\ExibirPergunta.aspx" />
     <Content Include="Interface\ExibirRanking.aspx" />
+    <Content Include="Interface\GerenciadorJogadores.aspx" />
     <Content Include="Interface\GerenciadorPerguntas.aspx" />
     <Content Include="Interface\Home.aspx" />
     <Content Include="Interface\JogadorMenu.aspx" />
+    <Content Include="Interface\ListarJogadores.aspx" />
     <Content Include="Interface\ListarPerguntas.aspx" />
     <Content Include="Interface\logout.aspx" />
     <Content Include="Interface\Perfil.aspx" />
@@ -131,6 +133,13 @@
     <Compile Include="Interface\ExibirRanking.aspx.designer.cs">
       <DependentUpon>ExibirRanking.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Interface\GerenciadorJogadores.aspx.cs">
+      <DependentUpon>GerenciadorJogadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\GerenciadorJogadores.aspx.designer.cs">
+      <DependentUpon>GerenciadorJogadores.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Interface\GerenciadorPerguntas.aspx.cs">
       <DependentUpon>GerenciadorPerguntas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -151,6 +160,13 @@
     </Compile>
     <Compile Include="Interface\JogadorMenu.aspx.designer.cs">
       <DependentUpon>JogadorMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\ListarJogadores.aspx.cs">
+      <DependentUpon>ListarJogadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\ListarJogadores.aspx.designer.cs">
+      <DependentUpon>ListarJogadores.aspx</DependentUpon>
     </Compile>
     <Compile Include="Interface\ListarPerguntas.aspx.cs">
       <DependentUpon>ListarPerguntas.aspx</DependentUpon>

@@ -91,6 +91,7 @@
                 <asp:TableCell></asp:TableCell>
                 <asp:TableCell>
                     <asp:Button ID="buttonSalvar" runat="server" OnClick="Salvar" Text="Salvar" />
+                    <asp:Button ID="buttonDeletar" runat="server" OnClick="Deletar" Text="Deletar" />
                     <asp:Button ID="buttonCancelar" runat="server" OnClick="Cancelar" Text="Cancelar"
                         CausesValidation="false" />
                 </asp:TableCell>

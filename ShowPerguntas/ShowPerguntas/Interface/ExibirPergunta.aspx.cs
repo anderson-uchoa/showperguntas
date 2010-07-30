@@ -74,5 +74,15 @@ namespace ShowPerguntas.Interface
             EstatisticAI3TextBox.Text = "0";
             EstatisticAI4TextBox.Text = "0";            
         }
+
+        public void Deletar(object sender, EventArgs e)
+        {
+            Pergunta p = new Pergunta();
+            p.idPergunta = id;
+            if(p.DeletarPergunta())
+                Response.Redirect("~/Interface/ListarPerguntas.aspx");
+            else
+                Response.Redirect("~/Interface/Home.aspx");
+        }
     }
 }

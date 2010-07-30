@@ -146,7 +146,22 @@ namespace ShowPerguntas.Negocio
                 pDAO.estatisticaAltIncorreta2 = this.estatisticas[2];
                 pDAO.estatisticaAltIncorreta3 = this.estatisticas[3];
                 pDAO.estatisticaAltIncorreta4 = this.estatisticas[4];
-                return pDAO.AtualizarPergunta(); ;
+                return pDAO.AtualizarPergunta();
+            }
+            catch (Exception)
+            {
+                return false;
+                //throw;
+            }
+        }
+
+        public Boolean DeletarPergunta()
+        {
+            try
+            {
+                PerguntaDAO pDAO = new PerguntaDAO();
+                pDAO.idPergunta = this.idPergunta;
+                return pDAO.DeletarPergunta();
             }
             catch (Exception)
             {
