@@ -49,7 +49,8 @@ namespace ShowPerguntas.Interface
         {
             Pergunta pergunta = new Pergunta(id, EnunciadoTextBox.Text, AlternativaCorretaTextBox.Text, AlternativaIncorreta1TextBox.Text,
                 AlternativaIncorreta2TextBox.Text, AlternativaIncorreta3TextBox.Text, AlternativaIncorreta4TextBox.Text, TemaDropdownlist.SelectedValue,
-                DificuldadeDropdownlist.SelectedValue);
+                DificuldadeDropdownlist.SelectedValue, EstatisticACTextBox.Text, EstatisticAI1TextBox.Text, EstatisticAI2TextBox.Text, 
+                EstatisticAI3TextBox.Text, EstatisticAI4TextBox.Text);
             if (pergunta.AtualizarPergunta())
             {
                 Response.Redirect("~/Interface/ListarPerguntas.aspx");
@@ -63,6 +64,15 @@ namespace ShowPerguntas.Interface
         public void Cancelar(object sender, EventArgs e)
         {
             Response.Redirect("~/Interface/ListarPerguntas.aspx");
+        }
+
+        public void ZerarEstatisticas(object sender, EventArgs e)
+        {
+            EstatisticACTextBox.Text = "0";
+            EstatisticAI1TextBox.Text = "0";
+            EstatisticAI2TextBox.Text = "0";
+            EstatisticAI3TextBox.Text = "0";
+            EstatisticAI4TextBox.Text = "0";            
         }
     }
 }

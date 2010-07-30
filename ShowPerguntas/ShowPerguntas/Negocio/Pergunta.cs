@@ -42,7 +42,8 @@ namespace ShowPerguntas.Negocio
             this.dificuldade = d;
         }
 
-        public Pergunta(int id, String e, String aC, String aI1, String aI2, String aI3, String aI4, String t, String d)
+        public Pergunta(int id, String e, String aC, String aI1, String aI2, String aI3, String aI4, String t, String d,
+            String eAC, String eAI1, String eAI2, String eAI3, String eAI4)
         {
             this.idPergunta = id;
             this.enunciado = e;
@@ -51,6 +52,11 @@ namespace ShowPerguntas.Negocio
             this.alternativas[2] = aI2;
             this.alternativas[3] = aI3;
             this.alternativas[4] = aI4;
+            this.estatisticas[0] = Convert.ToInt32(eAC);
+            this.estatisticas[1] = Convert.ToInt32(eAI1);
+            this.estatisticas[2] = Convert.ToInt32(eAI2);
+            this.estatisticas[3] = Convert.ToInt32(eAI3);
+            this.estatisticas[4] = Convert.ToInt32(eAI4);
             this.tema = t;
             this.dificuldade = d;
         } 
@@ -134,7 +140,12 @@ namespace ShowPerguntas.Negocio
                 pDAO.alternativaIncorreta2 = this.alternativas[2];
                 pDAO.alternativaIncorreta3 = this.alternativas[3];
                 pDAO.alternativaIncorreta4 = this.alternativas[4];
-                pDAO.dificuldade = Convert.ToInt32(this.dificuldade);                
+                pDAO.dificuldade = Convert.ToInt32(this.dificuldade);
+                pDAO.estatisticaAltCorreta = this.estatisticas[0];
+                pDAO.estatisticaAltIncorreta1 = this.estatisticas[1];
+                pDAO.estatisticaAltIncorreta2 = this.estatisticas[2];
+                pDAO.estatisticaAltIncorreta3 = this.estatisticas[3];
+                pDAO.estatisticaAltIncorreta4 = this.estatisticas[4];
                 return pDAO.AtualizarPergunta(); ;
             }
             catch (Exception)
