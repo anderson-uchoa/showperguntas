@@ -67,6 +67,8 @@
     <Content Include="Interface\logout.aspx" />
     <Content Include="Interface\Perfil.aspx" />
     <Content Include="Interface\TelaJogo1.aspx" />
+    <Content Include="Interface\TelaJogo2.aspx" />
+    <Content Include="Interface\TelaJogo3.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -178,6 +180,20 @@
     <Compile Include="Interface\TelaJogo1.aspx.designer.cs">
       <DependentUpon>TelaJogo1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Interface\TelaJogo2.aspx.cs">
+      <DependentUpon>TelaJogo2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\TelaJogo2.aspx.designer.cs">
+      <DependentUpon>TelaJogo2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\TelaJogo3.aspx.cs">
+      <DependentUpon>TelaJogo3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\TelaJogo3.aspx.designer.cs">
+      <DependentUpon>TelaJogo3.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Negocio\Administrador.cs" />
     <Compile Include="Negocio\Ajuda.cs" />
     <Compile Include="Negocio\Defines.cs" />
@@ -217,6 +233,9 @@
     <Content Include="Web.sitemap">
       <SubType>Designer</SubType>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Imagens\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

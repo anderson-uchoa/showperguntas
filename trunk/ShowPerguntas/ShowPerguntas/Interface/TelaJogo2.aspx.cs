@@ -32,6 +32,11 @@ namespace ShowPerguntas.Interface
                     alternativas.Items.Add(alternativa[i]);
                 }
             }
+        }
+
+        protected void Responder_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Interface/TelaJogo3.aspx");
         }        
 
     }

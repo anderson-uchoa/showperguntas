@@ -22,6 +22,7 @@
     </div>
     <asp:RadioButtonList ID="alternativas" runat="server">
     </asp:RadioButtonList>
+    <asp:Button ID="Responder" runat="server" onclick="Responder_Click" Text="Responder" />
     </form>
 </body>
 </html>
