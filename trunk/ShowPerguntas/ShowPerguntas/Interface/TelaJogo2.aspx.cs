@@ -11,6 +11,9 @@ namespace ShowPerguntas.Interface
     {
         public String[] perguntaAtr;
         public Negocio.Partida partida;
+        int alternativaEscolhida;
+        ListItem[] alternativa;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             partida = (Negocio.Partida) Session["partida"];
@@ -22,7 +25,7 @@ namespace ShowPerguntas.Interface
             }
             else
             {
-                ListItem[] alternativa = new ListItem[5];
+                alternativa = new ListItem[5];
                 int i;
                 enunciado.Text = perguntaAtr[0];
                 for (i = 0; i < 5; ++i)
@@ -36,6 +39,12 @@ namespace ShowPerguntas.Interface
 
         protected void Responder_Click(object sender, EventArgs e)
         {
+            int i;
+            
+            for (i = 0; i < alternativa.Length; ++i)
+                if (alternativa[i].Equals(alternativas.SelectedItem))
+                    partida.responder(i);
+            
             Response.Redirect("~/Interface/TelaJogo3.aspx");
         }        
 
