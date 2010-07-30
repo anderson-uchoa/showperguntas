@@ -100,6 +100,25 @@ namespace ShowPerguntas.Dados
             }
         }
 
+        public Boolean DeletarPergunta()
+        {
+            try
+            {
+                using (var _context = new Show_de_PerguntasEntities())
+                {
+                    Pergunta pergunta = (from p in _context.Perguntas where p.IdPergunta.Equals(this.idPergunta) select p).First();
+                    _context.DeleteObject(pergunta);
+                    _context.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+        }
+
         public List<Pergunta> BuscarPerguntaPorDificuldade(int dif)
         {
             try

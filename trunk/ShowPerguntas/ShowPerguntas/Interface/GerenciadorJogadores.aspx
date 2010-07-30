@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GerenciadorPerguntas.aspx.cs" Inherits="ShowPerguntas.Interface.GerenciadorPerguntas" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GerenciadorJogadores.aspx.cs" Inherits="ShowPerguntas.Interface.GerenciadorJogadores" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -7,7 +7,6 @@
     <title></title>
 </head>
 <body>
-<a href="logout.aspx">Sair</a>
     <form id="form1" runat="server">
     <div>
         <asp:Menu ID="Menu1" runat="server" DataSourceID="ShowPerguntasSiteMap" 
@@ -15,7 +14,7 @@
         </asp:Menu>
         <asp:SiteMapDataSource ID="ShowPerguntasSiteMap" runat="server" 
             StartFromCurrentNode="true" />
-    </div>    
+    </div>
     <div>
         <asp:Button ID="buttoVoltar" runat="server" OnClick="Voltar" Text="Voltar" />
     </div>
