@@ -20,12 +20,7 @@
         <br />
     
     </div>
-    <asp:RadioButtonList ID="alternativa1" runat="server">
-        <asp:ListItem></asp:ListItem>
-        <asp:ListItem></asp:ListItem>
-        <asp:ListItem></asp:ListItem>
-        <asp:ListItem></asp:ListItem>
-        <asp:ListItem></asp:ListItem>
+    <asp:RadioButtonList ID="alternativas" runat="server">
     </asp:RadioButtonList>
     </form>
 </body>
