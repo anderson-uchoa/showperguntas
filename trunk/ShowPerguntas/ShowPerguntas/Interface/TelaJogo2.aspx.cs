@@ -11,7 +11,6 @@ namespace ShowPerguntas.Interface
     {
         public String[] perguntaAtr;
         public Negocio.Partida partida;
-        int alternativaEscolhida;
         ListItem[] alternativa;
 
         protected void Page_Load(object sender, EventArgs e)

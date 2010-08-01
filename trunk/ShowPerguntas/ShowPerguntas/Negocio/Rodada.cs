@@ -10,12 +10,27 @@ namespace ShowPerguntas.Negocio
         public Pergunta P;
         public int dificuldade;
         int[] vetor;
+
+        /*
+         * Construtor da Rodada, dificuldade corresponde à dif. da pergunta que deve ser 
+         * carregada e listaIds contêm os Ids das perguntas que não podem ser carregadas
+         * 
+         * params: int dificuldade, int[10] listaIds
+         * return: Objeto Rodada
+         */
         public Rodada(int dificuldade, int[] listaIds)
         {
             this.dificuldade = dificuldade;
             P = new Pergunta(dificuldade, listaIds);
         }
 
+        /*
+         * Coloca os textos da pergunta e suas respostas 
+         * 
+         * params: -
+         * return: String[6] - Vetor com o enunciado na pos. 0 e alternativas 
+         *         nas pos. 1 até 5 embaralhadas
+         */
         public String[] colocarPergunta()
         {
             String[] pergunta;
@@ -28,6 +43,14 @@ namespace ShowPerguntas.Negocio
             }
         }
 
+        /*
+         * Embaralha as alternativas de forma randômica
+         * Embora talvez exista uma forma mais simples de se fazer tal operação
+         * 
+         * params: -
+         * return: String[6] - Vetor com o enunciado na pos. 0 e alternativas 
+         *         nas pos. 1 até 5 embaralhadas
+         */
         protected String[] embaralharAlternativas()
         {
             bool repetido;
@@ -58,12 +81,27 @@ namespace ShowPerguntas.Negocio
             return alt;
         }
 
+        /*
+         * Esta função vê se a escolha do Jogador corresponde à resposta certa
+         * Também adiciona um ao contador de vezes respondidas da alternativa escolhida
+         * 
+         * params: int escolha = alternativa (embaralhada) correspondente à resposta do Jogador
+         * return: correto = true, errado = false
+         * 
+         */
         public bool responder(int escolha)
         {
-            if (vetor[0] == escolha)
-                return true;
-            else
-                return false;
+            int i;
+            for(i = 0; i < 5; ++i)
+                if (vetor[i] == escolha)
+                {
+                    P.adicionarEstatistica(i);
+                    
+                    if (i == 0)
+                        return true;
+                }
+            return false;
         }
+
     }
 }
