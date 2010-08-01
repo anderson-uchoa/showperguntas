@@ -59,8 +59,14 @@ namespace ShowPerguntas.Negocio
             this.estatisticas[4] = Convert.ToInt32(eAI4);
             this.tema = t;
             this.dificuldade = d;
-        } 
-        
+        }
+
+        /*
+         * Busca uma pergunta de acordo com a dificuldade dela e que o id nao esteja na lista
+         * 
+         * params: int dificuldade, int[10] listaIds
+         * return: Objeto Pergunta
+         */
         public Pergunta(int dificuldade, int[] listaIds)
         {
             int i, contador = 0;
@@ -102,7 +108,9 @@ namespace ShowPerguntas.Negocio
         #endregion
 
         #region Methods
-
+        /*
+         * Coloque a explicação AQUI POR FAVOR
+         */
         public Boolean InserirNovaPergunta()
         {
             try
@@ -127,6 +135,9 @@ namespace ShowPerguntas.Negocio
             
         }
 
+        /*
+         * Coloque a explicação AQUI POR FAVOR
+         */
         public Boolean AtualizarPergunta()
         {
             try
@@ -155,6 +166,9 @@ namespace ShowPerguntas.Negocio
             }
         }
 
+        /*
+         * Coloque a explicação AQUI POR FAVOR
+         */
         public Boolean DeletarPergunta()
         {
             try
@@ -169,7 +183,9 @@ namespace ShowPerguntas.Negocio
                 //throw;
             }
         }
-
+        /*
+         * Coloque a explicação AQUI POR FAVOR
+         */
         public Boolean BuscarPerguntaPorId(int id)
         {
             try
@@ -204,32 +220,47 @@ namespace ShowPerguntas.Negocio
             //return (new PerguntaDAO()).BuscarPerguntaPorId(id);
         }
 
+        /*
+         * Dada uma 
+         */
         public void setarAtributos(Dados.Pergunta p)
         {
-                 
-            this.idPergunta = p.IdPergunta;
-            this.enunciado = p.enunciado;
-            /*
-             * Nao sei por que isso nao da certo, alguem pode arrumar???
-             * =/
-             * Acho que e por que nao fizemos o TEMA DAO...
-             */
-            //this.tema = p.Tema.descricao;
-            
+            try
+            {
+                this.idPergunta = p.IdPergunta;
+                this.enunciado = p.enunciado;
+                //this.tema = p.Tema.descricao;
 
-            this.alternativas[0] = p.alternativaCorreta;
-            this.alternativas[1] = p.alternativaIncorreta1;
-            this.alternativas[2] = p.alternativaIncorreta2;
-            this.alternativas[3] = p.alternativaIncorreta3;
-            this.alternativas[4] = p.alternativaIncorreta4;
 
-            this.estatisticas[0] = p.vezesRespondidaAltCorreta;
-            this.estatisticas[1] = p.vezesRespondidaAltIncorreta1;
-            this.estatisticas[2] = p.vezesRespondidaAltIncorreta2;
-            this.estatisticas[3] = p.vezesRespondidaAltIncorreta3;
-            this.estatisticas[4] = p.vezesRespondidaAltIncorreta4;           
+                this.alternativas[0] = p.alternativaCorreta;
+                this.alternativas[1] = p.alternativaIncorreta1;
+                this.alternativas[2] = p.alternativaIncorreta2;
+                this.alternativas[3] = p.alternativaIncorreta3;
+                this.alternativas[4] = p.alternativaIncorreta4;
+
+                this.estatisticas[0] = p.vezesRespondidaAltCorreta;
+                this.estatisticas[1] = p.vezesRespondidaAltIncorreta1;
+                this.estatisticas[2] = p.vezesRespondidaAltIncorreta2;
+                this.estatisticas[3] = p.vezesRespondidaAltIncorreta3;
+                this.estatisticas[4] = p.vezesRespondidaAltIncorreta4;
+            }
+            catch
+            { 
+                
+            }
         }
-        
+
+        /*
+         * Aumenta em um algum dos campos de estatistica
+         * 
+         * params: numero da alternativa que se respondeu
+         * return: -
+         */
+        public void adicionarEstatistica(int numeroAlternativa)
+        {
+            this.estatisticas[numeroAlternativa] += 1;
+            AtualizarPergunta();
+        }
         #endregion       
     }
 }
