@@ -13,7 +13,7 @@
     
         <br />
         <h1>
-        <asp:Label ID="Pontuacao" runat="server" Text="Label"></asp:Label> &nbsp;(dinheiros)</h1>
+        <asp:Label ID="Pontuacao" runat="server" Text="Label"></asp:Label></h1>
         <br />
         <asp:Label ID="Dificuldade" runat="server" Text="Dificuldade:"></asp:Label>
         <br />
