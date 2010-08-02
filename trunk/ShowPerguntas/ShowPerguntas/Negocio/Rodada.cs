@@ -33,7 +33,7 @@ namespace ShowPerguntas.Negocio
          */
         public String[] colocarPergunta()
         {
-            String[] pergunta;
+            String[] pergunta;            
             if (p == null)
                 return null;
             else
@@ -80,6 +80,7 @@ namespace ShowPerguntas.Negocio
             alt[0] = p.enunciado;
             for (i = 0; i < 5; ++i)
                 alt[vetor[i]+1] = p.alternativas[i];
+            alt[vetor[0] + 1] += " C";
             return alt;
         }
 
@@ -97,8 +98,7 @@ namespace ShowPerguntas.Negocio
             {
                 if (vetor[i] == escolha)
                 {
-                    p.adicionarEstatistica(i);
-
+                    //p.adicionarEstatistica(i);
                     if (i == 0)
                         return true;
                 }
