@@ -24,7 +24,7 @@
     <asp:Table BorderStyle="Solid" HorizontalAlign="Center" runat="server" Width="537px">
         <asp:TableRow >
             <asp:TableCell HorizontalAlign="Center">
-                <asp:Button ID="novoJogo" runat="server" onclick="novoJogo_Click" Text="Novo Jogo" Width="150px" />
+                <asp:Button ID="novoJogo" runat="server" onclick="novoJogo_Click" Text="Jogar" Width="150px" />
             </asp:TableCell>
             <asp:TableCell Width="30"></asp:TableCell>
         </asp:TableRow>

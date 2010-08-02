@@ -53,6 +53,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Dados\InserirPerguntas.sql" />
     <Content Include="Dados\ShowPerguntas.edmx.sql" />
     <Content Include="InterfaceAberta\Regras.aspx" />
     <Content Include="Interface\AdicionarPergunta.aspx" />

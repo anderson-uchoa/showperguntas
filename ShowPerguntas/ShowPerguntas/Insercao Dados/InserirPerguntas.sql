@@ -1,3 +1,35 @@
+DROP TABLE [dbo].[Perguntas];
+GO
+CREATE TABLE [dbo].[Perguntas] (
+    [IdPergunta] int IDENTITY(1,1) NOT NULL,
+    [enunciado] nvarchar(max)  NOT NULL,
+    [dificuldade] int  NOT NULL,
+    [alternativaCorreta] nvarchar(max)  NOT NULL,
+    [alternativaIncorreta1] nvarchar(max)  NOT NULL,
+    [alternativaIncorreta2] nvarchar(max)  NOT NULL,
+    [alternativaIncorreta3] nvarchar(max)  NOT NULL,
+    [alternativaIncorreta4] nvarchar(max)  NOT NULL,
+    [vezesRespondidaAltCorreta] int  NOT NULL,
+    [vezesRespondidaAltIncorreta1] int  NOT NULL,
+    [vezesRespondidaAltIncorreta2] int  NOT NULL,
+    [vezesRespondidaAltIncorreta3] int  NOT NULL,
+    [vezesRespondidaAltIncorreta4] int  NOT NULL,
+    [Tema_IdTema] int  NOT NULL
+);
+GO
+-- Creating primary key on [IdPergunta] in table 'Perguntas'
+ALTER TABLE [dbo].[Perguntas]
+ADD CONSTRAINT [PK_Perguntas]
+    PRIMARY KEY CLUSTERED ([IdPergunta] ASC);
+GO
+
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PerguntaTema'
+CREATE INDEX [IX_FK_PerguntaTema]
+ON [dbo].[Perguntas]
+    ([Tema_IdTema]);
+GO
+
 USE [Show de Perguntas]
 GO
 INSERT INTO dbo.Temas (descricao)

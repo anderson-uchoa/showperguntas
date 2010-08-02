@@ -26,6 +26,7 @@ namespace ShowPerguntas.Negocio
             status = true;
             this.dificuldade = dificuldade;
             IdPerguntas = new int[Defines.QNTPERGUNTAS];
+            pontuacao = 0;
             for (i = 0; i < IdPerguntas.Length; ++i)
                 IdPerguntas[i] = -1;
             switch (dificuldade)
@@ -96,6 +97,8 @@ namespace ShowPerguntas.Negocio
         public void responder(int escolha)
         {
             status = rodada.responder(escolha);
+            if (status == true)
+                pontuacao += pontuacaoNivel[rodada.dificuldade];
         }
     }
 }
