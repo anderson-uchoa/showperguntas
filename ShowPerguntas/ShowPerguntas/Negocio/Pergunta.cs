@@ -229,8 +229,7 @@ namespace ShowPerguntas.Negocio
             {
                 this.idPergunta = p.IdPergunta;
                 this.enunciado = p.enunciado;
-                //this.tema = p.Tema.descricao;
-
+                this.tema = Convert.ToString(p.Tema_IdTema);
 
                 this.alternativas[0] = p.alternativaCorreta;
                 this.alternativas[1] = p.alternativaIncorreta1;
@@ -259,7 +258,7 @@ namespace ShowPerguntas.Negocio
         public void adicionarEstatistica(int numeroAlternativa)
         {
             this.estatisticas[numeroAlternativa] += 1;
-            AtualizarPergunta();
+            Boolean boo = AtualizarPergunta();
         }
         #endregion       
     }

@@ -4,18 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using ShowPerguntas.Negocio;
 
 namespace ShowPerguntas.Interface
 {
     public partial class TelaJogo2 : System.Web.UI.Page
     {
         public String[] perguntaAtr;
-        public Negocio.Partida partida;
+        public Partida partida;
         ListItem[] alternativa;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            partida = (Negocio.Partida) Session["partida"];
+            partida = (Partida) Session["partida"];
             perguntaAtr = partida.colocarPergunta();
             if (perguntaAtr == null)
             {
@@ -39,10 +40,12 @@ namespace ShowPerguntas.Interface
         protected void Responder_Click(object sender, EventArgs e)
         {
             int i;
-            
+
             for (i = 0; i < alternativa.Length; ++i)
+            {
                 if (alternativa[i].Equals(alternativas.SelectedItem))
                     partida.responder(i);
+            }
             
             Response.Redirect("~/Interface/TelaJogo3.aspx");
         }        

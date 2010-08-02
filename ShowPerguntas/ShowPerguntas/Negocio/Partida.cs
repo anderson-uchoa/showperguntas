@@ -81,14 +81,17 @@ namespace ShowPerguntas.Negocio
             else
                 pararPartida();
 
-            if(status != false)
+            if (status != false)
+            {
                 for (i = 0; i < IdPerguntas.Length; ++i)
+                {
                     if (IdPerguntas[i] == -1)
                     {
-                        IdPerguntas[i] = rodada.P.idPergunta;
-                        i = IdPerguntas.Length;
+                        IdPerguntas[i] = rodada.p.idPergunta;
+                        break;
                     }
-
+                }
+            }
         }
 
         public void pararPartida()
