@@ -13,8 +13,8 @@ C:\Users\Quarto\Documents\Visual Studio 2010\projeto\ShowPerguntas\ShowPerguntas
 C:\Users\Quarto\Documents\Visual Studio 2010\projeto\ShowPerguntas\ShowPerguntas\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Quarto\Documents\Visual Studio 2010\projeto\ShowPerguntas\ShowPerguntas\obj\Debug\ShowPerguntas.dll
 C:\Users\Quarto\Documents\Visual Studio 2010\projeto\ShowPerguntas\ShowPerguntas\obj\Debug\ShowPerguntas.pdb
-C:\Users\Thi\Desktop\showperguntas\ShowPerguntas\ShowPerguntas\bin\ShowPerguntas.dll
-C:\Users\Thi\Desktop\showperguntas\ShowPerguntas\ShowPerguntas\bin\ShowPerguntas.pdb
-C:\Users\Thi\Desktop\showperguntas\ShowPerguntas\ShowPerguntas\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Thi\Desktop\showperguntas\ShowPerguntas\ShowPerguntas\obj\Debug\ShowPerguntas.dll
-C:\Users\Thi\Desktop\showperguntas\ShowPerguntas\ShowPerguntas\obj\Debug\ShowPerguntas.pdb
+C:\Show de Perguntas\uma bela bosta\ShowPerguntas\ShowPerguntas\bin\ShowPerguntas.dll
+C:\Show de Perguntas\uma bela bosta\ShowPerguntas\ShowPerguntas\bin\ShowPerguntas.pdb
+C:\Show de Perguntas\uma bela bosta\ShowPerguntas\ShowPerguntas\obj\Debug\ResolveAssemblyReference.cache
+C:\Show de Perguntas\uma bela bosta\ShowPerguntas\ShowPerguntas\obj\Debug\ShowPerguntas.dll
+C:\Show de Perguntas\uma bela bosta\ShowPerguntas\ShowPerguntas\obj\Debug\ShowPerguntas.pdb
