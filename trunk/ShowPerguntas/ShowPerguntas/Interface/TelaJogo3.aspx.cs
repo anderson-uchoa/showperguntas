@@ -15,11 +15,12 @@ namespace ShowPerguntas.Interface
         protected void Page_Load(object sender, EventArgs e)
         {
             Random rand = new Random();
-
-            partida = (Partida) Session["partida"];
             
+            partida = (Partida) Session["partida"];
 
-            if (partida.estaAtivo())
+            if (partida.ganhouPartida())
+                Imagem.ImageUrl = "~/Imagens/Ganhou.jpg" ;// +Convert.ToString(numero) + ".jpg";
+            else if (partida.estaAtivo())
             {
                 int numero = rand.Next(1, 1);
                 Imagem.ImageUrl = "~/Imagens/Acertou" + Convert.ToString(numero) + ".jpg";
