@@ -47,6 +47,11 @@ namespace ShowPerguntas.Negocio
             novaRodada();
         }
 
+        public void numeroRodada()
+        {
+        }
+
+
         public void novaRodada()
         {
             int i;
@@ -98,7 +103,10 @@ namespace ShowPerguntas.Negocio
         {
             status = rodada.responder(escolha);
             if (status == true)
+            {
                 pontuacao += pontuacaoNivel[rodada.dificuldade];
+            }
+
         }
     }
 }
