@@ -38,7 +38,7 @@ namespace ShowPerguntas.Interface
 
         protected void Continuar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Interface/TelaJogo1.aspx");
+            Response.Redirect("~/Interface/JogadorMenu.aspx");
         }
     }
 }

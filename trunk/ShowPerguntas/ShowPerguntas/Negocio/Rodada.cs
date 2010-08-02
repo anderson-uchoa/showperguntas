@@ -7,7 +7,7 @@ namespace ShowPerguntas.Negocio
 {
     public class Rodada
     {
-        public Pergunta P;
+        public Pergunta p;
         public int dificuldade;
         int[] vetor;
 
@@ -21,7 +21,7 @@ namespace ShowPerguntas.Negocio
         public Rodada(int dificuldade, int[] listaIds)
         {
             this.dificuldade = dificuldade;
-            P = new Pergunta(dificuldade, listaIds);
+            p = new Pergunta(dificuldade, listaIds);
         }
 
         /*
@@ -34,7 +34,7 @@ namespace ShowPerguntas.Negocio
         public String[] colocarPergunta()
         {
             String[] pergunta;
-            if (P == null)
+            if (p == null)
                 return null;
             else
             {
@@ -68,16 +68,18 @@ namespace ShowPerguntas.Negocio
                 {
                     repetido = false;
                     for (j = 0; j < 5; ++j)
+                    {
                         if (vetor[i] == vetor[j] && i != j)
                         {
                             vetor[i] = rand.Next(5);
                             repetido = true;
                         }
+                    }
                 }
             }
-            alt[0] = P.enunciado;
+            alt[0] = p.enunciado;
             for (i = 0; i < 5; ++i)
-                alt[vetor[i]+1] = P.alternativas[i];
+                alt[vetor[i]+1] = p.alternativas[i];
             return alt;
         }
 
@@ -91,15 +93,16 @@ namespace ShowPerguntas.Negocio
          */
         public bool responder(int escolha)
         {
-            int i;
-            for(i = 0; i < 5; ++i)
+            for (int i = 0; i < 5; ++i)
+            {
                 if (vetor[i] == escolha)
                 {
-                    P.adicionarEstatistica(i);
-                    
+                    p.adicionarEstatistica(i);
+
                     if (i == 0)
                         return true;
                 }
+            }
             return false;
         }
 

@@ -76,7 +76,7 @@ namespace ShowPerguntas.Dados
                 using (var _context = new Show_de_PerguntasEntities())
                 {
                     Pergunta pergunta = (from p in _context.Perguntas where p.IdPergunta.Equals(this.idPergunta) select p).First();
-                    pergunta.enunciado = pergunta.enunciado != this.enunciado ? pergunta.enunciado : this.enunciado;
+                    pergunta.enunciado = this.enunciado;
                     pergunta.Tema_IdTema = this.idTema;
                     pergunta.dificuldade = this.dificuldade;
                     pergunta.alternativaCorreta = this.alternativaCorreta;
@@ -88,8 +88,7 @@ namespace ShowPerguntas.Dados
                     pergunta.vezesRespondidaAltIncorreta1 = this.estatisticaAltIncorreta1;
                     pergunta.vezesRespondidaAltIncorreta2 = this.estatisticaAltIncorreta2;
                     pergunta.vezesRespondidaAltIncorreta3 = this.estatisticaAltIncorreta3;
-                    pergunta.vezesRespondidaAltIncorreta4 = this.estatisticaAltIncorreta4;                    
-                    _context.AcceptAllChanges();
+                    pergunta.vezesRespondidaAltIncorreta4 = this.estatisticaAltIncorreta4;    
                     _context.SaveChanges();
                 }
                 return true;
