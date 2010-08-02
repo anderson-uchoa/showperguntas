@@ -49,13 +49,14 @@ namespace ShowPerguntas.Negocio
             novaRodada();
         }
 
-        public int numeroRodada()
+        public String numeroRodada()
         {
-            int i;
-            for (i = 0; i < IdPerguntas.Length; ++i)
-                if (IdPerguntas[i] == -1)
-                    return i;
-            return i;
+            int total, parcial;
+            parcial = qntPerguntas[Defines.FACIL] + qntPerguntas[Defines.MEDIO] + qntPerguntas[Defines.DIFICIL];
+            total = IdPerguntas.Length;
+            parcial = 10 - parcial;
+            return parcial.ToString() + "/" + total.ToString();
+
         }
 
 
@@ -80,6 +81,7 @@ namespace ShowPerguntas.Negocio
             else
             {
                 ganhou = true;
+                status = false;
                 pararPartida();
             }
 

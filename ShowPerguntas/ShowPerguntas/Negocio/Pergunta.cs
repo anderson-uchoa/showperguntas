@@ -73,20 +73,28 @@ namespace ShowPerguntas.Negocio
             int numero;
             List<Dados.Pergunta> p = (new PerguntaDAO()).BuscarPerguntaPorDificuldade(dificuldade);
             Random r = new Random();
-            while(contador < 500)
+            while (contador < p.Count) {
+                contador++;
+            }
+           /* while(contador < 500)
             {
                 numero = r.Next(p.Count);
                 for (i = 0; i < listaIds.Length; ++i)
                 {
-                    if (p[numero].IdPergunta == listaIds[i])
+                    if (listaIds[i] == -1)
+                    {
+                        contador = 500;
                         i = listaIds.Length;
-                    else if(i == listaIds.Length - 1)
+                    }
+                    else if (p[numero].IdPergunta == listaIds[i])
+                        i = listaIds.Length;
+                    else if (i == listaIds.Length - 1)
                         setarAtributos(p[numero]);
                     contador = 500;
                 }
 
                 contador++;
-            }
+            }*/
         }
 
         public Pergunta(int[] listaIds, int dif)

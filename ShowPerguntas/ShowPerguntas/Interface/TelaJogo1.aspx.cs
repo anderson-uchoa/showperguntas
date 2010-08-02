@@ -30,7 +30,7 @@ namespace ShowPerguntas.Interface
             if (partida.estaAtivo())
             {
                 Dificuldade.Visible = false;
-                Pontuacao.Text = "Você já ganhou por volta de: D$ " + partida.pontuacao.ToString() + " (dinheiros)";
+                Pontuacao.Text = "Você já ganhou mais ou menos: D$ " + (partida.pontuacao + rand.Next(1,100)).ToString() + " Rodada " + partida.numeroRodada();
                 DropDownList1.Visible = false;
                 NovoJogoB.Visible = false;
                 ContinuarB.Visible = true;
