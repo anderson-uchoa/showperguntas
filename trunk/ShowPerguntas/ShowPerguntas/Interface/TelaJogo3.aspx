@@ -10,7 +10,11 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:Image ID="GameOver" runat="server"/>
+        <asp:Image ID="Imagem" runat="server"/>
+        <br />
+        <br />
+        <asp:Button ID="Continuar" runat="server" onclick="Continuar_Click" Text="Continuar" />
+        <br />
     
     </div>
     </form>

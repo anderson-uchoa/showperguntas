@@ -10,8 +10,6 @@ namespace ShowPerguntas.Interface
 {
     public partial class JogadorMenu : System.Web.UI.Page    {
 
-        public Negocio.Partida partida;
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -19,11 +17,8 @@ namespace ShowPerguntas.Interface
 
         protected void novoJogo_Click(object sender, EventArgs e)
         {
-            partida = new Negocio.Partida();
-            partida.novaPartida(0);
-            Session["partida"] = partida;
-            Response.Redirect("~/Interface/TelaJogo1.aspx");
-            
+            Session["partida"] = new Negocio.Partida();
+            Response.Redirect("~/Interface/TelaJogo1.aspx");   
         }
 
         protected void mostrarRanking_Click(object sender, EventArgs e)

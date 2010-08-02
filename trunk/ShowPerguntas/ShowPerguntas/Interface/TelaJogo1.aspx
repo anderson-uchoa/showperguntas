@@ -12,12 +12,18 @@
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     
         <br />
-        <h1>Você já ganhou por volta de: D$
-        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label> &nbsp;(dinheiros)</h1>
-        <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Silvio, Proxima Pergunta" />
-    
-        <asp:Button ID="Button2" runat="server" Text="Nah... Sou maricas" 
-            onclick="Button2_Click" />
+        <h1>
+        <asp:Label ID="Pontuacao" runat="server" Text="Label"></asp:Label> &nbsp;(dinheiros)</h1>
+        <br />
+        <asp:Label ID="Dificuldade" runat="server" Text="Dificuldade:"></asp:Label>
+        <br />
+        <asp:DropDownList ID="DropDownList1" runat="server" 
+            onselectedindexchanged="DropDownList1_SelectedIndexChanged">
+        </asp:DropDownList>
+        <br />
+        <asp:Button ID="NovoJogoB" runat="server" Text="Novo Jogo" onclick="NovoJogo_Click" />
+        <asp:Button ID="ContinuarB" runat="server" onclick="ContinuarResp_Click" Text="Silvio, Proxima Pergunta" />
+        <asp:Button ID="PararB" runat="server" Text="Nah... Sou maricas" onclick="Parar_Click" />
     
     </div>
     </form>
