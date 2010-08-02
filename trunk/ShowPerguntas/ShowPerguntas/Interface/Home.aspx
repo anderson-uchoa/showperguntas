@@ -5,24 +5,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Show de Perguntas</title>
+    <style type="text/css">
+        body
+        {
+            background-image: url("fundo.gif");
+            background-repeat: repeat-x;
+            color: #4468A3;
+            font-family: Tahoma,Arial,sans-serif;
+            font-size: 12px;
+        }
+        input
+        {
+            color: #666666;
+        }
+    </style>
 </head>
 <body>
 <center><h1>Bem Vindo ao sensacional!</h1></center>
 <br />
-<center><h1>Show de Perguntas</h1></center>
-
+<div style="text-align: center;"><img src="logo.png" alt="Show de Perguntas" align="middle" /></div>
  <form id="home" runat="server">
  <br />
  <br />
 <asp:Table ID="TableLogin" runat="server" HorizontalAlign="Center" Width="384px" 
-     Height="151px" BackColor="#EAEAEA" BorderStyle="Groove">
+     Height="151px" BackColor="#EAEAEA" BorderStyle="None" 
+     BorderColor="#B1B1B1">
     <asp:TableRow>
         <asp:TableCell VerticalAlign="Middle"  HorizontalAlign="Center" >
             <asp:Login ID="Login" runat="server" LoginButtonText="Entrar"
-                OnAuthenticate="Login_Authenticate" UserNameLabelText="Login:  " 
-                PasswordLabelText="Senha:  " DisplayRememberMe="false" 
+                OnAuthenticate="Login_Authenticate" UserNameLabelText="Login: " 
+                PasswordLabelText="Senha: " DisplayRememberMe="false" 
                 FailureText="Login ou senha incorretos. Tente novamente!" 
-                TitleText="Acesse sua conta!" Width="220px" >
+                TitleText="Acesse sua conta!" Width="220px">
                 <TextBoxStyle Width="130px" />
             </asp:Login>
         </asp:TableCell>
