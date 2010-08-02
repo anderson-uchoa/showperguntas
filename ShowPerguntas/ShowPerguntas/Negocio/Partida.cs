@@ -25,6 +25,7 @@ namespace ShowPerguntas.Negocio
         {
             int i;
             status = true;
+            ganhou = false;
             this.dificuldade = dificuldade;
             IdPerguntas = new int[Defines.QNTPERGUNTAS];
             pontuacao = 0;
@@ -61,8 +62,6 @@ namespace ShowPerguntas.Negocio
         public void novaRodada()
         {
             int i;
-            if (numeroRodada == IdPerguntas.Length)
-                ganhou = true;                
             if (qntPerguntas[Defines.FACIL] > 0)
             {
                 rodada = new Rodada(Defines.FACIL, IdPerguntas);
@@ -79,7 +78,10 @@ namespace ShowPerguntas.Negocio
                 qntPerguntas[Defines.DIFICIL] -= 1;
             }
             else
+            {
+                ganhou = true;
                 pararPartida();
+            }
 
             if (status != false)
             {
@@ -99,10 +101,7 @@ namespace ShowPerguntas.Negocio
             status = false;
         }
 
-        public bool estaAtivo()
-        {
-            return status;
-        }
+        public bool estaAtivo() { return status; }
 
         public String[] colocarPergunta() 
         {
@@ -118,5 +117,7 @@ namespace ShowPerguntas.Negocio
             }
 
         }
+
+        public bool ganhouPartida() { return ganhou; }
     }
 }
