@@ -10,11 +10,17 @@
     <form id="form1" runat="server">    
     <div>
         <asp:GridView ID="Ranking" runat="server" AutoGenerateColumns="False" 
-            DataKeyNames="IdRanking" DataSourceID="ShowPerguntas">
+            DataKeyNames="IdRanking" DataSourceID="ShowPerguntas" OnRowDataBound="AtualizarPosicao">
             <Columns>
+                <asp:TemplateField HeaderText="Posição" >
+                    <ItemTemplate>
+                        <asp:Label ID="Posicao" runat="server" Text='<%# posicao %>' >
+                        </asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:TemplateField HeaderText="Usuario" SortExpression="Usuario"> 
                   <ItemTemplate> 
-                    <asp:Label ID="Tema" runat="server"  Text='<%# Eval("Usuario.nome") %>'> 
+                    <asp:Label ID="Tema" runat="server"  Text='<%# Eval("Usuario.nome") %>' > 
                     </asp:Label> 
                   </ItemTemplate> 
                 </asp:TemplateField> 
