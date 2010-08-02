@@ -1,0 +1,12 @@
+﻿body
+        {
+            background-image: url("/Imagens/fundo.gif");           
+            background-repeat: repeat-x;
+            color: #4468A3;
+            font-family: Tahoma,Arial,sans-serif;
+            font-size: 12px;
+        }
+        input
+        {
+            color: #666666;
+        }

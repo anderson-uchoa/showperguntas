@@ -8,6 +8,7 @@ namespace ShowPerguntas.Negocio
 {
     public class Partida
     {
+        protected bool ganhou;
         protected bool status;
         public Rodada rodada;
         protected int dificuldade;
@@ -47,14 +48,21 @@ namespace ShowPerguntas.Negocio
             novaRodada();
         }
 
-        public void numeroRodada()
+        public int numeroRodada()
         {
+            int i;
+            for (i = 0; i < IdPerguntas.Length; ++i)
+                if (IdPerguntas[i] == -1)
+                    return i;
+            return i;
         }
 
 
         public void novaRodada()
         {
             int i;
+            if (numeroRodada == IdPerguntas.Length)
+                ganhou = true;                
             if (qntPerguntas[Defines.FACIL] > 0)
             {
                 rodada = new Rodada(Defines.FACIL, IdPerguntas);
@@ -85,7 +93,6 @@ namespace ShowPerguntas.Negocio
 
         public void pararPartida()
         {
-            //TODO
             status = false;
         }
 
