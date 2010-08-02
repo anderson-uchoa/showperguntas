@@ -13,7 +13,7 @@ namespace ShowPerguntas.Interface
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["tipo"] = "";
+            Logo.ImageUrl = "~/Imagens/logo.png";           
         }
 
         protected void Login_Authenticate(object sender, AuthenticateEventArgs e)

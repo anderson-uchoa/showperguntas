@@ -5,25 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Show de Perguntas</title>
-    <style type="text/css">
-        body
-        {
-            background-image: url("fundo.gif");
-            background-repeat: repeat-x;
-            color: #4468A3;
-            font-family: Tahoma,Arial,sans-serif;
-            font-size: 12px;
-        }
-        input
-        {
-            color: #666666;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="/Estilo.css" />
 </head>
 <body>
 <center><h1>Bem Vindo ao sensacional!</h1></center>
 <br />
-<div style="text-align: center;"><img src="logo.png" alt="Show de Perguntas" align="middle" /></div>
+<div style="text-align: center;"><asp:Image ID="Logo" runat="server" /></div>
  <form id="home" runat="server">
  <br />
  <br />

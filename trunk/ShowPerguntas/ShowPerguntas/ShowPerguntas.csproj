@@ -55,6 +55,7 @@
   <ItemGroup>
     <Content Include="Dados\InserirPerguntas.sql" />
     <Content Include="Dados\ShowPerguntas.edmx.sql" />
+    <Content Include="Estilo.css" />
     <Content Include="InterfaceAberta\Regras.aspx" />
     <Content Include="Interface\AdicionarPergunta.aspx" />
     <Content Include="Interface\AdministradorMenu.aspx" />
