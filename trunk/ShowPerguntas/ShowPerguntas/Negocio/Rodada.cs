@@ -98,7 +98,7 @@ namespace ShowPerguntas.Negocio
             {
                 if (vetor[i] == escolha)
                 {
-                    //p.adicionarEstatistica(i);
+                    p.adicionarEstatistica(i);
                     if (i == 0)
                         return true;
                 }

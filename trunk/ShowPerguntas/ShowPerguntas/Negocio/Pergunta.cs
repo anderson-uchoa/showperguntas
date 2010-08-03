@@ -69,32 +69,40 @@ namespace ShowPerguntas.Negocio
          */
         public Pergunta(int dificuldade, int[] listaIds)
         {
-            int i, contador = 0;
+            int i, contador;
+            bool repetido;
             int numero;
             List<Dados.Pergunta> p = (new PerguntaDAO()).BuscarPerguntaPorDificuldade(dificuldade);
             Random r = new Random();
-            while (contador < p.Count) {
-                contador++;
-            }
-           /* while(contador < 500)
+
+            // Este 'for' faz a verificação se o id de uma pergunta aleatória já foi usado
+            for (contador = 0; contador <= p.Count; ++contador) 
             {
+                repetido = false;
                 numero = r.Next(p.Count);
-                for (i = 0; i < listaIds.Length; ++i)
-                {
-                    if (listaIds[i] == -1)
+                for (i = 0; i < listaIds.Length; ++i){
+                    if (listaIds[i] == p[numero].IdPergunta)
                     {
-                        contador = 500;
+                        // Esta pergunta já foi feita
+                        repetido = true;
+                        // Pára a procura
                         i = listaIds.Length;
                     }
-                    else if (p[numero].IdPergunta == listaIds[i])
+                    // Se encontrar o valor -1, significa que a partir dali o vetor é vazio
+                    else if (listaIds[i] == -1)
                         i = listaIds.Length;
-                    else if (i == listaIds.Length - 1)
-                        setarAtributos(p[numero]);
-                    contador = 500;
+                 }
+                // Caso não seja repetida, usa-se esta pergunta
+                if (!repetido)
+                {
+                    contador = p.Count;
+                    setarAtributos(p[numero]);
                 }
-
-                contador++;
-            }*/
+                // Caso seja repetido e for a ultima pergunta da lista p, ai usamos uma aleatoria qualquer mesmo...
+                // Aqui talvez fosse necessário lançar um erro
+                else if (contador == p.Count)
+                    setarAtributos(p[r.Next(p.Count)]);
+            }
         }
 
         public Pergunta(int[] listaIds, int dif)
