@@ -17,36 +17,14 @@ namespace ShowPerguntas.Interface
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Random rand = new Random();
-            ContinuarB.Text = continuar[rand.Next(continuar.Length)];
-            PararB.Text = parar[rand.Next(parar.Length)];
-            DropDownList1.Items.Add("Fácil");
-            DropDownList1.Items.Add("Médio");
-            DropDownList1.Items.Add("Difícil");
-            
-            Label1.Text = "Esta pagina serve tanto para o jogador pedir um novo jogo quanto para continuar respondendo";
-            partida = (Partida)Session["partida"];
-
-            if (partida.estaAtivo())
-            {
-                Dificuldade.Visible = false;
-                Pontuacao.Text = "Você já ganhou mais ou menos: D$ " + (partida.pontuacao + rand.Next(1,100)).ToString() + " Rodada " + partida.numeroRodada();
-                DropDownList1.Visible = false;
-                NovoJogoB.Visible = false;
-                ContinuarB.Visible = true;
-            }
-            else
-            {
-                Dificuldade.Visible = true;
-                Pontuacao.Visible = false;
-                DropDownList1.Visible = true;
-                NovoJogoB.Visible = true;
-                ContinuarB.Visible = false;
-            }
+            verificarUsuario();
+            partida = (Partida) Session["partida"];
+            setarValoresCampos();
         }
 
         protected void NovoJogo_Click(object sender, EventArgs e)
         {
+            // Caso o jogador clique em "Novo Jogo", uma nova partida é carregada
             if (escolha.Equals("Fácil"))
                 partida.novaPartida(0);
             else if (escolha.Equals("Médio"))
@@ -64,12 +42,13 @@ namespace ShowPerguntas.Interface
 
         protected void Parar_Click(object sender, EventArgs e)
         {
-
+            // Caso o jogador clique em Parar, pára o jogo
             if (partida.estaAtivo())
             {
                 partida.pararPartida();
                 Response.Redirect("~/Interface/TelaJogo1.aspx");
             }
+            // Ou se ele não estiver jogando, e clica no botão, volta para o menu principal
             else
                 Response.Redirect("~/Interface/JogadorMenu.aspx");
         }
@@ -77,6 +56,46 @@ namespace ShowPerguntas.Interface
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             escolha = DropDownList1.SelectedItem.Text;
+        }
+
+        protected void setarValoresCampos()
+        {
+            Random rand = new Random();
+            ContinuarB.Text = continuar[rand.Next(continuar.Length)];
+            PararB.Text = parar[rand.Next(parar.Length)];
+            DropDownList1.Items.Add("Fácil");
+            DropDownList1.Items.Add("Médio");
+            DropDownList1.Items.Add("Difícil");
+            Label1.Text = "Esta pagina serve tanto para o jogador pedir um novo jogo quanto para continuar respondendo";
+            
+            if (partida.estaAtivo())
+            {
+                Dificuldade.Visible = false;
+                PontuacaoL.Text = "Você já ganhou mais ou menos: D$ " + (partida.mostrarPontuacao()).ToString();
+                RodadaL.Text = " Rodada " + partida.numeroRodada();
+                DropDownList1.Visible = false;
+                NovoJogoB.Visible = false;
+                ContinuarB.Visible = true;
+                PararB.Text = "Parar";
+
+            }
+            else
+            {
+                Dificuldade.Visible = true;
+                RodadaL.Visible = false;
+                PontuacaoL.Visible = false;
+                DropDownList1.Visible = true;
+                NovoJogoB.Visible = true;
+                ContinuarB.Visible = false;
+                PararB.Text = "Menu Anterior";
+            }
+        }
+
+        public void verificarUsuario(){
+            if (!Session["tipo"].Equals("Jogador") || Session["nome"].Equals(null))
+                Response.Redirect("~/Interface/Home.aspx");
+
+            
         }
     }
 }

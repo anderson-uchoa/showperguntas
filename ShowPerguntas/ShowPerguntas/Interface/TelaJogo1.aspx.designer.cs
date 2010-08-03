@@ -31,13 +31,22 @@ namespace ShowPerguntas.Interface {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Pontuacao control.
+        /// RodadaL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Pontuacao;
+        protected global::System.Web.UI.WebControls.Label RodadaL;
+        
+        /// <summary>
+        /// PontuacaoL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PontuacaoL;
         
         /// <summary>
         /// Dificuldade control.

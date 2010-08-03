@@ -19,7 +19,10 @@ namespace ShowPerguntas.Interface
             partida = (Partida) Session["partida"];
 
             if (partida.ganhouPartida())
-                Imagem.ImageUrl = "~/Imagens/Ganhou.jpg" ;// +Convert.ToString(numero) + ".jpg";
+            {
+                int numero = rand.Next(1, 1);
+                Imagem.ImageUrl = "~/Imagens/Ganhou" + Convert.ToString(numero) + ".jpg";
+            }
             else if (partida.estaAtivo())
             {
                 int numero = rand.Next(1, 1);

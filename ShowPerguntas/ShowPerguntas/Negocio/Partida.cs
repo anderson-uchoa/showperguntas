@@ -56,7 +56,6 @@ namespace ShowPerguntas.Negocio
             total = IdPerguntas.Length;
             parcial = 10 - parcial;
             return parcial.ToString() + "/" + total.ToString();
-
         }
 
 
@@ -103,8 +102,6 @@ namespace ShowPerguntas.Negocio
             status = false;
         }
 
-        public bool estaAtivo() { return status; }
-
         public String[] colocarPergunta() 
         {
             return rodada.colocarPergunta();
@@ -116,10 +113,19 @@ namespace ShowPerguntas.Negocio
             if (status == true)
             {
                 pontuacao += pontuacaoNivel[rodada.dificuldade];
-            }
+                if (IdPerguntas[IdPerguntas.Length - 1] != -1)
+                    ganhou = true;
+            }                
 
         }
 
         public bool ganhouPartida() { return ganhou; }
+        public int mostrarPontuacao() {
+            Random rand = new Random();
+            // Isso é uma bricandeira com a pontuacao
+            // A pontuacao basica é sempre multiplo de 100, mas um valor randômico é adicionado somente para amostragem...
+            return pontuacao + rand.Next(1,100); 
+        }
+        public bool estaAtivo() { return status; }
     }
 }
