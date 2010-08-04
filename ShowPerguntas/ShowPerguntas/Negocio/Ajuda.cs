@@ -14,7 +14,7 @@ namespace ShowPerguntas.Negocio
                 return false;
             else
             {
-                //TODO
+                p.rodada.mostrarEstatisticas();
                 return true;
             }
         }

@@ -92,9 +92,14 @@ namespace ShowPerguntas.Interface
         }
 
         public void verificarUsuario(){
-            if (!Session["tipo"].Equals("Jogador") || Session["nome"].Equals(null))
-                Response.Redirect("~/Interface/Home.aspx");
-
+            String nome = (String) Session["nome"] ;
+            String tipo = (String) Session["tipo"] ;
+            if (tipo == null)
+                Response.Redirect("~/Interface/Home.aspx") ;
+            else if (!tipo.Equals("Jogador"))
+                Response.Redirect("~/Interface/Home.aspx") ;
+            else if (nome == null)
+                Response.Redirect("~/Interface/Home.aspx") ; 
             
         }
     }
