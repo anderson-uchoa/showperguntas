@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D06FB13C-F154-4840-B0A9-710AA66917A6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ShowPerguntas</RootNamespace>
+    <AssemblyName>ShowPerguntas</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dados\InserirPerguntas.sql" />
+    <Content Include="Dados\ShowPerguntas.edmx.sql" />
+    <Content Include="Estilo.css" />
+    <Content Include="InterfaceAberta\Regras.aspx" />
+    <Content Include="Interface\AdicionarPergunta.aspx" />
+    <Content Include="Interface\AdministradorMenu.aspx" />
+    <Content Include="InterfaceAberta\CadastroJogador.aspx" />
+    <Content Include="Interface\ExibirPergunta.aspx" />
+    <Content Include="Interface\ExibirRanking.aspx" />
+    <Content Include="Interface\GerenciadorJogadores.aspx" />
+    <Content Include="Interface\GerenciadorPerguntas.aspx" />
+    <Content Include="Interface\Home.aspx" />
+    <Content Include="Interface\JogadorMenu.aspx" />
+    <Content Include="Interface\ListarJogadores.aspx" />
+    <Content Include="Interface\ListarPerguntas.aspx" />
+    <Content Include="Interface\logout.aspx" />
+    <Content Include="Interface\Perfil.aspx" />
+    <Content Include="Interface\TelaJogo1.aspx" />
+    <Content Include="Interface\TelaJogo2.aspx" />
+    <Content Include="Interface\TelaJogo3.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dados\PerguntaDAO.cs" />
+    <Compile Include="Dados\RankingDAO.cs" />
+    <Compile Include="Dados\ShowPerguntas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShowPerguntas.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Dados\TemaDAO.cs" />
+    <Compile Include="Dados\UsuarioDAO.cs" />
+    <Compile Include="InterfaceAberta\Regras.aspx.cs">
+      <DependentUpon>Regras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InterfaceAberta\Regras.aspx.designer.cs">
+      <DependentUpon>Regras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\AdicionarPergunta.aspx.cs">
+      <DependentUpon>AdicionarPergunta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\AdicionarPergunta.aspx.designer.cs">
+      <DependentUpon>AdicionarPergunta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\AdministradorMenu.aspx.cs">
+      <DependentUpon>AdministradorMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\AdministradorMenu.aspx.designer.cs">
+      <DependentUpon>AdministradorMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceAberta\CadastroJogador.aspx.cs">
+      <DependentUpon>CadastroJogador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InterfaceAberta\CadastroJogador.aspx.designer.cs">
+      <DependentUpon>CadastroJogador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\ExibirPergunta.aspx.cs">
+      <DependentUpon>ExibirPergunta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\ExibirPergunta.aspx.designer.cs">
+      <DependentUpon>ExibirPergunta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\ExibirRanking.aspx.cs">
+      <DependentUpon>ExibirRanking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\ExibirRanking.aspx.designer.cs">
+      <DependentUpon>ExibirRanking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\GerenciadorJogadores.aspx.cs">
+      <DependentUpon>GerenciadorJogadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\GerenciadorJogadores.aspx.designer.cs">
+      <DependentUpon>GerenciadorJogadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\GerenciadorPerguntas.aspx.cs">
+      <DependentUpon>GerenciadorPerguntas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\GerenciadorPerguntas.aspx.designer.cs">
+      <DependentUpon>GerenciadorPerguntas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\JogadorMenu.aspx.cs">
+      <DependentUpon>JogadorMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\JogadorMenu.aspx.designer.cs">
+      <DependentUpon>JogadorMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\ListarJogadores.aspx.cs">
+      <DependentUpon>ListarJogadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\ListarJogadores.aspx.designer.cs">
+      <DependentUpon>ListarJogadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\ListarPerguntas.aspx.cs">
+      <DependentUpon>ListarPerguntas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\ListarPerguntas.aspx.designer.cs">
+      <DependentUpon>ListarPerguntas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\TelaJogo1.aspx.cs">
+      <DependentUpon>TelaJogo1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\TelaJogo1.aspx.designer.cs">
+      <DependentUpon>TelaJogo1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\TelaJogo2.aspx.cs">
+      <DependentUpon>TelaJogo2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\TelaJogo2.aspx.designer.cs">
+      <DependentUpon>TelaJogo2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\TelaJogo3.aspx.cs">
+      <DependentUpon>TelaJogo3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\TelaJogo3.aspx.designer.cs">
+      <DependentUpon>TelaJogo3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Negocio\Administrador.cs" />
+    <Compile Include="Negocio\Ajuda.cs" />
+    <Compile Include="Negocio\Defines.cs" />
+    <Compile Include="Negocio\Jogador.cs" />
+    <Compile Include="Negocio\Partida.cs" />
+    <Compile Include="Negocio\Pergunta.cs" />
+    <Compile Include="Negocio\Regras.cs" />
+    <Compile Include="Negocio\Rodada.cs" />
+    <Compile Include="Negocio\Usuario.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowPerguntas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShowPerguntas.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Dados\ShowPerguntas.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ShowPerguntas.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InterfaceAberta\Web2.config" />
+    <Content Include="Interface\Web1.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="ShowPerguntas.xsc">
+      <DependentUpon>ShowPerguntas.xsd</DependentUpon>
+    </None>
+    <None Include="ShowPerguntas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShowPerguntas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ShowPerguntas.xss">
+      <DependentUpon>ShowPerguntas.xsd</DependentUpon>
+    </None>
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Imagens\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1776</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

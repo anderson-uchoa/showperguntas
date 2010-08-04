@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/Interface/Home.aspx" title="ShowDePerguntas"  description="Home do jogo Show de Perguntas">
+      <siteMapNode url="~/Interface/AdministradorMenu.aspx" title="AdministradorMenu"  description="Menu do Administrador">
+        <siteMapNode url="~/Interface/GerenciadorPerguntas.aspx" title="GerenciadorPerguntas" description="Menu para Gerenciar as Perguntas">
+          <siteMapNode url="~/Interface/ListarPerguntas.aspx" title="ListarPerguntas" description="Lista as Perguntas"/>
+          <siteMapNode url="~/Interface/AdicionarPergunta.aspx" title="AdicionarPergunta"  description="Adicionar Pergunta" />
+        </siteMapNode>
+        <siteMapNode url="~/Interface/GerenciadorJogadores.aspx" title="GerenciadorJogadores" description="Menu para Gerenciar os Jogadores">
+          <siteMapNode url="~/Interface/ListarJogadores.aspx" title="ListarJogadores" description="Lista os Jogadores"/>    
+        </siteMapNode>
+      </siteMapNode>
+      <siteMapNode url="~/Interface/JogadorMenu.aspx" title="JogadorMenu"  description="JogadorMenu" >
+      </siteMapNode>
+        <siteMapNode url="~/InterfaceAberta/Regras.aspx" title="Regras do Jogo" description="RegrasJogo">        
+      </siteMapNode>
+    </siteMapNode>
+</siteMap>
