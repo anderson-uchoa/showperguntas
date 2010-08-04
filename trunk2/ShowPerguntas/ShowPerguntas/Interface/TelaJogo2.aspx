@@ -13,17 +13,12 @@
     <link rel="stylesheet" type="text/css" href="/Estilo.css" />
 </head>
 <body style="height: 271px">
-    <form id="form1" runat="server">
+    <form ID="Form1" runat="Server" >
     <div>
-    
-        <br />
-        <asp:Label ID="enunciado" runat="server" Text="Label"></asp:Label>
-        <br />
-    
+        <asp:Table ID="Tabela" runat="server" HorizontalAlign="Center">
+        </asp:Table>
+        <asp:Button ID="Responder" runat="server" onclick="Responder_Click" Text="Responder" />
     </div>
-    <asp:RadioButtonList ID="alternativas" runat="server">
-    </asp:RadioButtonList>
-    <asp:Button ID="Responder" runat="server" onclick="Responder_Click" Text="Responder" />
     </form>
 </body>
 </html>
