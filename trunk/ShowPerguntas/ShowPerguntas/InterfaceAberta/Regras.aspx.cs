@@ -18,7 +18,7 @@ namespace ShowPerguntas.InterfaceAberta
 
         protected void Voltar_Click(object sender, EventArgs e)
         {
-            if (Session["Tipo"].Equals(""))
+            if (Session["Tipo"] == null)
             {
                 Response.Redirect("~/Interface/Home.aspx");
             }

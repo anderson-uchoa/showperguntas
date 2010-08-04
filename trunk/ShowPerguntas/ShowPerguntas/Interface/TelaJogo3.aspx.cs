@@ -15,7 +15,9 @@ namespace ShowPerguntas.Interface
         protected void Page_Load(object sender, EventArgs e)
         {
             Random rand = new Random();
-            
+
+            verificarUsuario();
+
             partida = (Partida) Session["partida"];
 
             if (partida.ganhouPartida())
@@ -43,6 +45,19 @@ namespace ShowPerguntas.Interface
         protected void Continuar_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Interface/JogadorMenu.aspx");
+        }
+
+        public void verificarUsuario()
+        {
+            String nome = (String)Session["nome"];
+            String tipo = (String)Session["tipo"];
+            if (tipo == null)
+                Response.Redirect("~/Interface/Home.aspx");
+            else if (!tipo.Equals("Jogador"))
+                Response.Redirect("~/Interface/Home.aspx");
+            else if (nome == null)
+                Response.Redirect("~/Interface/Home.aspx");
+
         }
     }
 }

@@ -10,6 +10,7 @@ namespace ShowPerguntas.Negocio
         public Pergunta p;
         public int dificuldade;
         int[] vetor;
+        bool mostrar;
 
         /*
          * Construtor da Rodada, dificuldade corresponde à dif. da pergunta que deve ser 
@@ -20,6 +21,7 @@ namespace ShowPerguntas.Negocio
          */
         public Rodada(int dificuldade, int[] listaIds)
         {
+            mostrar = false;
             this.dificuldade = dificuldade;
             p = new Pergunta(dificuldade, listaIds);
         }
@@ -106,5 +108,33 @@ namespace ShowPerguntas.Negocio
             return false;
         }
 
+        /*
+         * Função para mostrar estatísticas
+         */
+        public bool mostrarEstatisticas()
+        {
+            if (!mostrar)
+            {
+                mostrar = true;
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public String[] carregarEstatisticas()
+        {
+            int i, total = 0;
+            String[] estatisticas = new String[5];
+            if (vetor == null)
+                return null ;
+            for (i = 0; i < estatisticas.Length; ++i)
+                total += p.estatisticas[i] ;
+            if (total == 0)
+                total = 1;
+            for (i = 0; i < estatisticas.Length; ++i)
+                estatisticas[vetor[i]] = Convert.ToString(p.estatisticas[vetor[i]]/total) ;
+            return estatisticas ;
+        }
     }
 }

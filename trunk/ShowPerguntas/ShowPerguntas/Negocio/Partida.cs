@@ -119,6 +119,11 @@ namespace ShowPerguntas.Negocio
 
         }
 
+        public String[] carregarEstatisticas()
+        {
+            return rodada.carregarEstatisticas();
+        }
+
         public bool ganhouPartida() { return ganhou; }
         public int mostrarPontuacao() {
             Random rand = new Random();
