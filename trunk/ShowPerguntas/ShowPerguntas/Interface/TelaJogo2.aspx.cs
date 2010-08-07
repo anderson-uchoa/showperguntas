@@ -13,11 +13,13 @@ namespace ShowPerguntas.Interface
         public String[] perguntaAtr;
         public Partida partida;
         ListItem[] alternativa;
+        public String[] estatisticas;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             partida = (Partida) Session["partida"];
             perguntaAtr = partida.colocarPergunta();
+
             if (perguntaAtr == null)
             {
                 enunciado.Text = "";
@@ -48,7 +50,30 @@ namespace ShowPerguntas.Interface
             }
             
             Response.Redirect("~/Interface/TelaJogo3.aspx");
-        }        
+        }
 
+        protected void MostrarEstatisticas_Click(object sender, EventArgs e)
+        {
+            estatisticas = (new Ajuda()).mostrarEstatisticas(partida);
+            //TODO
+        }
+
+        protected void Pular_Click(object sender, EventArgs e)
+        {
+            (new Ajuda()).pularPergunta(partida);
+            Response.Redirect(Request.RawUrl);
+        }
+
+        protected void RemoverAlternativas_Click(object sender, EventArgs e)
+        {
+            int i;
+            bool[] alt = (new Ajuda()).removerAlternativas(partida);
+            for (i = 0; i < alt.Length; ++i)
+                if (alt[i] == true)
+                {
+                    alternativa[i].Enabled = false;
+                    alternativas.Items.RemoveAt(i);
+                }
+        }
     }
 }

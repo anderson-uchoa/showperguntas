@@ -8,14 +8,13 @@ namespace ShowPerguntas.Negocio
 {
     public class Ajuda
     {
-        public bool mostrarEstatisticas(Partida p)
+        public String[] mostrarEstatisticas(Partida p)
         {
             if (p.ajuda[Defines.ESTAT] <= 0)
-                return false;
+                return null;
             else
             {
-                p.rodada.mostrarEstatisticas();
-                return true;
+                return p.rodada.mostrarEstatisticas();
             }
         }
 
@@ -25,19 +24,30 @@ namespace ShowPerguntas.Negocio
                 return false;
             else
             {
-                //TODO
+                int i;
+                int[] velhoIdPerguntas = p.IdPerguntas;
+                p.IdPerguntas = new int[velhoIdPerguntas.Length + 1];
+                for (i = 0; i < p.IdPerguntas.Length; ++i)
+                {
+                    if (i < velhoIdPerguntas.Length)
+                        p.IdPerguntas[i] = velhoIdPerguntas[i];
+                    else
+                        p.IdPerguntas[i] = -1;
+                }
+                p.novaRodada();
+                        
                 return true;
             }
         }
 
-        public bool removerAlternativas(Partida p)
+        public bool[] removerAlternativas(Partida p)
         {
             if (p.ajuda[Defines.REMOV] <= 0)
-                return false;
+                return null;
             else
             {
-                //TODO
-                return true;
+                Random rand = new Random();
+                return p.rodada.selecionaAlt(rand.Next(5));
             }
         }
     }
