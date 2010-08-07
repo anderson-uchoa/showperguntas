@@ -24,6 +24,9 @@
     <asp:RadioButtonList ID="alternativas" runat="server">
     </asp:RadioButtonList>
     <asp:Button ID="Responder" runat="server" onclick="Responder_Click" Text="Responder" />
+    <asp:Button ID="Button1" runat="server" onclick="RemoverAlternativas_Click" Text="Remover Alternativas" />
+    <asp:Button ID="Button2" runat="server" onclick="MostrarEstatisticas_Click" Text="Mostrar Estatísticas" />
+    <asp:Button ID="Button3" runat="server" onclick="Pular_Click" Text="Pular" />
     </form>
 </body>
 </html>

@@ -108,21 +108,7 @@ namespace ShowPerguntas.Negocio
             return false;
         }
 
-        /*
-         * Função para mostrar estatísticas
-         */
-        public bool mostrarEstatisticas()
-        {
-            if (!mostrar)
-            {
-                mostrar = true;
-                return true;
-            }
-            else
-                return false;
-        }
-
-        public String[] carregarEstatisticas()
+        public String[] mostrarEstatisticas()
         {
             int i, total = 0;
             String[] estatisticas = new String[5];
@@ -133,8 +119,34 @@ namespace ShowPerguntas.Negocio
             if (total == 0)
                 total = 1;
             for (i = 0; i < estatisticas.Length; ++i)
-                estatisticas[vetor[i]] = Convert.ToString(p.estatisticas[vetor[i]]/total) ;
+                estatisticas[vetor[i]] = Convert.ToString((p.estatisticas[vetor[i]]/total)*100) ;
             return estatisticas ;
+        }
+
+        /*
+         * Função: Selecionar um numero das alternativas não corretas
+         * params: int numero
+         * return: vetor[5] booleano, true = alternativa nao correta, false = alternativa nao selecionada
+         */
+        public bool[] selecionaAlt(int numero)
+        {
+            Random rand = new Random();
+            bool[] vetorb = new bool[5] {false, false, false, false, false};
+            if (numero > 5)
+                return null;
+            else
+            {
+                int i, naleatorio;
+                for (i = 0; i < numero; ++i)
+                {
+                    naleatorio = rand.Next(5);
+                    if (vetorb[naleatorio] == true || naleatorio == vetor[0])
+                        --i;
+                    else
+                        vetorb[naleatorio] = true;
+                }
+            }
+            return vetorb;
         }
     }
 }
