@@ -8,6 +8,7 @@ namespace ShowPerguntas.Negocio
 {
     public class Ajuda
     {
+
         public String[] mostrarEstatisticas(Partida p)
         {
             if (p.ajuda[Defines.ESTAT] <= 0)
@@ -18,7 +19,7 @@ namespace ShowPerguntas.Negocio
             }
         }
 
-        public bool pularPergunta(Partida p)
+        public Boolean pularPergunta(Partida p)
         {
             if (p.ajuda[Defines.PULAR] <= 0)
                 return false;

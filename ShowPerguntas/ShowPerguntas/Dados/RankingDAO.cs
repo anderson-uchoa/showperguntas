@@ -7,31 +7,19 @@ namespace ShowPerguntas.Dados
 {
     public class RankingDAO
     {
-        int IdRanking;
-        int pontuacaoMax;
-        int IdUsuario;
+        public int IdRanking;
+        public int pontuacaoMax;
+        public int IdUsuario;
 
-        public Boolean BuscarRanking()
+        public Boolean BuscarPontuacaoPorJogador()
         {
             try
             {
                 using (var _context = new Show_de_PerguntasEntities())
                 {
-
+                    Ranking ranking = (from r in _context.Rankings where r.UsuarioIdUsuario.Equals(this.IdUsuario) select r).First();
+                    this.pontuacaoMax = ranking.pontuacaoMaxima;
                 }
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-                //throw;
-            }
-        }
-
-        public Boolean BuscarPontuacaoPorIdUsuario(int id)
-        {
-            try
-            {
                 return true;
             }
             catch (Exception)
