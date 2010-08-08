@@ -103,6 +103,15 @@ namespace ShowPerguntas.Interface {
         protected global::System.Web.UI.WebControls.Table auxiliarTable;
         
         /// <summary>
+        /// pontuacao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label pontuacao;
+        
+        /// <summary>
         /// RemoverAlternativasB control.
         /// </summary>
         /// <remarks>
@@ -110,6 +119,15 @@ namespace ShowPerguntas.Interface {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button RemoverAlternativasB;
+        
+        /// <summary>
+        /// qtdeRemoverAlternativas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label qtdeRemoverAlternativas;
         
         /// <summary>
         /// MostrarEstatisticasB control.
@@ -121,6 +139,15 @@ namespace ShowPerguntas.Interface {
         protected global::System.Web.UI.WebControls.Button MostrarEstatisticasB;
         
         /// <summary>
+        /// qtdeMostrarEstatisticas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label qtdeMostrarEstatisticas;
+        
+        /// <summary>
         /// PularB control.
         /// </summary>
         /// <remarks>
@@ -130,12 +157,21 @@ namespace ShowPerguntas.Interface {
         protected global::System.Web.UI.WebControls.Button PularB;
         
         /// <summary>
-        /// Responder control.
+        /// qtdePular control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Responder;
+        protected global::System.Web.UI.WebControls.Label qtdePular;
+        
+        /// <summary>
+        /// ResponderButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ResponderButton;
     }
 }

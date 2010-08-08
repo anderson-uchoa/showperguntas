@@ -37,7 +37,7 @@ namespace ShowPerguntas.Interface
                 int numero = rand.Next(1, 1);
                 Imagem.ImageUrl = "~/Imagens/Acertou" + Convert.ToString(numero) + ".jpg";
                 Continuar.Visible = false;
-                Response.AddHeader("REFRESH", "3;URL=TelaJogo1.aspx");
+                Response.AddHeader("REFRESH", "1;URL=TelaJogo1.aspx");
             }
             else
             {

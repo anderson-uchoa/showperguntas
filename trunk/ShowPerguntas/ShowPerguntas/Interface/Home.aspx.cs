@@ -13,6 +13,7 @@ namespace ShowPerguntas.Interface
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Page.SetFocus(Login);
             Logo.ImageUrl = "~/Imagens/logo.png";           
         }
 

@@ -38,6 +38,8 @@ namespace ShowPerguntas.Interface
             MostrarEstatisticasB.Visible = (new Ajuda()).ajudasRestantes(partida, Defines.ESTAT);
             PularB.Visible = (new Ajuda()).ajudasRestantes (partida, Defines.PULAR);
             RemoverAlternativasB.Visible = (new Ajuda()).ajudasRestantes(partida, Defines.REMOV);
+
+            pontuacao.Text = Convert.ToString(partida.pontuacao);
                 
             if (perguntaAtr == null)
             {
@@ -58,6 +60,12 @@ namespace ShowPerguntas.Interface
                 }
             }
         }
+
+        protected void ativarResposta(object sender, EventArgs e)
+        {
+            ResponderButton.Enabled = true;
+        }
+
 
         protected void Responder_Click(object sender, EventArgs e)
         {
@@ -85,7 +93,9 @@ namespace ShowPerguntas.Interface
                 estat[i].Style["Position"] = "Absolute";
                 estat[i].Style["Top"] = Convert.ToString(35 * i + 70) + "px";
                 estat[i].Style["Left"] = "505px";
-                form1.Controls.Add(estat[i]);
+
+                alternativas.Items.FindByText(alternativa[i].Text).Text = alternativa[i].Text + " " + estat[i].Text;
+
             }
             auxiliarTable.Visible = false;
         }

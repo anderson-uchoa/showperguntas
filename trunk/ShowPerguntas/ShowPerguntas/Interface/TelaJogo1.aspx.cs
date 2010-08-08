@@ -51,15 +51,10 @@ namespace ShowPerguntas.Interface
 
         protected void Parar_Click(object sender, EventArgs e)
         {
-            // Caso o jogador clique em Parar, pára o jogo
+            // Caso o jogador clique em Parar, pára o jogo, de qquer maneira volta pra tela inicial
             if (partida.estaAtivo())
-            {
                 partida.pararPartida(false);
-                Response.Redirect("~/Interface/TelaJogo1.aspx");
-            }
-            // Ou se ele não estiver jogando, e clica no botão, volta para o menu principal
-            else
-                Response.Redirect("~/Interface/JogadorMenu.aspx");
+            Response.Redirect("~/Interface/JogadorMenu.aspx");
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
