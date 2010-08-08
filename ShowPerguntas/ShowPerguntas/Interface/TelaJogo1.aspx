@@ -9,7 +9,8 @@
 <body>
     <form id="form1" runat="server">
     
-    <asp:Table ID="escolhaDificuldadeTable" runat="server" HorizontalAlign="Center" Visible="true">
+    <asp:Table ID="escolhaDificuldadeTable" runat="server" HorizontalAlign="Center" 
+        Visible="true" Height="106px">
         <asp:TableRow>
             <asp:TableCell>
                 <h1><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></h1>
@@ -30,7 +31,7 @@
     </asp:TableRow>
     </asp:Table>
     
-    <asp:Table runat="server" HorizontalAlign="Center">
+    <asp:Table runat="server" HorizontalAlign="Center" Height="81px">
     <asp:TableRow>
         <asp:TableCell><asp:Button ID="NovoJogoB" runat="server" Text="Novo Jogo" onclick="NovoJogo_Click" />
         <asp:Button ID="ContinuarB" runat="server" onclick="ContinuarResp_Click" Text="Silvio, Proxima Pergunta" />
