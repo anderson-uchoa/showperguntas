@@ -12,7 +12,7 @@ namespace ShowPerguntas.Negocio
 
         int IdRanking;
         int pontuacaoMax;
-        int pontuacaoMin = 300;
+        int pontuacaoMin = 0;
         int IdUsuario;
 
         #endregion

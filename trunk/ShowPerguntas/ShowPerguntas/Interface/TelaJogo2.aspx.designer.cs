@@ -76,6 +76,15 @@ namespace ShowPerguntas.Interface {
         protected global::System.Web.UI.WebControls.Label enunciado;
         
         /// <summary>
+        /// pontuacao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label pontuacao;
+        
+        /// <summary>
         /// celulaAlternativas control.
         /// </summary>
         /// <remarks>
@@ -101,15 +110,6 @@ namespace ShowPerguntas.Interface {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table auxiliarTable;
-        
-        /// <summary>
-        /// pontuacao control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label pontuacao;
         
         /// <summary>
         /// RemoverAlternativasB control.

@@ -10,7 +10,7 @@
     <form id="form1" runat="server">    
     <div>
         <asp:GridView ID="Ranking" runat="server" AutoGenerateColumns="False" 
-            DataKeyNames="IdRanking" DataSourceID="ShowPerguntas" OnRowDataBound="AtualizarPosicao">
+            DataKeyNames="IdRanking" DataSourceID="ShowPerguntas" OnRowDataBound="AtualizarPosicao" HorizontalAlign="Center">
             <Columns>
                 <asp:TemplateField HeaderText="Posição" >
                     <ItemTemplate>
@@ -34,9 +34,15 @@
             EntitySetName="Rankings" Include="Usuario" OrderBy="it.pontuacaoMaxima DESC">
         </asp:EntityDataSource>
     </div>
-    <div>
-        <asp:Button ID="Voltar" runat="server" Text="Voltar" onclick="Voltar_Click" />    
-    </div>
+
+    <asp:Table runat=server HorizontalAlign=Center>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Button ID="Voltar" runat="server" Text="Voltar" onclick="Voltar_Click"/>    
+            </asp:TableCell>
+        </asp:TableRow>
+    </asp:Table>
+
     </form>
 </body>
 </html>
