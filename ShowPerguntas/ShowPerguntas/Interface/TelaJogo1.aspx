@@ -8,7 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-
+    
     <asp:Table ID="escolhaDificuldadeTable" runat="server" HorizontalAlign="Center" Visible="true">
         <asp:TableRow>
             <asp:TableCell>
