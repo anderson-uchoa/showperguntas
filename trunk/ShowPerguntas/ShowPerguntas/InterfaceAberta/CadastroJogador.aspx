@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    <asp:Table ID="TabelaCadastroJogador" runat="server" Width="445px">
+    <asp:Table ID="TabelaCadastroJogador" runat="server" Width="527px" HorizontalAlign="Center">
             <asp:TableRow ID="NomeJogador">
                 <asp:TableCell>Nome: </asp:TableCell>
                     <asp:TableCell> 
@@ -65,9 +65,15 @@
                         ForeColor="red" Text="A senha não corresponde à senha de confirmação!" runat="server"></asp:CompareValidator>
                 </asp:TableCell>
             </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                </asp:TableCell>
+                <asp:TableCell HorizontalAlign="Right">    
+                    <asp:Button ID="SalvarJogador" runat="server" onclick="SalvarJogador_C" Text="Salvar" />
+                    <asp:Button ID="Button1" runat="server" onclick="Cancelar_C" Text="Cancelar" CausesValidation="false" />
+                </asp:TableCell>
+            </asp:TableRow>
             </asp:Table>
-        <asp:Button ID="SalvarJogador" runat="server" onclick="SalvarJogador_C" Text="Salvar" />
-        <asp:Button ID="Cancelar" runat="server" onclick="Cancelar_C" Text="Cancelar" CausesValidation="false" />
     </div>
     </form>
 </body>
