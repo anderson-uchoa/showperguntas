@@ -56,7 +56,7 @@ namespace ShowPerguntas.Dados
             {
                 using (var _context = new Show_de_PerguntasEntities())
                 {
-                    Ranking ranking = (from r in _context.Rankings where r.UsuarioIdUsuario.Equals(this.IdUsuario) select r).First();
+                    Ranking ranking = (from r in _context.Rankings where r.Usuario.IdUsuario.Equals(this.IdUsuario) select r).FirstOrDefault();
                     if (ranking != null)
                     {
                         ranking.pontuacaoMaxima = this.pontuacaoMax;

@@ -19,16 +19,17 @@ namespace ShowPerguntas.Negocio
 
         #region Contrutores
 
-        public Ranking(int IdUsuario, int pontuacao){
+        public Ranking (int IdUsuario, int pontuacao){
             this.IdUsuario = IdUsuario;
             if (pontuacao > pontuacaoMin)
             {
                 this.pontuacaoMax = pontuacao;
-                PontuarPorJogador();
+                Boolean boo = PontuarPorJogador();
             }
         }
 
         #endregion
+
         #region Metodos
 
         public Boolean BuscarPontuacaoPorJogador()
