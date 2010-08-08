@@ -20,7 +20,7 @@
                     <asp:Login ID="Login" runat="server" LoginButtonText="Entrar"
                         OnAuthenticate="Login_Authenticate" UserNameLabelText="Login: " 
                         PasswordLabelText="Senha: " DisplayRememberMe="false" 
-                        FailureText="Login ou senha incorretos! Tente novamente!" 
+                        FailureText="Login ou senha incorretos!" 
                         TitleText="Acesse sua conta!" Width="220px" TitleTextStyle-BorderStyle="NotSet" Orientation="Vertical" LoginButtonStyle-CssClass="botao" TextBoxStyle-CssClass="campo">
                         <TextBoxStyle Width="130px" />
                     </asp:Login>
