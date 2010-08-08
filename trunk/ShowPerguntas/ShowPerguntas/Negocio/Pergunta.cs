@@ -8,7 +8,7 @@ namespace ShowPerguntas.Negocio
 {
     public class Pergunta
     {
-        #region Attributes
+        #region Atributos
  
         public int idPergunta;
 
@@ -24,7 +24,7 @@ namespace ShowPerguntas.Negocio
 
         #endregion        
 
-        #region Constructors
+        #region Construtores
 
         public Pergunta()
         {
@@ -123,7 +123,7 @@ namespace ShowPerguntas.Negocio
 
         #endregion
 
-        #region Methods
+        #region Metodos
         /*
          * Coloque a explicação AQUI POR FAVOR
          */

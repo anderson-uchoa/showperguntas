@@ -23,8 +23,14 @@ namespace ShowPerguntas.Negocio
             this.IdUsuario = IdUsuario;
             if (pontuacao > pontuacaoMin)
             {
-                this.pontuacaoMax = pontuacao;
-                Boolean boo = PontuarPorJogador();
+                if(BuscarPontuacaoPorJogador())
+                    if (pontuacao > this.pontuacaoMax)
+                    {
+                        this.pontuacaoMax = pontuacao;
+                        if (!PontuarPorJogador()) ;
+                            //MENSAGEM DE ERRO - NAO PODE GRAVAR NO RANKIGN
+                    }
+                    
             }
         }
 
