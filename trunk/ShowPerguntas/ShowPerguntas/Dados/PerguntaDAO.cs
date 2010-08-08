@@ -115,7 +115,7 @@ namespace ShowPerguntas.Dados
             catch (Exception)
             {
                 return false;
-                throw;
+                //throw;
             }
         }
 

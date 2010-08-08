@@ -92,5 +92,22 @@ namespace ShowPerguntas.Negocio
 		        //throw;
 	        }
         }
+
+        public Boolean RemoverJogador()
+        {
+            try
+            {
+                UsuarioDAO uDAO = new UsuarioDAO();
+                uDAO.IdUsuario = this.IdUsuario;
+                return uDAO.DeletarJogador();
+
+            }
+            catch (Exception)
+            {
+                return false;
+                //throw;
+            }
+
+        }
     }
 }

@@ -113,5 +113,24 @@ namespace ShowPerguntas.Dados
 		        //throw;
 	        }            
         }
+
+        public Boolean DeletarJogador()
+        {
+            try
+            {
+                using (var _context = new Show_de_PerguntasEntities())
+                {
+                    Usuario usuario = (from u in _context.Usuarios where u.IdUsuario.Equals(this.IdUsuario) select u).First();
+                    _context.DeleteObject(usuario);
+                    _context.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                //throw;
+            }
+        }
     }
 }
