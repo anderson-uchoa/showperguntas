@@ -87,12 +87,14 @@ namespace ShowPerguntas.Interface
                 estat[i].Style["Left"] = "505px";
                 form1.Controls.Add(estat[i]);
             }
+            auxiliarTable.Visible = false;
         }
 
         protected void Pular_Click(object sender, EventArgs e)
         {
             (new Ajuda()).pularPergunta(partida);
             Response.Redirect(Request.RawUrl);
+            auxiliarTable.Visible = false;
         }
 
         /*
@@ -109,7 +111,8 @@ namespace ShowPerguntas.Interface
                 {
                     alternativas.Items.FindByText(alternativa[i].Text).Enabled = false;
                     alternativas.Items.FindByText(alternativa[i].Text).Text = "<del>" + alternativa[i].Text + "</del>";
-                }                
+                }
+            auxiliarTable.Visible = false;
         }
 
         protected void Timer1_Tick(object sender, EventArgs e)

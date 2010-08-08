@@ -27,36 +27,36 @@
             </ContentTemplate>
         </asp:UpdatePanel>
     
-    <asp:Table ID="RodadaTable" runat="server" HorizontalAlign="Center" BorderStyle="Dashed">
+    <asp:Table ID="RodadaTable" runat="server" HorizontalAlign="Center" 
+            BorderStyle="Solid">
             <asp:TableRow>
-                <asp:TableCell BorderStyle="Solid" Width="300px"><asp:Label ID="enunciado" runat="server" Text="Label"></asp:Label></asp:TableCell>
+                <asp:TableCell BorderStyle="Solid" Width="280px" Height="80" VerticalAlign="Top" HorizontalAlign="Left"><asp:Label ID="enunciado" runat="server" Text="Label"></asp:Label></asp:TableCell>
                 <asp:TableCell>TIMER</asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
-                <asp:TableCell><asp:RadioButtonList ID="alternativas" runat="server" Width="497px">
-    </asp:RadioButtonList></asp:TableCell>
+                <asp:TableCell ID="celulaAlternativas"><asp:RadioButtonList ID="alternativas" runat="server" ></asp:RadioButtonList></asp:TableCell>
                 <asp:TableCell>        
-                    <asp:Table ID="Table1" runat="server">
+                    <asp:Table ID="auxiliarTable" runat="server">
                         <asp:TableRow>
                             <asp:TableCell>Pontuação atual</asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
-                            <asp:TableCell>PRECISA DE AJUDA?</asp:TableCell>
+                            <asp:TableCell></asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
-                            <asp:TableCell><asp:Button ID="RemoverAlternativasB" runat="server" onclick="RemoverAlternativas_Click" Text="Remover Alternativas" /></asp:TableCell>
+                            <asp:TableCell><asp:Button ID="RemoverAlternativasB" runat="server" onclick="RemoverAlternativas_Click" Text="Remover Alternativas" Width="150px"/></asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
-                            <asp:TableCell><asp:Button ID="MostrarEstatisticasB" runat="server" onclick="MostrarEstatisticas_Click" Text="Mostrar Estatísticas" /></asp:TableCell>
+                            <asp:TableCell><asp:Button ID="MostrarEstatisticasB" runat="server" onclick="MostrarEstatisticas_Click" Text="Mostrar Estatísticas" Width="150px"/></asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
-                            <asp:TableCell><asp:Button ID="PularB" runat="server" onclick="Pular_Click" Text="Pular" /></asp:TableCell>
+                            <asp:TableCell><asp:Button ID="PularB" runat="server" onclick="Pular_Click" Text="Pular" Width="150px"/></asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
-                <asp:TableCell><asp:Button ID="Responder" runat="server" onclick="Responder_Click" Text="Responder" /></asp:TableCell>
+                <asp:TableCell><asp:Button ID="Responder" runat="server" onclick="Responder_Click" Text="Responder" Width="280px" /></asp:TableCell>
             </asp:TableRow>
 
         </asp:Table>
