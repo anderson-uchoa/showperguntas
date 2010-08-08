@@ -79,26 +79,23 @@ namespace ShowPerguntas.Interface
             DropDownList1.Items.Add("Fácil");
             DropDownList1.Items.Add("Médio");
             DropDownList1.Items.Add("Difícil");
-            Label1.Text = "Esta pagina serve tanto para o jogador pedir um novo jogo quanto para continuar respondendo";
+            Label1.Text = "Antes de iniciar um novo jogo você deve escolher uma dificuldade!";
             
             if (partida.estaAtivo())
             {
                 Dificuldade.Visible = false;
-                PontuacaoL.Text = "Você já ganhou mais ou menos: D$ " + (partida.mostrarPontuacao()).ToString();
-                RodadaL.Text = " Rodada " + partida.numeroRodada();
-                DropDownList1.Visible = false;
+                PontuacaoL.Text = "Você já ganhou: D$ " + (partida.mostrarPontuacao()).ToString();
+                RodadaL.Text = " Rodada :" + partida.numeroRodada();
+                escolhaDificuldadeTable.Visible = false;
+                PontuacaoTable.Visible = true;
                 NovoJogoB.Visible = false;
                 ContinuarB.Visible = true;
                 PararB.Text = "Parar";
-
             }
             else
             {
-                Dificuldade.Visible = true;
-                RodadaL.Visible = false;
-                PontuacaoL.Visible = false;
-                DropDownList1.Visible = true;
-                NovoJogoB.Visible = true;
+                PontuacaoTable.Visible = false;
+                escolhaDificuldadeTable.Visible = true;
                 ContinuarB.Visible = false;
                 PararB.Text = "Menu Anterior";
             }
