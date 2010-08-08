@@ -72,11 +72,39 @@ namespace ShowPerguntas.Interface
             
         }
 
-        protected void Cancelar_C(object sender, EventArgs e)
+        protected void Editar_C(object sender, EventArgs e)
+        {
+            botoesSalvarCancelar.Visible = true;
+            PerfilJogador.Enabled = true;
+            AlterarSenhaCheckBox.Visible = true;
+            botoesEditarRemoverVoltar.Visible = false;
+
+        }
+        protected void RemoverPerfil_C(object sender, EventArgs e)
+        {
+            ConfirmaçãoRemoverPerfil.Visible = true;
+            botoesEditarRemoverVoltar.Visible = false;
+        }
+        protected void Voltar_C(object sender, EventArgs e)
         {
             Response.Redirect("~/Interface/JogadorMenu.aspx");
         }
 
+        protected void confirmarRemoverPerfil_C(object sender, EventArgs e)
+        {
+            //Remove Jogador
+            //TODO
+        }
+        protected void cancelaConfirmarRemoverPerfil_C(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Interface/JogadorMenu.aspx");
+        }
+
+        protected void Cancelar_C(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Interface/JogadorMenu.aspx");
+        }
+        
         protected void AlterarSenha_C(object sender, EventArgs e)
         {
             if (senhaAntiga.Visible == false)

@@ -121,13 +121,13 @@ namespace ShowPerguntas.Interface {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator LoginRequiredFieldValidator;
         
         /// <summary>
-        /// usuarioDesdeLabel control.
+        /// UsuarioDesdeTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label usuarioDesdeLabel;
+        protected global::System.Web.UI.WebControls.TextBox UsuarioDesdeTextBox;
         
         /// <summary>
         /// AlterarSenhaCheckBox control.
@@ -247,6 +247,51 @@ namespace ShowPerguntas.Interface {
         protected global::System.Web.UI.WebControls.CompareValidator comfirmaSenhaIgual;
         
         /// <summary>
+        /// botoesEditarRemoverVoltar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table botoesEditarRemoverVoltar;
+        
+        /// <summary>
+        /// Editar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Editar;
+        
+        /// <summary>
+        /// RemoverPerfil control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button RemoverPerfil;
+        
+        /// <summary>
+        /// Voltar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Voltar;
+        
+        /// <summary>
+        /// botoesSalvarCancelar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table botoesSalvarCancelar;
+        
+        /// <summary>
         /// SalvarJogador control.
         /// </summary>
         /// <remarks>
@@ -263,5 +308,32 @@ namespace ShowPerguntas.Interface {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Cancelar;
+        
+        /// <summary>
+        /// ConfirmaçãoRemoverPerfil control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table ConfirmaçãoRemoverPerfil;
+        
+        /// <summary>
+        /// confirmarRemoverPerfil control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button confirmarRemoverPerfil;
+        
+        /// <summary>
+        /// cancelaConfirmarRemoverPerfil control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button cancelaConfirmarRemoverPerfil;
     }
 }
