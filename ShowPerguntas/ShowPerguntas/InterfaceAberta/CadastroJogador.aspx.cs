@@ -17,7 +17,7 @@ namespace ShowPerguntas.Interface
 
         protected void Cancelar_C(object sender, EventArgs e)
         {
-            Response.Redirect("~/Home.aspx");
+            Response.Redirect("~/Interface/Home.aspx");
         }
 
         protected void SalvarJogador_C(object sender, EventArgs e)
