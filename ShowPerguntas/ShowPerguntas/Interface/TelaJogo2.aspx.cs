@@ -39,6 +39,10 @@ namespace ShowPerguntas.Interface
             PularB.Visible = (new Ajuda()).ajudasRestantes (partida, Defines.PULAR);
             RemoverAlternativasB.Visible = (new Ajuda()).ajudasRestantes(partida, Defines.REMOV);
 
+            qtdeMostrarEstatisticas.Text = Convert.ToString(partida.ajuda[Defines.ESTAT]);
+            qtdePular.Text = Convert.ToString(partida.ajuda[Defines.PULAR]);
+            qtdeRemoverAlternativas.Text = Convert.ToString(partida.ajuda[Defines.REMOV]);
+
             pontuacao.Text = Convert.ToString(partida.pontuacao);
                 
             if (perguntaAtr == null)
