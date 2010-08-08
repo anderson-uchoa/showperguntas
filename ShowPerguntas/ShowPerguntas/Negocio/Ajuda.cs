@@ -8,7 +8,7 @@ namespace ShowPerguntas.Negocio
 {
     public class Ajuda
     {
-
+        #region Metodos
         public String[] mostrarEstatisticas(Partida p)
         {
             if (p.ajuda[Defines.ESTAT] <= 0)
@@ -36,6 +36,7 @@ namespace ShowPerguntas.Negocio
                     else
                         p.IdPerguntas[i] = -1;
                 }
+                p.qntPerguntas[p.rodada.dificuldade] += 1;
                 p.novaRodada();
                 --p.ajuda[Defines.PULAR];        
                 return true;
@@ -64,23 +65,21 @@ namespace ShowPerguntas.Negocio
                         return false;
                     else
                         return true;
-                    break;
                 case Defines.ESTAT:
                     if (P.ajuda[Defines.ESTAT] <= 0)
                         return false;
                     else
                         return true;
-                    break;
                 case Defines.REMOV:
                     if (P.ajuda[Defines.REMOV] <= 0)
                         return false;
                     else
                         return true;
-                    break;
                 default:
                     return false;
-                    break;
             }
         }
+
+        #endregion
     }
 }

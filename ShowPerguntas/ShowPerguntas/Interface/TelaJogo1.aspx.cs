@@ -10,11 +10,17 @@ namespace ShowPerguntas.Interface
 {
     public partial class TelaJogo1 : System.Web.UI.Page
     {
+
+        #region Atributos
+
         String escolha = "Fácil";
         public Partida partida;
         protected String[] continuar = new String[6] {"Silvio, proxima Pergunta", "Ripa na Xulipa", "Manda Bala", "Pé na Tabua", "Mete Bronca", "May the force be with... me"};
         protected String[] parar = new String[6] {"Parei", "Fui", "Miei", "Me chama de mocinha e me tira daqui", "Perdi!", "I'll be Back"};
 
+        #endregion
+
+        #region EventosDaPagina
         protected void Page_Load(object sender, EventArgs e)
         {
             verificarUsuario();
@@ -61,6 +67,10 @@ namespace ShowPerguntas.Interface
             escolha = DropDownList1.SelectedItem.Text;
         }
 
+        #endregion
+
+        #region Metodos
+
         protected void setarValoresCampos()
         {
             Random rand = new Random();
@@ -102,8 +112,10 @@ namespace ShowPerguntas.Interface
             else if (!tipo.Equals("Jogador"))
                 Response.Redirect("~/Interface/Home.aspx") ;
             else if (nome == null)
-                Response.Redirect("~/Interface/Home.aspx") ; 
-            
+                Response.Redirect("~/Interface/Home.aspx") ;
+
         }
+
+        #endregion
     }
 }

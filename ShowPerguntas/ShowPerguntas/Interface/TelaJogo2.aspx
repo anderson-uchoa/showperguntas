@@ -31,7 +31,7 @@
         <br />
     
     </div>
-    <asp:RadioButtonList ID="alternativas" runat="server">
+    <asp:RadioButtonList ID="alternativas" runat="server" Width="497px">
     </asp:RadioButtonList>
     <asp:Button ID="Responder" runat="server" onclick="Responder_Click" Text="Responder" />
     <asp:Button ID="RemoverAlternativasB" runat="server" onclick="RemoverAlternativas_Click" Text="Remover Alternativas" />

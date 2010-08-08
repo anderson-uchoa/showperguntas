@@ -7,10 +7,16 @@ namespace ShowPerguntas.Negocio
 {
     public class Rodada
     {
+        #region Atributos
+
         public Pergunta p;
         public int dificuldade;
         int[] vetor;
         bool mostrar;
+
+        #endregion
+
+        #region Construtores
 
         /*
          * Construtor da Rodada, dificuldade corresponde à dif. da pergunta que deve ser 
@@ -25,6 +31,10 @@ namespace ShowPerguntas.Negocio
             this.dificuldade = dificuldade;
             p = new Pergunta(dificuldade, listaIds);
         }
+
+        #endregion
+
+        #region Metodos
 
         /*
          * Coloca os textos da pergunta e suas respostas 
@@ -108,6 +118,12 @@ namespace ShowPerguntas.Negocio
             return false;
         }
 
+        /*
+         * Retorna uma string com as estatisticas correspondentes ao vetor de alternativas
+         * embaralhado
+         * params: -
+         * return: Vetor de String com uma porcentagem em cada
+         */
         public String[] mostrarEstatisticas()
         {
             int i, total = 0;
@@ -119,7 +135,7 @@ namespace ShowPerguntas.Negocio
             if (total == 0)
                 total = 1;
             for (i = 0; i < estatisticas.Length; ++i)
-                estatisticas[vetor[i]] = Convert.ToString((p.estatisticas[vetor[i]]/total)*100) ;
+                estatisticas[vetor[i]] = Convert.ToString((p.estatisticas[vetor[i]]/total)*100) + "%";
             return estatisticas ;
         }
 
@@ -148,5 +164,7 @@ namespace ShowPerguntas.Negocio
             }
             return vetorb;
         }
+
+        #endregion
     }
 }

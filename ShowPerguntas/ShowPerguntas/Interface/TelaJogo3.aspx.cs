@@ -11,7 +11,14 @@ namespace ShowPerguntas.Interface
 {
     public partial class TelaJogo3 : System.Web.UI.Page
     {
+        #region Atributos
+
         Partida partida;
+
+        #endregion
+
+        #region EventosDaPagina
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Random rand = new Random();
@@ -47,6 +54,9 @@ namespace ShowPerguntas.Interface
             Response.Redirect("~/Interface/JogadorMenu.aspx");
         }
 
+        #endregion
+
+        #region Metodos
         public void verificarUsuario()
         {
             String nome = (String)Session["nome"];
@@ -59,5 +69,7 @@ namespace ShowPerguntas.Interface
                 Response.Redirect("~/Interface/Home.aspx");
 
         }
+        #endregion
+
     }
 }

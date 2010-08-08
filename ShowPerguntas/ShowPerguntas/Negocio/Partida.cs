@@ -8,6 +8,8 @@ namespace ShowPerguntas.Negocio
 {
     public class Partida
     {
+        #region Atributos
+
         protected bool ganhou;
         protected bool status;
         protected int IdUsuario;
@@ -20,8 +22,11 @@ namespace ShowPerguntas.Negocio
         public int tempo;
         public int[] IdPerguntas;
         public int[] qntPerguntas;
+        protected int numeroMaxPerguntas = 10;
 
+        #endregion
 
+        #region Construtores
         public void novaPartida(int dificuldade)
         {
             int i;
@@ -50,11 +55,15 @@ namespace ShowPerguntas.Negocio
             novaRodada();
         }
 
+        #endregion
+
+        #region Metodos
+
         public String numeroRodada()
         {
-            int total, parcial;
+            int total, parcial = 0;
+            total = numeroMaxPerguntas;
             parcial = qntPerguntas[Defines.FACIL] + qntPerguntas[Defines.MEDIO] + qntPerguntas[Defines.DIFICIL];
-            total = IdPerguntas.Length;
             parcial = 10 - parcial;
             return parcial.ToString() + "/" + total.ToString();
         }
@@ -100,8 +109,9 @@ namespace ShowPerguntas.Negocio
         {
             status = false;
             if (tempoacabou)
-                pontuacao = pontuacao / 2;
-            new Ranking(IdUsuario, mostrarPontuacao());
+                perder();
+            else
+                new Ranking(IdUsuario, mostrarPontuacao());
         }
 
         public String[] colocarPergunta() 
@@ -116,21 +126,31 @@ namespace ShowPerguntas.Negocio
             {
                 pontuacao += pontuacaoNivel[rodada.dificuldade];
                 if (IdPerguntas[IdPerguntas.Length - 1] != -1)
-                {
-                    ganhou = true;
-                    //Bonus pq ele ganhou!
-                    this.pontuacao += pontuacaoNivel[dificuldade];
-                    new Ranking(IdUsuario, mostrarPontuacao());
-                }
+                    ganhar();
             }
             else
-            {
-                pontuacao = pontuacao / 2;
-                new Ranking(IdUsuario, mostrarPontuacao());
-            }
-
+                perder();
         }
 
+        protected void perder()
+        {
+            status = false;
+            ganhou = false;
+            pontuacao = pontuacao / 2;
+            new Ranking(IdUsuario, mostrarPontuacao());
+        }
+
+        protected void ganhar()
+        {
+            status = false;
+            ganhou = true;
+            pontuacao += pontuacaoNivel[dificuldade];
+            new Ranking(IdUsuario, mostrarPontuacao());
+        }
+
+        #endregion
+
+        #region GettersSetters
 
         public void colocarIdUsuario(int id) { IdUsuario = id; }
         public bool ganhouPartida() { return ganhou; }
@@ -141,5 +161,7 @@ namespace ShowPerguntas.Negocio
             return pontuacao + rand.Next(1,100); 
         }
         public bool estaAtivo() { return status; }
+
+        #endregion
     }
 }

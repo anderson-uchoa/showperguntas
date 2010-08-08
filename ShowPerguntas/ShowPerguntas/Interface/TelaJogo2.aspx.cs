@@ -11,16 +11,23 @@ namespace ShowPerguntas.Interface
 {
     public partial class TelaJogo2 : System.Web.UI.Page
     {
+        #region Atributos
+
         public String[] perguntaAtr;
         public Partida partida;
+        Label[] estat;
         ListItem[] alternativa;
         public String[] estatisticas;
         DateTime tempo;
         int cronometro;
 
+        #endregion
+
+        #region EventosDaPagina
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            verificarUsuario();
             partida = (Partida) Session["partida"];
             cronometro = partida.tempo;
             ContadorL.Text = cronometro.ToString();
@@ -69,8 +76,17 @@ namespace ShowPerguntas.Interface
 
         protected void MostrarEstatisticas_Click(object sender, EventArgs e)
         {
+            int i;
+            estat = new Label[5];
             estatisticas = (new Ajuda()).mostrarEstatisticas(partida);
-            //TODO
+            for(i = 0; i < estat.Length; ++i){
+                estat[i] = new Label();
+                estat[i].Text = estatisticas[i];
+                estat[i].Style["Position"] = "Absolute";
+                estat[i].Style["Top"] = Convert.ToString(35 * i + 70) + "px";
+                estat[i].Style["Left"] = "505px";
+                form1.Controls.Add(estat[i]);
+            }
         }
 
         protected void Pular_Click(object sender, EventArgs e)
@@ -87,13 +103,12 @@ namespace ShowPerguntas.Interface
         {
             int i;
             bool[] alt = (new Ajuda()).removerAlternativas(partida);
-            //alternativas.Items.Clear();
+            
             for (i = 0; i < alt.Length; ++i)
                 if (alt[i] == true)
                 {
-                    //alternativa[i].Enabled = false;
-                    //alternativas.Items.Add(alternativa[i]);
                     alternativas.Items.FindByText(alternativa[i].Text).Enabled = false;
+                    alternativas.Items.FindByText(alternativa[i].Text).Text = "<del>" + alternativa[i].Text + "</del>";
                 }                
         }
 
@@ -105,6 +120,7 @@ namespace ShowPerguntas.Interface
                 partida.pararPartida(true);
                 Response.Redirect("~/Interface/TelaJogo3");
                 
+
             }
             else
             {
@@ -112,5 +128,24 @@ namespace ShowPerguntas.Interface
                 ContadorL.Text = cronometro.ToString();
             }
         }
+
+        #endregion
+
+        #region Metodos
+
+        public void verificarUsuario()
+        {
+            String nome = (String)Session["nome"];
+            String tipo = (String)Session["tipo"];
+            if (tipo == null)
+                Response.Redirect("~/Interface/Home.aspx");
+            else if (!tipo.Equals("Jogador"))
+                Response.Redirect("~/Interface/Home.aspx");
+            else if (nome == null)
+                Response.Redirect("~/Interface/Home.aspx");
+
+        }
+
+        #endregion
     }
 }
