@@ -5,7 +5,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title></title>
+    <title>Show de Perguntas - Cadastro</title>
+    <link rel="stylesheet" type="text/css" href="/Estilo.css" />
 </head>
 <body>
     <form id="form1" runat="server">
