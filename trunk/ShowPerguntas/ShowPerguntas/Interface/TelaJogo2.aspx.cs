@@ -15,12 +15,23 @@ namespace ShowPerguntas.Interface
         public Partida partida;
         ListItem[] alternativa;
         public String[] estatisticas;
+        DateTime tempo;
+        int cronometro;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             partida = (Partida) Session["partida"];
+            cronometro = partida.tempo;
+            ContadorL.Text = cronometro.ToString();
+            tempo = DateTime.Now;
+            tempo.AddSeconds(partida.tempo);
             perguntaAtr = partida.colocarPergunta();
 
+            MostrarEstatisticasB.Visible = (new Ajuda()).ajudasRestantes(partida, Defines.ESTAT);
+            PularB.Visible = (new Ajuda()).ajudasRestantes (partida, Defines.PULAR);
+            RemoverAlternativasB.Visible = (new Ajuda()).ajudasRestantes(partida, Defines.REMOV);
+                
             if (perguntaAtr == null)
             {
                 enunciado.Text = "";
@@ -35,7 +46,8 @@ namespace ShowPerguntas.Interface
                 {
                     alternativa[i] = new ListItem();
                     alternativa[i].Text = perguntaAtr[i + 1];
-                    alternativas.Items.Add(alternativa[i]);
+                    if(!IsPostBack)
+                        alternativas.Items.Add(alternativa[i]);
                 }
             }
         }
@@ -65,16 +77,38 @@ namespace ShowPerguntas.Interface
             Response.Redirect(Request.RawUrl);
         }
 
+        /*
+         * Acao do botão deve remover alternativaspassadas na lista de booleanos
+         * se for true, a alternativa deve desaparecer
+         */ 
         protected void RemoverAlternativas_Click(object sender, EventArgs e)
         {
             int i;
             bool[] alt = (new Ajuda()).removerAlternativas(partida);
+            //alternativas.Items.Clear();
             for (i = 0; i < alt.Length; ++i)
                 if (alt[i] == true)
                 {
-                    alternativa[i].Enabled = false;
-                    alternativas.Items.RemoveAt(i);
-                }
+                    //alternativa[i].Enabled = false;
+                    //alternativas.Items.Add(alternativa[i]);
+                    alternativas.Items.FindByText(alternativa[i].Text).Enabled = false;
+                }                
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
+        {
+            if(tempo.CompareTo(DateTime.Now) > 0)
+            {
+                ContadorL.Text = "ACABOU!";
+                partida.pararPartida();
+                Response.Redirect("~/Interface/TelaJogo3");
+                
+            }
+            else
+            {
+                cronometro--;
+                ContadorL.Text = cronometro.ToString();
+            }
         }
     }
 }

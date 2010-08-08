@@ -31,6 +31,8 @@ namespace ShowPerguntas.Interface
                 partida.novaPartida(1);
             else if (escolha.Equals("Difícil"))
                 partida.novaPartida(2);
+            else
+                Response.Redirect("~/Interface/Home.aspx");
             Response.Redirect("~/Interface/TelaJogo2.aspx");
         }
 

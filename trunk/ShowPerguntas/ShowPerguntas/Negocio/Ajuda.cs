@@ -15,6 +15,7 @@ namespace ShowPerguntas.Negocio
                 return null;
             else
             {
+                --p.ajuda[Defines.ESTAT];
                 return p.rodada.mostrarEstatisticas();
             }
         }
@@ -36,7 +37,7 @@ namespace ShowPerguntas.Negocio
                         p.IdPerguntas[i] = -1;
                 }
                 p.novaRodada();
-                        
+                --p.ajuda[Defines.PULAR];        
                 return true;
             }
         }
@@ -48,7 +49,37 @@ namespace ShowPerguntas.Negocio
             else
             {
                 Random rand = new Random();
+                --p.ajuda[Defines.REMOV];
                 return p.rodada.selecionaAlt(rand.Next(5));
+            }
+
+        }
+
+        public bool ajudasRestantes(Partida P, int tipoAjuda)
+        {
+            switch (tipoAjuda)
+            {
+                case Defines.PULAR:
+                    if (P.ajuda[Defines.PULAR] <= 0)
+                        return false;
+                    else
+                        return true;
+                    break;
+                case Defines.ESTAT:
+                    if (P.ajuda[Defines.ESTAT] <= 0)
+                        return false;
+                    else
+                        return true;
+                    break;
+                case Defines.REMOV:
+                    if (P.ajuda[Defines.REMOV] <= 0)
+                        return false;
+                    else
+                        return true;
+                    break;
+                default:
+                    return false;
+                    break;
             }
         }
     }
