@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    <asp:Table ID="PerfilJogador" runat="server" HorizontalAlign="Center">
+    <asp:Table ID="PerfilJogador" runat="server" HorizontalAlign="Center" Enabled="false">
             <asp:TableRow ID="Nome" >
                 <asp:TableCell Width="145px">Nome: </asp:TableCell>
                     <asp:TableCell> 
@@ -40,7 +40,7 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell Width="145px"></asp:TableCell>
-                <asp:TableCell><asp:CheckBox ID="AlterarSenhaCheckBox" runat="server" Text="Alterar Senha" TextAlign="Right" Checked="false" AutoPostBack="True" OnCheckedChanged="AlterarSenha_C"/></asp:TableCell>
+                <asp:TableCell><asp:CheckBox ID="AlterarSenhaCheckBox" runat="server" Text="Alterar Senha" TextAlign="Right" Checked="false" AutoPostBack="True" OnCheckedChanged="AlterarSenha_C" Visible="false"/></asp:TableCell>
             </asp:TableRow>
            
             <asp:TableRow ID="senhaAntiga" Visible="false">
@@ -83,10 +83,35 @@
             </asp:TableRow>
             </asp:Table>
    
-    <asp:Table runat="server" HorizontalAlign="Center">
+    <asp:Table ID="botoesEditarRemoverVoltar" runat="server" HorizontalAlign="Center" Visible="true">
+        <asp:TableRow>
+            <asp:TableCell><asp:Button ID="Editar" runat="server" onclick="Editar_C" Text="Editar" CausesValidation="false" /></asp:TableCell>
+            <asp:TableCell><asp:Button ID="RemoverPerfil" runat="server" onclick="RemoverPerfil_C" Text="Remover Perfil" CausesValidation="false" /></asp:TableCell>
+            <asp:TableCell><asp:Button ID="Voltar" runat="server" onclick="Voltar_C" Text="Voltar" CausesValidation="false"/></asp:TableCell>
+        </asp:TableRow>
+   </asp:Table>
+
+    <asp:Table ID="botoesSalvarCancelar" runat="server" HorizontalAlign="Center" Visible="false">
         <asp:TableRow>
             <asp:TableCell><asp:Button ID="SalvarJogador" runat="server" onclick="SalvarJogador_C" Text="Salvar" /></asp:TableCell>
             <asp:TableCell><asp:Button ID="Cancelar" runat="server" onclick="Cancelar_C" Text="Cancelar" CausesValidation="false" /></asp:TableCell>
+        </asp:TableRow>
+   </asp:Table>
+   
+   
+   
+   <asp:Table ID="ConfirmaçãoRemoverPerfil" runat="server" HorizontalAlign="Center" Visible="false">
+        <asp:TableRow>
+            <asp:TableCell>Tem certeza que deseja remover seu perfil?</asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>Essa ação não poderá ser desfeita.</asp:TableCell> 
+        </asp:TableRow>
+        <asp:TableRow HorizontalAlign="Center">
+            <asp:TableCell>
+                <asp:Button ID="confirmarRemoverPerfil" runat="server" onclick="confirmarRemoverPerfil_C" Text="Confirma" CausesValidation="false" />
+                <asp:Button ID="cancelaConfirmarRemoverPerfil" runat="server" onclick="cancelaConfirmarRemoverPerfil_C" Text="Cancela" CausesValidation="false" />
+            </asp:TableCell>
         </asp:TableRow>
    </asp:Table>
    
