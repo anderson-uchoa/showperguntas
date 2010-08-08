@@ -218,6 +218,7 @@
     <Compile Include="Negocio\Jogador.cs" />
     <Compile Include="Negocio\Partida.cs" />
     <Compile Include="Negocio\Pergunta.cs" />
+    <Compile Include="Negocio\Ranking.cs" />
     <Compile Include="Negocio\Regras.cs" />
     <Compile Include="Negocio\Rodada.cs" />
     <Compile Include="Negocio\Usuario.cs" />
@@ -239,6 +240,7 @@
     <Content Include="Interface\Web1.config">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="ClassDiagram1.cd" />
     <None Include="ShowPerguntas.xsc">
       <DependentUpon>ShowPerguntas.xsd</DependentUpon>
     </None>
