@@ -31,8 +31,11 @@
         <asp:EntityDataSource ID="ShowPerguntas" runat="server" 
             ConnectionString="name=Show_de_PerguntasEntities" 
             DefaultContainerName="Show_de_PerguntasEntities" EnableFlattening="False" 
-            EntitySetName="Rankings" Include="Usuario">
+            EntitySetName="Rankings" Include="Usuario" OrderBy="it.pontuacaoMaxima DESC">
         </asp:EntityDataSource>
+    </div>
+    <div>
+        <asp:Button ID="Voltar" runat="server" Text="Voltar" onclick="Voltar_Click" />    
     </div>
     </form>
 </body>

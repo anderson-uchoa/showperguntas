@@ -20,5 +20,10 @@ namespace ShowPerguntas.Interface
         {
             posicao++;
         }
+
+        protected void Voltar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Interface/JogadorMenu.aspx");
+        }
     }
 }
