@@ -33,6 +33,7 @@ namespace ShowPerguntas.Interface
                 partida.novaPartida(2);
             else
                 Response.Redirect("~/Interface/Home.aspx");
+            partida.colocarIdUsuario(Convert.ToInt32(Session["Id"]));
             Response.Redirect("~/Interface/TelaJogo2.aspx");
         }
 
@@ -47,7 +48,7 @@ namespace ShowPerguntas.Interface
             // Caso o jogador clique em Parar, pára o jogo
             if (partida.estaAtivo())
             {
-                partida.pararPartida();
+                partida.pararPartida(false);
                 Response.Redirect("~/Interface/TelaJogo1.aspx");
             }
             // Ou se ele não estiver jogando, e clica no botão, volta para o menu principal

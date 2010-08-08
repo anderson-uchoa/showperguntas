@@ -10,6 +10,7 @@ namespace ShowPerguntas.Negocio
     {
         protected bool ganhou;
         protected bool status;
+        protected int IdUsuario;
         public Rodada rodada;
         protected int dificuldade;
         protected int nivel;
@@ -79,9 +80,7 @@ namespace ShowPerguntas.Negocio
             }
             else
             {
-                ganhou = true;
-                status = false;
-                pararPartida();
+                //ERRO - Ele nao verificou que a partida acabou lah no responder...
             }
 
             if (status != false)
@@ -97,9 +96,12 @@ namespace ShowPerguntas.Negocio
             }
         }
 
-        public void pararPartida()
+        public void pararPartida(bool tempoacabou)
         {
             status = false;
+            if (tempoacabou)
+                pontuacao = pontuacao / 2;
+            new Ranking(IdUsuario, mostrarPontuacao());
         }
 
         public String[] colocarPergunta() 
@@ -114,11 +116,23 @@ namespace ShowPerguntas.Negocio
             {
                 pontuacao += pontuacaoNivel[rodada.dificuldade];
                 if (IdPerguntas[IdPerguntas.Length - 1] != -1)
+                {
                     ganhou = true;
-            }                
+                    //Bonus pq ele ganhou!
+                    this.pontuacao += pontuacaoNivel[dificuldade];
+                    new Ranking(IdUsuario, mostrarPontuacao());
+                }
+            }
+            else
+            {
+                pontuacao = pontuacao / 2;
+                new Ranking(IdUsuario, mostrarPontuacao());
+            }
 
         }
 
+
+        public void colocarIdUsuario(int id) { IdUsuario = id; }
         public bool ganhouPartida() { return ganhou; }
         public int mostrarPontuacao() {
             Random rand = new Random();

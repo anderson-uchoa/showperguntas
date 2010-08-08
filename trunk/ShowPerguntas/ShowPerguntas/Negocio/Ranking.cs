@@ -12,10 +12,23 @@ namespace ShowPerguntas.Negocio
 
         int IdRanking;
         int pontuacaoMax;
+        int pontuacaoMin = 300;
         int IdUsuario;
 
         #endregion
 
+        #region Contrutores
+
+        public Ranking(int IdUsuario, int pontuacao){
+            this.IdUsuario = IdUsuario;
+            if (pontuacao > pontuacaoMin)
+            {
+                this.pontuacaoMax = pontuacao;
+                PontuarPorJogador();
+            }
+        }
+
+        #endregion
         #region Metodos
 
         public Boolean BuscarPontuacaoPorJogador()

@@ -55,14 +55,16 @@ namespace ShowPerguntas.Interface
         protected void Responder_Click(object sender, EventArgs e)
         {
             int i;
-
-            for (i = 0; i < alternativa.Length; ++i)
+            if (alternativas.SelectedItem != null)
             {
-                if (alternativa[i].Equals(alternativas.SelectedItem))
-                    partida.responder(i);
+                for (i = 0; i < alternativa.Length; ++i)
+                {
+                    if (alternativa[i].Equals(alternativas.SelectedItem))
+                        partida.responder(i);
+                }
+
+                Response.Redirect("~/Interface/TelaJogo3.aspx");
             }
-            
-            Response.Redirect("~/Interface/TelaJogo3.aspx");
         }
 
         protected void MostrarEstatisticas_Click(object sender, EventArgs e)
@@ -100,7 +102,7 @@ namespace ShowPerguntas.Interface
             if(tempo.CompareTo(DateTime.Now) > 0)
             {
                 ContadorL.Text = "ACABOU!";
-                partida.pararPartida();
+                partida.pararPartida(true);
                 Response.Redirect("~/Interface/TelaJogo3");
                 
             }
