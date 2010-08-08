@@ -58,6 +58,15 @@ namespace ShowPerguntas.Interface {
         protected global::System.Web.UI.WebControls.Label ContadorL;
         
         /// <summary>
+        /// RodadaTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table RodadaTable;
+        
+        /// <summary>
         /// enunciado control.
         /// </summary>
         /// <remarks>
@@ -76,13 +85,13 @@ namespace ShowPerguntas.Interface {
         protected global::System.Web.UI.WebControls.RadioButtonList alternativas;
         
         /// <summary>
-        /// Responder control.
+        /// Table1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Responder;
+        protected global::System.Web.UI.WebControls.Table Table1;
         
         /// <summary>
         /// RemoverAlternativasB control.
@@ -110,5 +119,14 @@ namespace ShowPerguntas.Interface {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button PularB;
+        
+        /// <summary>
+        /// Responder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Responder;
     }
 }
