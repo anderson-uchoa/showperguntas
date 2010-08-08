@@ -15,6 +15,16 @@
 <body style="height: 271px">
     <form id="form1" runat="server">
     <div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+        <asp:Timer runat="server" id="Timer1" interval="1000" ontick="Timer1_Tick" />
+        <asp:UpdatePanel runat="server" id="TimePanel" UpdateMode="Always">
+            <Triggers>
+                <asp:AsyncPostBackTrigger controlid="Timer1" eventname="Tick" />
+            </Triggers>
+            <ContentTemplate>
+                <asp:Label runat="server" id="ContadorL" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
     
         <br />
         <asp:Label ID="enunciado" runat="server" Text="Label"></asp:Label>
@@ -24,9 +34,9 @@
     <asp:RadioButtonList ID="alternativas" runat="server">
     </asp:RadioButtonList>
     <asp:Button ID="Responder" runat="server" onclick="Responder_Click" Text="Responder" />
-    <asp:Button ID="Button1" runat="server" onclick="RemoverAlternativas_Click" Text="Remover Alternativas" />
-    <asp:Button ID="Button2" runat="server" onclick="MostrarEstatisticas_Click" Text="Mostrar Estatísticas" />
-    <asp:Button ID="Button3" runat="server" onclick="Pular_Click" Text="Pular" />
+    <asp:Button ID="RemoverAlternativasB" runat="server" onclick="RemoverAlternativas_Click" Text="Remover Alternativas" />
+    <asp:Button ID="MostrarEstatisticasB" runat="server" onclick="MostrarEstatisticas_Click" Text="Mostrar Estatísticas" />
+    <asp:Button ID="PularB" runat="server" onclick="Pular_Click" Text="Pular" />
     </form>
 </body>
 </html>
