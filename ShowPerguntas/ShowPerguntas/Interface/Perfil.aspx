@@ -4,38 +4,45 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title></title>
+    <title>Show de Perguntas - Perfil de <%Response.Write(Session["nome"]);%></title>
+    <link rel="stylesheet" type="text/css" href="/Estilo.css" />
 </head>
 <body>
+<br />
+<div style="text-align: center;">
+<img src="/Imagens/logo.png" />
+</div>
+<h1 style="text-align:center">Perfil de <%Response.Write(Session["nome"]);%></h1>
     <form id="form1" runat="server">
-    <div>
-    <asp:Table ID="PerfilJogador" runat="server" HorizontalAlign="Center" Enabled="false">
+    <div class="borda" align="center" style="width: 450px;">
+    <asp:Table ID="PerfilJogador" runat="server" HorizontalAlign="Center" Enabled="false" BackColor="#F8F8F8" BorderColor="#F8F8F8" 
+            BorderWidth="15px">
             <asp:TableRow ID="Nome" >
                 <asp:TableCell Width="145px">Nome: </asp:TableCell>
                     <asp:TableCell> 
-                        <asp:TextBox ID="nomeTextBox" runat="server" Width="150px"></asp:TextBox> 
+                        <asp:TextBox ID="nomeTextBox" runat="server" Width="150px" CssClass="campo"></asp:TextBox> 
                         <asp:RequiredFieldValidator ID="NomeRequiredFieldValidator" runat="server" ControlToValidate="nomeTextBox" 
-                                    ErrorMessage="Esse campo deve ser preenchido!"></asp:RequiredFieldValidator> 
+                                    ErrorMessage="*"></asp:RequiredFieldValidator> 
                     </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow ID="Sobrenome">
                 <asp:TableCell>Sobrenome: </asp:TableCell>
                     <asp:TableCell> 
-                        <asp:TextBox ID="sobrenomeTextBox" runat="server" Width="150px"></asp:TextBox>
+                        <asp:TextBox ID="sobrenomeTextBox" runat="server" Width="150px" CssClass="campo"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="SobreNomeRequiredFieldValidator" runat="server" ControlToValidate="sobrenomeTextBox" 
-                                    ErrorMessage="Esse campo deve ser preenchido!"></asp:RequiredFieldValidator> 
+                                    ErrorMessage="*"></asp:RequiredFieldValidator> 
                     </asp:TableCell>
             </asp:TableRow> 
             <asp:TableRow ID="Login" >
                 <asp:TableCell Width="145px">Login: </asp:TableCell>
                     <asp:TableCell> 
-                        <asp:TextBox ID="loginTextBox" runat="server" Enabled="false" ForeColor="Black" Width="150px"></asp:TextBox>
+                        <asp:TextBox ID="loginTextBox" runat="server" Enabled="false" ForeColor="Black" Width="150px" CssClass="campologin"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="LoginRequiredFieldValidator" runat="server" ControlToValidate="loginTextBox" 
-                                    ErrorMessage="Esse campo deve ser preenchido!"></asp:RequiredFieldValidator> 
+                                    ErrorMessage="*"></asp:RequiredFieldValidator> 
                     </asp:TableCell>
             </asp:TableRow>  
             <asp:TableRow>
-                <asp:TableCell Width="145px">Usuário desde:</asp:TableCell>
+                <asp:TableCell Width="145px" CssClass="campologin">Usuário desde:</asp:TableCell>
                 <asp:TableCell><asp:TextBox ID="UsuarioDesdeTextBox" runat="server" Width="150px"></asp:TextBox> </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -47,7 +54,7 @@
                 <asp:TableCell Width="145px">Senha antiga: </asp:TableCell>
                 <asp:TableCell><asp:TextBox ID="senhaAntigaTextBox" runat="server" Width="150px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="senhaAntigaRequiredFieldValidator" runat="server" ControlToValidate="senhaAntigaTextBox" 
-                        ErrorMessage="Esse campo deve ser preenchido!"></asp:RequiredFieldValidator> 
+                        ErrorMessage="*"></asp:RequiredFieldValidator> 
                 </asp:TableCell>    
             </asp:TableRow>
 
@@ -61,7 +68,7 @@
                     <asp:TableCell> 
                         <asp:TextBox ID="novaSenhaTextBox" runat="server" TextMode="Password" Width="150px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="novaSenhaRequiredFieldValidator" runat="server" ControlToValidate="novaSenhaTextBox" 
-                                    ErrorMessage="Esse campo deve ser preenchido!"></asp:RequiredFieldValidator> 
+                                    ErrorMessage="*"></asp:RequiredFieldValidator> 
                     </asp:TableCell>
             </asp:TableRow>     
             
@@ -70,7 +77,7 @@
                     <asp:TableCell> 
                         <asp:TextBox ID="confirmeNovaSenhaTextBox" runat="server" TextMode="Password" Width="150px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="confirmeNovaSenhaRequiredFieldValidator" runat="server" ControlToValidate="confirmeNovaSenhaTextBox" 
-                        ErrorMessage="Esse campo deve ser preenchido!"></asp:RequiredFieldValidator>
+                        ErrorMessage="*"></asp:RequiredFieldValidator>
                     </asp:TableCell>
             </asp:TableRow>
 
