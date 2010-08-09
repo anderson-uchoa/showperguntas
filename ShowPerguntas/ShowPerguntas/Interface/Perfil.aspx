@@ -15,8 +15,9 @@
 <h1 style="text-align:center">Perfil de <%Response.Write(Session["nome"]);%></h1>
     <form id="form1" runat="server">
     <div class="borda" align="center" style="width: 450px;">
-    <asp:Table ID="PerfilJogador" runat="server" HorizontalAlign="Center" Enabled="false" BackColor="#F8F8F8" BorderColor="#F8F8F8" 
-            BorderWidth="15px" Width="450px">
+    <asp:Table ID="PerfilJogador" runat="server" HorizontalAlign="Center" 
+            Enabled="false" BackColor="#F8F8F8" BorderColor="#F8F8F8" 
+            BorderWidth="15px" Width="450px" Height="152px">
             <asp:TableRow ID="Nome">
                 <asp:TableCell HorizontalAlign="Right">Nome: </asp:TableCell>
                     <asp:TableCell> 
@@ -42,10 +43,14 @@
                     </asp:TableCell>
             </asp:TableRow>  
             <asp:TableRow>
-                <asp:TableCell HorizontalAlign="Right">Usuário desde:</asp:TableCell>
-                <asp:TableCell><asp:TextBox ID="UsuarioDesdeTextBox" runat="server" Enabled="false" CssClass="campologin"></asp:TextBox> </asp:TableCell>
+                <asp:TableCell HorizontalAlign="Right">Usuário desde: </asp:TableCell>
+                <asp:TableCell><asp:TextBox ID="UsuarioDesdeTextBox" runat="server" Enabled="false" CssClass="campologin"></asp:TextBox> 
+                <asp:RequiredFieldValidator ID="sóParaAlinhar" runat="server" ControlToValidate="UsuarioDesdeTextBox" 
+                                    ErrorMessage="*"></asp:RequiredFieldValidator> 
+                </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
+            <asp:TableCell></asp:TableCell>
                 <asp:TableCell><asp:CheckBox ID="AlterarSenhaCheckBox" runat="server" Text=" Alterar Senha" TextAlign="Right" Checked="false" AutoPostBack="True" OnCheckedChanged="AlterarSenha_C" Visible="false"/></asp:TableCell>
             </asp:TableRow>
            
@@ -80,14 +85,24 @@
             </asp:TableRow>
 
             <asp:TableRow ID="CompareValidator" Visible="false">
+                <asp:TableCell></asp:TableCell>
                 <asp:TableCell>
                     <asp:CompareValidator ID="comfirmaSenhaIgual" ControlToValidate="novaSenhaTextBox" ControlToCompare="confirmeNovaSenhaTextBox" 
                         ForeColor="red" Text="A senha não corresponde à senha de confirmação!" runat="server"></asp:CompareValidator>
                 </asp:TableCell>
             </asp:TableRow>
             </asp:Table>
-   
-    <asp:Table ID="botoesEditarRemoverVoltar" runat="server" BorderColor="#F8F8F8" BorderWidth="15px" HorizontalAlign="Center" BackColor="#F8F8F8" Visible="true" Width="450px">
+   <asp:Table ID="botoesSalvarCancelar" runat="server" HorizontalAlign="Center" 
+            Visible="false" BorderColor="#F8F8F8" BorderWidth="15px" BackColor="#F8F8F8" 
+            Width="450px" Height="44px">
+        <asp:TableRow>
+            <asp:TableCell HorizontalAlign="Center"><asp:Button ID="SalvarJogador" runat="server" onclick="SalvarJogador_C" Text="Salvar" />
+            <asp:Button ID="Cancelar" runat="server" onclick="Cancelar_C" Text="Cancelar" CausesValidation="false" /></asp:TableCell>
+        </asp:TableRow>
+   </asp:Table>
+    <asp:Table ID="botoesEditarRemoverVoltar" runat="server" BorderColor="#F8F8F8" 
+            BorderWidth="15px" HorizontalAlign="Center" BackColor="#F8F8F8" Visible="true" 
+            Width="450px" Height="41px">
         <asp:TableRow>
             <asp:TableCell HorizontalAlign="Center"><asp:Button ID="Editar" runat="server" onclick="Editar_C" Text="Editar" CausesValidation="false" />
                 <asp:Button ID="RemoverPerfil" runat="server" onclick="RemoverPerfil_C" Text="Remover perfil" CausesValidation="false" />
@@ -95,14 +110,9 @@
             </asp:TableCell>
         </asp:TableRow>
    </asp:Table>
-
-    <asp:Table ID="botoesSalvarCancelar" runat="server" HorizontalAlign="Center" Visible="false" BorderColor="#F8F8F8" BorderWidth="15px" BackColor="#F8F8F8" Width="450px">
-        <asp:TableRow>
-            <asp:TableCell HorizontalAlign="Center"><asp:Button ID="SalvarJogador" runat="server" onclick="SalvarJogador_C" Text="Salvar" />
-            <asp:Button ID="Cancelar" runat="server" onclick="Cancelar_C" Text="Cancelar" CausesValidation="false" /></asp:TableCell>
-        </asp:TableRow>
-   </asp:Table>
-   <asp:Table ID="ConfirmaçãoRemoverPerfil" runat="server" HorizontalAlign="Center" Visible="false" BorderColor="#F8F8F8" BorderWidth="15px" BackColor="#F8F8F8" Width="450px">
+   <asp:Table ID="ConfirmaçãoRemoverPerfil" runat="server" HorizontalAlign="Center" 
+            Visible="false" BorderColor="#F8F8F8" BorderWidth="15px" BackColor="#F8F8F8" 
+            Width="450px" Height="54px">
         <asp:TableRow>
             <asp:TableCell HorizontalAlign="Center"  >Tem certeza que deseja remover seu perfil?</asp:TableCell>
         </asp:TableRow>

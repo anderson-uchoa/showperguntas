@@ -130,6 +130,15 @@ namespace ShowPerguntas.Interface {
         protected global::System.Web.UI.WebControls.TextBox UsuarioDesdeTextBox;
         
         /// <summary>
+        /// sóParaAlinhar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator sóParaAlinhar;
+        
+        /// <summary>
         /// AlterarSenhaCheckBox control.
         /// </summary>
         /// <remarks>
@@ -247,6 +256,33 @@ namespace ShowPerguntas.Interface {
         protected global::System.Web.UI.WebControls.CompareValidator comfirmaSenhaIgual;
         
         /// <summary>
+        /// botoesSalvarCancelar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table botoesSalvarCancelar;
+        
+        /// <summary>
+        /// SalvarJogador control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SalvarJogador;
+        
+        /// <summary>
+        /// Cancelar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Cancelar;
+        
+        /// <summary>
         /// botoesEditarRemoverVoltar control.
         /// </summary>
         /// <remarks>
@@ -281,33 +317,6 @@ namespace ShowPerguntas.Interface {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Voltar;
-        
-        /// <summary>
-        /// botoesSalvarCancelar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table botoesSalvarCancelar;
-        
-        /// <summary>
-        /// SalvarJogador control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SalvarJogador;
-        
-        /// <summary>
-        /// Cancelar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Cancelar;
         
         /// <summary>
         /// ConfirmaçãoRemoverPerfil control.
