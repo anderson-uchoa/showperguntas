@@ -37,13 +37,13 @@
         <asp:TableRow>
             <asp:TableCell>Ainda não é um jogador cadastrado?</asp:TableCell>
             <asp:TableCell>
-                <asp:Button ID="BotaoCadastro" runat="server" Text="Cadastre-se Agora!" OnClick="BotaoCadastroClick" Width="150" /> 
+                <asp:Button ID="BotaoCadastro" runat="server" Text="Cadastre-se agora!" OnClick="BotaoCadastroClick" Width="150" /> 
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell>Quer saber como o Jogo funciona?</asp:TableCell>
             <asp:TableCell>
-                <asp:Button ID="BotaoRegras" runat="server" Text="Consulte as Regras!" OnClick="BotaoRegrasClick" Width="150"/>
+                <asp:Button ID="BotaoRegras" runat="server" Text="Consulte as regras!" OnClick="BotaoRegrasClick" Width="150"/>
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
