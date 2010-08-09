@@ -135,7 +135,8 @@ namespace ShowPerguntas.Negocio
             if (total == 0)
                 total = 1;
             for (i = 0; i < estatisticas.Length; ++i)
-                estatisticas[vetor[i]] = Convert.ToString((p.estatisticas[vetor[i]]/total)*100) + "%";
+                estatisticas[vetor[i]] = String.Format("{0:0.0}", (((float)p.estatisticas[i]) / total) * 100) +"%";
+            
             return estatisticas ;
         }
 
