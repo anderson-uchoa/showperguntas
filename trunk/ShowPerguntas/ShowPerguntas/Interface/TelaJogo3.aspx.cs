@@ -35,7 +35,7 @@ namespace ShowPerguntas.Interface
                         Imagem.ImageUrl = "~/Imagens/Ganhou" + Convert.ToString(numero) + ".jpg";
                         dadosFimDaPartida.Visible = true;
                         ContinuarButton.Visible = true;
-                        posicaoRankingLabel = "";
+                       // posicaoRankingLabel = "";
                     break;
 
                 case Defines.ATIVO:
