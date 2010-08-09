@@ -24,6 +24,11 @@ namespace ShowPerguntas.Interface
             Response.Redirect("~/Interface/GerenciadorJogadores.aspx");
         }
 
+        protected void GerenciadorRanking_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Interface/GerenciadorRanking.aspx");
+        }
+
         protected void Sair_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Interface/logout.aspx");

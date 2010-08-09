@@ -21,7 +21,7 @@
             BorderWidth="15px" HorizontalAlign="Center">
          <asp:TableRow>
    
-                     <asp:TableCell HorizontalAlign="Center">
+                        <asp:TableCell HorizontalAlign="Center">
                 <table width="64" cellspacing="0" cellpadding="0"><tr><td>
                 <asp:ImageButton ID="GerenciarPerguntas" runat="server" onclick="GerenciarPerguntas_Click" ImageUrl="/Imagens/perguntas.png" Width="64" Height="64" AlternateText="Gerenciar perguntas" />
             </td></tr><tr><td style="font-size: 16px; text-align: center;">Perguntas</td></tr></table>
@@ -30,6 +30,11 @@
                 <table width="64" cellspacing="0" cellpadding="0"><tr><td>
                 <asp:ImageButton ID="GerenciarJogadores" runat="server" onclick="GerenciarJogadores_Click" ImageUrl="/Imagens/jogadores.png" Width="64" Height="64" AlternateText="Gerenciar jogadores" />
             </td></tr><tr><td style="font-size: 16px; text-align: center;">Jogadores</td></tr></table>
+            </asp:TableCell>
+                        <asp:TableCell HorizontalAlign="Center">
+                <table width="64" cellspacing="0" cellpadding="0"><tr><td>
+                <asp:ImageButton ID="GerenciarRanking" runat="server" onclick="GerenciadorRanking_Click" ImageUrl="/Imagens/jogadores.png" Width="64" Height="64" AlternateText="Gerenciar ranking" />
+            </td></tr><tr><td style="font-size: 16px; text-align: center;">Ranking</td></tr></table>
             </asp:TableCell>
          </asp:TableRow>
         </asp:Table>

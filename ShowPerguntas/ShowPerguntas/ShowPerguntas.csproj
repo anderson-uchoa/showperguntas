@@ -64,6 +64,7 @@
     <Content Include="Interface\ExibirRanking.aspx" />
     <Content Include="Interface\GerenciadorJogadores.aspx" />
     <Content Include="Interface\GerenciadorPerguntas.aspx" />
+    <Content Include="Interface\GerenciadorRanking.aspx" />
     <Content Include="Interface\Home.aspx" />
     <Content Include="Interface\JogadorMenu.aspx" />
     <Content Include="Interface\ListarJogadores.aspx" />
@@ -148,6 +149,13 @@
     </Compile>
     <Compile Include="Interface\GerenciadorPerguntas.aspx.designer.cs">
       <DependentUpon>GerenciadorPerguntas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\GerenciadorRanking.aspx.cs">
+      <DependentUpon>GerenciadorRanking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\GerenciadorRanking.aspx.designer.cs">
+      <DependentUpon>GerenciadorRanking.aspx</DependentUpon>
     </Compile>
     <Compile Include="Interface\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

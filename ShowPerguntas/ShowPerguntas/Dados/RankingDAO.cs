@@ -125,5 +125,27 @@ namespace ShowPerguntas.Dados
                 //throw;
             }
         }
+
+        public Boolean ZerarRanking()
+        {
+            try
+            {
+                using (var _context = new Show_de_PerguntasEntities())
+                {
+                    List<Ranking> ranking = _context.Rankings.ToList();
+                    foreach (Ranking r in ranking)
+                    {
+                        _context.DeleteObject(r);
+                        _context.SaveChanges();
+                    }
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                //throw;
+            }
+        }
     }
 }

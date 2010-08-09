@@ -111,6 +111,19 @@ namespace ShowPerguntas.Negocio
             }
         }
 
+        public Boolean ZerarRanking()
+        {
+            try
+            {
+                return new RankingDAO().ZerarRanking();
+            }
+            catch (Exception)
+            {
+                return false;
+                //throw;
+            }
+        }
+
         #endregion
     }
 }
