@@ -18,5 +18,20 @@ namespace ShowPerguntas.Interface
         {
             Response.Redirect("~/Interface/AdministradorMenu.aspx");
         }
+
+        protected void AdicionarPergunta_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Interface/AdicionarPergunta.aspx");
+        }
+
+        protected void ListarPerguntas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Interface/ListarPerguntas.aspx");
+        }
+
+        protected void Sair_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Interface/logout.aspx");
+        }
     }
 }

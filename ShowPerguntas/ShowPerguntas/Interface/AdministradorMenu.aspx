@@ -9,12 +9,28 @@
 </head>
 <body>
     <form id="Administrador" runat="server">
-    Ola administrador! <a href="logout.aspx">Sair</a>&nbsp;
-        <div>            
-            <asp:Menu ID="Menu1" runat="server" DataSourceID="ShowPerguntasSiteMap" MaximumDynamicDisplayLevels="1" >
-            </asp:Menu>
-            <asp:SiteMapDataSource ID="ShowPerguntasSiteMap" runat="server" StartFromCurrentNode="true"/>
-        </div>
+    <div> 
+    Ola administrador!
+    </div>
+    <div>
+        <asp:Table ID="Administrador_Menu" runat="server">
+         <asp:TableRow>
+            <asp:TableCell>
+                <asp:Button ID="GerenciarPerguntas" runat="server" Text="Gerenciar Perguntas" OnClick="GerenciarPerguntas_Click"/>
+            </asp:TableCell>
+         </asp:TableRow>
+         <asp:TableRow>
+            <asp:TableCell>
+                <asp:Button ID="GerenciarJogadores" runat="server" Text="Gerenciar Jogadores" OnClick="GerenciarJogadores_Click"/>                
+            </asp:TableCell>
+         </asp:TableRow>
+         <asp:TableRow>
+            <asp:TableCell>
+                <asp:Button ID="Sair" runat="server" Text="Sair" OnClick="Sair_Click"/>             
+            </asp:TableCell>
+         </asp:TableRow>
+        </asp:Table>
+    </div>
     </form>
 </body>
 </html>

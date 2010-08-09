@@ -14,11 +14,19 @@ namespace ShowPerguntas.Interface
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void GerenciarPerguntas_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Interface/GerenciadorPerguntas.aspx");
         }
 
+        protected void GerenciarJogadores_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Interface/GerenciadorJogadores.aspx");
+        }
 
+        protected void Sair_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Interface/logout.aspx");
+        }
     }
 }

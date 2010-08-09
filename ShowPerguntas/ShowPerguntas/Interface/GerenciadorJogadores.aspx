@@ -9,14 +9,22 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:Menu ID="Menu1" runat="server" DataSourceID="ShowPerguntasSiteMap" 
-            MaximumDynamicDisplayLevels="1">
-        </asp:Menu>
-        <asp:SiteMapDataSource ID="ShowPerguntasSiteMap" runat="server" 
-            StartFromCurrentNode="true" />
-    </div>
-    <div>
-        <asp:Button ID="buttoVoltar" runat="server" OnClick="Voltar" Text="Voltar" />
+        <asp:Table ID="Gerenciar_Jogadores" runat="server">
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Button ID="buttonListar" runat="server" Text="Listar Jogadores" 
+                        onclick="ListarJogadores_Click" />
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Button ID="buttonVoltar" runat="server" OnClick="Voltar" Text="Voltar" />
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Button ID="buttonSair" runat="server" Text="Sair" onclick="Sair_Click" />
+                </asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>        
     </div>
     </form>
 </body>
