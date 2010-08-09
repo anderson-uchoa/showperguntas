@@ -50,9 +50,10 @@
     </asp:Table>
     
    
-    <asp:Table runat="server" HorizontalAlign="Center" Height="81px">
+    <asp:Table runat="server" HorizontalAlign="Center" BackColor="#F8F8F8" BorderColor="#F8F8F8" 
+            BorderWidth="15px" Width="450">
     <asp:TableRow>
-        <asp:TableCell>
+        <asp:TableCell HorizontalAlign="Center">
         <asp:Button ID="ContinuarB" runat="server" onclick="ContinuarResp_Click" Text="Continuar" />
         <asp:Button ID="PararB" runat="server" Text="Parar" onclick="Parar_Click" />
         </asp:TableCell>
