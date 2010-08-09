@@ -69,6 +69,7 @@ namespace ShowPerguntas.Interface
 
         protected void Continuar_Click(object sender, EventArgs e)
         {
+            Session["decidiuParar"] = null;
             Response.Redirect("~/Interface/JogadorMenu.aspx");
         }
 
