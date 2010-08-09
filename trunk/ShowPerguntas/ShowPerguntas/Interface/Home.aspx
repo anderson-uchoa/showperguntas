@@ -9,22 +9,25 @@
 </head>
 <body>
 <br />
+<div style="text-align: center;">
 <asp:Image ID="Logo" runat="server" />
 <form id="home" runat="server">
     <br />
-    <div class="borda" align="center">
+    <div class="borda" align="center" style="width: 250px;">
         <asp:Table ID="TableLogin" runat="server" HorizontalAlign="Center" 
             Width="250px" Height="150px" BackColor="#F8F8F8">
-            <asp:TableRow>
+            <asp:TableRow HorizontalAlign="Center">
                 <asp:TableCell VerticalAlign="Middle"  HorizontalAlign="Center" >
                     <asp:Login ID="Login" runat="server" LoginButtonText="Entrar"
                         OnAuthenticate="Login_Authenticate" UserNameLabelText="Login: " 
                         PasswordLabelText="Senha: " DisplayRememberMe="false" 
                         FailureText="Login ou senha incorretos!" 
-                        TitleText="Acesse sua conta!" Width="220px" TitleTextStyle-BorderStyle="NotSet" Orientation="Vertical" LoginButtonStyle-CssClass="botao" TextBoxStyle-CssClass="campo">
-                        <TextBoxStyle Width="130px" />
-                    </asp:Login>
-                </asp:TableCell>
+                        TitleText="Acesse sua conta!" Width="220px" TitleTextStyle-BorderStyle="NotSet" Orientation="Vertical" TextBoxStyle-CssClass="campologin" TitleTextStyle-Wrap="True">
+<TextBoxStyle Width="130px" />
+                    
+</asp:Login>
+                
+</asp:TableCell>
             </asp:TableRow>
         </asp:Table>
     </div>
@@ -45,6 +48,6 @@
         </asp:TableRow>
     </asp:Table>
 </form>       
-     
+</div>
 </body>
 </html>
