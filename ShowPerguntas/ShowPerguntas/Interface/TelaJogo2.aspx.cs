@@ -13,13 +13,13 @@ namespace ShowPerguntas.Interface
     {
         #region Atributos
 
+
         public double seconds;
         public String[] perguntaAtr;
         public Partida partida;
         Label[] estat;
         ListItem[] alternativa;
         public String[] estatisticas;
-        DateTime tempo;
         int cronometro;
 
         #endregion
@@ -30,11 +30,10 @@ namespace ShowPerguntas.Interface
         {
             verificarUsuario();
             partida = (Partida) Session["partida"];
-            seconds = (GetEndTime() - GetStartTime()).TotalSeconds;
+            if(!Page.IsPostBack)
+                seconds = (GetEndTime() - GetStartTime()).TotalSeconds;
+            
             cronometro = partida.tempo;
-            ContadorL.Text = cronometro.ToString();
-            tempo = DateTime.Now;
-            tempo.AddSeconds(partida.tempo);
             perguntaAtr = partida.colocarPergunta();
 
             MostrarEstatisticasB.Visible = (new Ajuda()).ajudasRestantes(partida, Defines.ESTAT);
@@ -131,23 +130,6 @@ namespace ShowPerguntas.Interface
             auxiliarTable.Visible = false;
         }
 
-        protected void Timer1_Tick(object sender, EventArgs e)
-        {
-            if(tempo.CompareTo(DateTime.Now) > 0)
-            {
-                ContadorL.Text = "ACABOU!";
-                partida.tempoEsgotado();
-                Response.Redirect("~/Interface/TelaJogo3");
-                
-
-            }
-            else
-            {
-                cronometro--;
-                ContadorL.Text = cronometro.ToString();
-            }
-        }
-
         #endregion
 
         #region Metodos
@@ -161,6 +143,12 @@ namespace ShowPerguntas.Interface
             return DateTime.Now.AddSeconds(partida.tempo);
         }
 
+        public void tempoExpirou()
+        {
+            partida.tempoEsgotado();
+            Response.Redirect("~/Interface/TelaJogo3.aspx");
+        }
+        
         public void verificarUsuario()
         {
             String nome = (String)Session["nome"];

@@ -15,30 +15,25 @@
 </head>
 <body style="height: 271px">
     <form id="form1" runat="server">
-    <div>
-        <asp:ScriptManager ID="ScriptManager1" runat="server" />
-        <asp:Timer runat="server" id="Timer1" interval="1000" ontick="Timer1_Tick" />
-        <asp:UpdatePanel runat="server" id="TimePanel" UpdateMode="Always">
-            <Triggers>
-                <asp:AsyncPostBackTrigger controlid="Timer1" eventname="Tick" />
-            </Triggers>
-            <ContentTemplate>
-                <asp:Label runat="server" id="ContadorL" />
-            </ContentTemplate>
-        </asp:UpdatePanel>
+    <div>    
+        
 
-    
-        <div id="timelabel"></div>
-        <script type="text/javascript">
+    <asp:Table ID="RodadaTable" runat="server" HorizontalAlign="Center" 
+            BorderStyle="Solid" Width="511px">
+            <asp:TableRow>
+                <asp:TableCell BorderStyle="Solid" Width="280px" Height="80" VerticalAlign="Top" HorizontalAlign="Left"><asp:Label ID="enunciado" runat="server" Text="Label"></asp:Label></asp:TableCell>
+                <asp:TableCell Width="155px"><div id="timelabel"></div>
+                <script type="text/javascript">
 
 
         var leave =<%=seconds %>;
 
         CounterTimer();
         var interv=setInterval(CounterTimer,1000);
+        //var interv2=setInterval(TempoAcabou,1000);
 
         function CounterTimer()
-        {
+        {         
             var day = Math.floor(leave / ( 60 * 60 * 24))
             var hour = Math.floor(leave / 3600) - (day * 24)
             var minute = Math.floor(leave / 60) - (day * 24 *60) - (hour * 60)
@@ -48,20 +43,39 @@
             minute=minute<10 ? "0" + minute : minute;
             second=second<10 ? "0" + second : second;
 
-            var remain=second + "segundo(s)";
+            var remain=second + " segundo(s)";
             leave=leave-1;
 
-            document.getElementById("timelabel").innerText=remain;
-
+            document.getElementById("timelabel").innerHTML=remain;
+            
         }
+        /*
+        function TempoAcabou()
+        {
+            if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                }
+            else
+            {// code for IE6, IE5
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function()
+            {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("POST","TelaJogo2.aspx",true);
+            xmlhttp.setRequestHeader("Content-type","Sistema de Perguntas/Nao sei");
+            xmlhttp.send("status=true");
+        }   */
+        
 
         </script>
-
-    <asp:Table ID="RodadaTable" runat="server" HorizontalAlign="Center" 
-            BorderStyle="Solid" Width="511px">
-            <asp:TableRow>
-                <asp:TableCell BorderStyle="Solid" Width="280px" Height="80" VerticalAlign="Top" HorizontalAlign="Left"><asp:Label ID="enunciado" runat="server" Text="Label"></asp:Label></asp:TableCell>
-                <asp:TableCell Width="155px">TIMER</asp:TableCell>
+                
+                </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell></asp:TableCell>
