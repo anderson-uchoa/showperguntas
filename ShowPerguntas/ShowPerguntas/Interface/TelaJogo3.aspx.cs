@@ -22,49 +22,41 @@ namespace ShowPerguntas.Interface
         protected void Page_Load(object sender, EventArgs e)
         {
             Random rand = new Random();
-
+            int numero;
             verificarUsuario();
 
             partida = (Partida) Session["partida"];
 
             pontuacaoFinalLabel.Text = Convert.ToString(partida.pontuacao);
 
-            if (Session["decidiuParar"] == null)
-            {
-
-                if (partida.estaAtivo())
-                {
-                    if (partida.ganhouPartida())//GANHOU
-                    {
-                        int numero = rand.Next(1, 1);
+            switch(partida.estadoPartida()){
+                case Defines.GANHOU:
+                        numero = rand.Next(1, 1);
                         Imagem.ImageUrl = "~/Imagens/Ganhou" + Convert.ToString(numero) + ".jpg";
                         dadosFimDaPartida.Visible = true;
                         ContinuarButton.Visible = true;
-                    }
-                    else//não ganhou mas ACERTOU
-                    {
-                        int numero = rand.Next(1, 1);
+                    break;
+
+                case Defines.ATIVO:
+                        numero = rand.Next(1, 1);
                         Imagem.ImageUrl = "~/Imagens/Acertou" + Convert.ToString(numero) + ".jpg";
                         Response.AddHeader("REFRESH", "1;URL=TelaJogo1.aspx");
-                    }
-                }
-                else //ERROU
-                {
-                    int numero = rand.Next(1, 6);
+                    break;
+
+                case Defines.PERDEU:
+                    numero = rand.Next(1, 6);
                     Imagem.ImageUrl = "~/Imagens/GameOver" + Convert.ToString(numero) + ".jpg";
                     dadosFimDaPartida.Visible = true;
                     ContinuarButton.Visible = true;
-                }
+                break;
+            
+                case Defines.PAROU:
+                    numero = rand.Next(1, 1);
+                    Imagem.ImageUrl = "~/Imagens/parar" + Convert.ToString(numero) + ".jpg";
+                    dadosFimDaPartida.Visible = true;
+                    ContinuarButton.Visible = true;
+                break;
             }
-            else if (Session["decidiuParar"].Equals("parou"))
-            {
-                //pediu pra parar
-                int numero = rand.Next(1, 1);
-                Imagem.ImageUrl = "~/Imagens/parar" + Convert.ToString(numero) + ".jpg";
-                dadosFimDaPartida.Visible = true;
-                ContinuarButton.Visible = true;
-            }
-
         }
 
         protected void Continuar_Click(object sender, EventArgs e)

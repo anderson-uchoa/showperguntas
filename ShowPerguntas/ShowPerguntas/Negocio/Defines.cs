@@ -18,5 +18,10 @@ namespace ShowPerguntas.Negocio
         public const int PULAR = 0;
         public const int ESTAT = 1;
         public const int REMOV = 2;
+
+        public const int ATIVO = 0;
+        public const int GANHOU = 1;
+        public const int PERDEU = 2;
+        public const int PAROU = 3;
     }
 }

@@ -10,6 +10,7 @@ namespace ShowPerguntas.Negocio
     {
         #region Atributos
 
+        protected bool perdeu;
         protected bool ganhou;
         protected bool status;
         protected int IdUsuario;
@@ -32,6 +33,7 @@ namespace ShowPerguntas.Negocio
             int i;
             status = true;
             ganhou = false;
+            perdeu = false;
             this.dificuldade = dificuldade;
             IdPerguntas = new int[Defines.QNTPERGUNTAS];
             pontuacao = 0;
@@ -61,6 +63,7 @@ namespace ShowPerguntas.Negocio
 
         public String numeroRodada()
         {
+            
             int total, parcial = 0;
             total = numeroMaxPerguntas;
             parcial = qntPerguntas[Defines.FACIL] + qntPerguntas[Defines.MEDIO] + qntPerguntas[Defines.DIFICIL];
@@ -105,13 +108,13 @@ namespace ShowPerguntas.Negocio
             }
         }
 
-        public void pararPartida(bool tempoacabou)
+        public void tempoEsgotado()
+        {
+            perder();
+        }
+        public void pararPartida()
         {
             status = false;
-            if (tempoacabou)
-                perder();
-            else
-                new Ranking(IdUsuario, mostrarPontuacao());
         }
 
         public String[] colocarPergunta() 
@@ -131,11 +134,18 @@ namespace ShowPerguntas.Negocio
             else
                 perder();
         }
-
+        protected void parar()
+        {
+            status = false;
+            ganhou = false;
+            perdeu = false;
+            new Ranking(IdUsuario, mostrarPontuacao());
+        }
         protected void perder()
         {
             status = false;
             ganhou = false;
+            perdeu = true;
             pontuacao = pontuacao / 2;
             new Ranking(IdUsuario, mostrarPontuacao());
         }
@@ -144,20 +154,29 @@ namespace ShowPerguntas.Negocio
         {
             status = false;
             ganhou = true;
+            perdeu = false;
             pontuacao += pontuacaoNivel[dificuldade];
             new Ranking(IdUsuario, mostrarPontuacao());
         }
 
+        public int estadoPartida()
+        {
+            if (status == true)
+                return Defines.ATIVO;
+            else if (perdeu == true)
+                return Defines.PERDEU;
+            else if (ganhou == true)
+                return Defines.GANHOU;
+            else return Defines.PAROU;
+
+
+        }
         #endregion
 
         #region GettersSetters
 
         public void colocarIdUsuario(int id) { IdUsuario = id; }
-        public bool ganhouPartida() { return ganhou; }
-        public int mostrarPontuacao() {
-            return pontuacao; 
-        }
-        public bool estaAtivo() { return status; }
+        public int mostrarPontuacao() { return pontuacao; }
 
         #endregion
     }
