@@ -92,8 +92,15 @@ namespace ShowPerguntas.Interface
 
         protected void confirmarRemoverPerfil_C(object sender, EventArgs e)
         {
-            //Remove Jogador
-            //TODO
+            int id = Convert.ToInt32(Session["id"]);
+            Jogador j = new Jogador();
+            j.IdUsuario = id;
+            Ranking r = new Ranking();
+            r.IdUsuario = id;
+            if (r.RemoverJogadorRanking() && j.RemoverJogador())
+                Response.Redirect("~/Interface/Home.aspx");
+            else
+                Response.Redirect("~/Interface/JogadorMenu.aspx");
         }
         protected void cancelaConfirmarRemoverPerfil_C(object sender, EventArgs e)
         {
