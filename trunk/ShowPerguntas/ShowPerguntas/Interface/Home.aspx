@@ -41,7 +41,7 @@
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
-            <asp:TableCell>Quer saber como o Jogo funciona?</asp:TableCell>
+            <asp:TableCell>Quer saber como o jogo funciona?</asp:TableCell>
             <asp:TableCell>
                 <asp:Button ID="BotaoRegras" runat="server" Text="Consulte as regras!" OnClick="BotaoRegrasClick" Width="150"/>
             </asp:TableCell>
