@@ -36,5 +36,10 @@ namespace ShowPerguntas.Interface
             Response.Redirect("~/Interface/Perfil.aspx");
         }
 
+        protected void Sair_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Interface/logout.aspx");
+        }
+
     }
 }
