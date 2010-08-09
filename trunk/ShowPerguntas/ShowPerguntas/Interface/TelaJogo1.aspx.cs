@@ -28,21 +28,6 @@ namespace ShowPerguntas.Interface
             setarValoresCampos();
         }
 
-        protected void NovoJogo_Click(object sender, EventArgs e)
-        {
-            // Caso o jogador clique em "Novo Jogo", uma nova partida é carregada
-            if (escolha.Equals("Fácil"))
-                partida.novaPartida(0);
-            else if (escolha.Equals("Médio"))
-                partida.novaPartida(1);
-            else if (escolha.Equals("Difícil"))
-                partida.novaPartida(2);
-            else
-                Response.Redirect("~/Interface/Home.aspx");
-            partida.colocarIdUsuario(Convert.ToInt32(Session["Id"]));
-            Response.Redirect("~/Interface/TelaJogo2.aspx");
-        }
-
         protected void ContinuarResp_Click(object sender, EventArgs e)
         {
             partida.novaRodada();
@@ -63,9 +48,23 @@ namespace ShowPerguntas.Interface
             }
         }
 
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void facil_click(object sender, EventArgs e)
         {
-            escolha = DropDownList1.SelectedItem.Text;
+            partida.novaPartida(Defines.FACIL);
+            partida.colocarIdUsuario(Convert.ToInt32(Session["Id"]));
+            Response.Redirect("~/Interface/TelaJogo2.aspx");
+        }
+        protected void medio_click(object sender, EventArgs e) 
+        {
+            partida.novaPartida(Defines.MEDIO);
+            partida.colocarIdUsuario(Convert.ToInt32(Session["Id"]));
+            Response.Redirect("~/Interface/TelaJogo2.aspx");
+        }
+        protected void dificil_click(object sender, EventArgs e) 
+        {
+            partida.novaPartida(Defines.DIFICIL);
+            partida.colocarIdUsuario(Convert.ToInt32(Session["Id"]));
+            Response.Redirect("~/Interface/TelaJogo2.aspx");
         }
 
         #endregion
@@ -77,24 +76,25 @@ namespace ShowPerguntas.Interface
             Random rand = new Random();
             ContinuarB.Text = continuar[rand.Next(continuar.Length)];
             PararB.Text = parar[rand.Next(parar.Length)];
-            DropDownList1.Items.Add("Fácil");
-            DropDownList1.Items.Add("Médio");
-            DropDownList1.Items.Add("Difícil");
             Label1.Text = "Escolha o nível de dificuldade";
             
             if (partida.estadoPartida() == Defines.ATIVO)
             {
-                Dificuldade.Visible = false;
+                Facil.Visible = false;
+                Medio.Visible = false;
+                Dificil.Visible = false;
                 PontuacaoL.Text = "Você já ganhou: D$ " + (partida.mostrarPontuacao()).ToString();
                 RodadaL.Text = " Rodada :" + partida.numeroRodada();
                 escolhaDificuldadeTable.Visible = false;
                 PontuacaoTable.Visible = true;
-                NovoJogoB.Visible = false;
                 ContinuarB.Visible = true;
                 PararB.Text = "Parar";
             }
             else
             {
+                Facil.Visible = true;
+                Medio.Visible = true;
+                Dificil.Visible = true;
                 PontuacaoTable.Visible = false;
                 escolhaDificuldadeTable.Visible = true;
                 ContinuarB.Visible = false;
