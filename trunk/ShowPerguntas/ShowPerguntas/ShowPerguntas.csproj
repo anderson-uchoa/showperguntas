@@ -73,7 +73,6 @@
     <Content Include="Interface\TelaJogo1.aspx" />
     <Content Include="Interface\TelaJogo2.aspx" />
     <Content Include="Interface\TelaJogo3.aspx" />
-    <Content Include="Interface\Teste.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -212,13 +211,6 @@
     </Compile>
     <Compile Include="Interface\TelaJogo3.aspx.designer.cs">
       <DependentUpon>TelaJogo3.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Interface\Teste.aspx.cs">
-      <DependentUpon>Teste.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Interface\Teste.aspx.designer.cs">
-      <DependentUpon>Teste.aspx</DependentUpon>
     </Compile>
     <Compile Include="Negocio\Administrador.cs" />
     <Compile Include="Negocio\Ajuda.cs" />

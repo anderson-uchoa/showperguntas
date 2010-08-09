@@ -24,6 +24,7 @@ namespace ShowPerguntas.Negocio
         public int[] IdPerguntas;
         public int[] qntPerguntas;
         protected int numeroMaxPerguntas = 10;
+        public int posicao = -1;
 
         #endregion
 
@@ -114,7 +115,8 @@ namespace ShowPerguntas.Negocio
         }
         public void pararPartida()
         {
-            status = false;
+            //status = false;
+            parar();
         }
 
         public String[] colocarPergunta() 
@@ -139,7 +141,8 @@ namespace ShowPerguntas.Negocio
             status = false;
             ganhou = false;
             perdeu = false;
-            new Ranking(IdUsuario, mostrarPontuacao());
+            Ranking r = new Ranking(IdUsuario, mostrarPontuacao());
+            posicao = r.BuscarPosicaoJogador();
         }
         protected void perder()
         {
@@ -147,7 +150,8 @@ namespace ShowPerguntas.Negocio
             ganhou = false;
             perdeu = true;
             pontuacao = pontuacao / 2;
-            new Ranking(IdUsuario, mostrarPontuacao());
+            Ranking r = new Ranking(IdUsuario, mostrarPontuacao());
+            posicao = r.BuscarPosicaoJogador();
         }
 
         protected void ganhar()
@@ -156,7 +160,8 @@ namespace ShowPerguntas.Negocio
             ganhou = true;
             perdeu = false;
             pontuacao += pontuacaoNivel[dificuldade];
-            new Ranking(IdUsuario, mostrarPontuacao());
+            Ranking r = new Ranking(IdUsuario, mostrarPontuacao());
+            posicao = r.BuscarPosicaoJogador();
         }
 
         public int estadoPartida()
