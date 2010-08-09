@@ -54,7 +54,7 @@
         BackColor="#F8F8F8" BorderColor="#F8F8F8" 
             BorderWidth="15px">
         <asp:TableRow >
-                    <asp:TableCell HorizontalAlign="Left">Olá, <b><%Response.Write(Session["nome"]);%></b>! Divirta-se no jogo!</asp:TableCell>
+                    <asp:TableCell HorizontalAlign="Left">Olá, <b><%Response.Write(Session["nome"]);%></b>! Divirta-se com o jogo!</asp:TableCell>
                     <asp:TableCell HorizontalAlign="Right"><asp:Button runat="server" Text="Sair" OnClick="Sair_Click"/></asp:TableCell>
         </asp:TableRow>
     </asp:Table>
