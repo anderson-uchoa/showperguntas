@@ -20,7 +20,7 @@
             <asp:TableRow ID="Nome" >
                 <asp:TableCell Width="145px">Nome: </asp:TableCell>
                     <asp:TableCell> 
-                        <asp:TextBox ID="nomeTextBox" runat="server" Width="150px" CssClass="campo"></asp:TextBox> 
+                        <asp:TextBox ID="nomeTextBox" runat="server" CssClass="campo"></asp:TextBox> 
                         <asp:RequiredFieldValidator ID="NomeRequiredFieldValidator" runat="server" ControlToValidate="nomeTextBox" 
                                     ErrorMessage="*"></asp:RequiredFieldValidator> 
                     </asp:TableCell>
@@ -28,7 +28,7 @@
             <asp:TableRow ID="Sobrenome">
                 <asp:TableCell>Sobrenome: </asp:TableCell>
                     <asp:TableCell> 
-                        <asp:TextBox ID="sobrenomeTextBox" runat="server" Width="150px" CssClass="campo"></asp:TextBox>
+                        <asp:TextBox ID="sobrenomeTextBox" runat="server" CssClass="campo"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="SobreNomeRequiredFieldValidator" runat="server" ControlToValidate="sobrenomeTextBox" 
                                     ErrorMessage="*"></asp:RequiredFieldValidator> 
                     </asp:TableCell>
@@ -36,14 +36,14 @@
             <asp:TableRow ID="Login" >
                 <asp:TableCell Width="145px">Login: </asp:TableCell>
                     <asp:TableCell> 
-                        <asp:TextBox ID="loginTextBox" runat="server" Enabled="false" ForeColor="Black" Width="150px" CssClass="campologin"></asp:TextBox>
+                        <asp:TextBox ID="loginTextBox" runat="server" Enabled="false" CssClass="campologin"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="LoginRequiredFieldValidator" runat="server" ControlToValidate="loginTextBox" 
                                     ErrorMessage="*"></asp:RequiredFieldValidator> 
                     </asp:TableCell>
             </asp:TableRow>  
             <asp:TableRow>
                 <asp:TableCell Width="145px" CssClass="campologin">Usuário desde:</asp:TableCell>
-                <asp:TableCell><asp:TextBox ID="UsuarioDesdeTextBox" runat="server" Width="150px"></asp:TextBox> </asp:TableCell>
+                <asp:TableCell><asp:TextBox ID="UsuarioDesdeTextBox" runat="server" CssClass="campologin"></asp:TextBox> </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell Width="145px"></asp:TableCell>
@@ -52,7 +52,7 @@
            
             <asp:TableRow ID="senhaAntiga" Visible="false">
                 <asp:TableCell Width="145px">Senha antiga: </asp:TableCell>
-                <asp:TableCell><asp:TextBox ID="senhaAntigaTextBox" runat="server" Width="150px"></asp:TextBox>
+                <asp:TableCell><asp:TextBox ID="senhaAntigaTextBox" runat="server" CssClass="campologin"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="senhaAntigaRequiredFieldValidator" runat="server" ControlToValidate="senhaAntigaTextBox" 
                         ErrorMessage="*"></asp:RequiredFieldValidator> 
                 </asp:TableCell>    
@@ -66,7 +66,7 @@
             <asp:TableRow ID="NovaSenha" Visible="false">
                 <asp:TableCell Width="145px">Nova Senha: </asp:TableCell>
                     <asp:TableCell> 
-                        <asp:TextBox ID="novaSenhaTextBox" runat="server" TextMode="Password" Width="150px"></asp:TextBox>
+                        <asp:TextBox ID="novaSenhaTextBox" runat="server" TextMode="Password" CssClass="campologin"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="novaSenhaRequiredFieldValidator" runat="server" ControlToValidate="novaSenhaTextBox" 
                                     ErrorMessage="*"></asp:RequiredFieldValidator> 
                     </asp:TableCell>
@@ -75,7 +75,7 @@
             <asp:TableRow ID="ConfirmeNovaSenha" Visible="false">
                 <asp:TableCell Width="145px">Confirme Nova Senha: </asp:TableCell>
                     <asp:TableCell> 
-                        <asp:TextBox ID="confirmeNovaSenhaTextBox" runat="server" TextMode="Password" Width="150px"></asp:TextBox>
+                        <asp:TextBox ID="confirmeNovaSenhaTextBox" runat="server" TextMode="Password" CssClass="campologin"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="confirmeNovaSenhaRequiredFieldValidator" runat="server" ControlToValidate="confirmeNovaSenhaTextBox" 
                         ErrorMessage="*"></asp:RequiredFieldValidator>
                     </asp:TableCell>
@@ -112,7 +112,7 @@
             <asp:TableCell>Tem certeza que deseja remover seu perfil?</asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
-            <asp:TableCell>Essa ação não poderá ser desfeita.</asp:TableCell> 
+            <asp:TableCell>Essa ação não poderá ser desfeita!</asp:TableCell> 
         </asp:TableRow>
         <asp:TableRow HorizontalAlign="Center">
             <asp:TableCell>
