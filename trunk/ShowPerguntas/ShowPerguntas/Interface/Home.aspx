@@ -13,9 +13,9 @@
 <asp:Image ID="Logo" runat="server" />
 <form id="home" runat="server">
     <br />
-    <div class="borda" align="center" style="width: 250px;">
+    <div class="borda" align="center" style="width: 270px;">
         <asp:Table ID="TableLogin" runat="server" HorizontalAlign="Center" 
-            Width="250px" Height="150px" BackColor="#F8F8F8">
+            Width="270px" Height="150px" BackColor="#F8F8F8">
             <asp:TableRow HorizontalAlign="Center">
                 <asp:TableCell VerticalAlign="Middle"  HorizontalAlign="Center" >
                     <asp:Login ID="Login" runat="server" LoginButtonText="Entrar"
