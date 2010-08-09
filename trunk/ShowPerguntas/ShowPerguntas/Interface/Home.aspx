@@ -22,12 +22,11 @@
                         OnAuthenticate="Login_Authenticate" UserNameLabelText="Login: " 
                         PasswordLabelText="Senha: " DisplayRememberMe="false" 
                         FailureText="Login ou senha incorretos!" 
-                        TitleText="Acesse sua conta!" Width="220px" TitleTextStyle-BorderStyle="NotSet" Orientation="Vertical" TextBoxStyle-CssClass="campologin" TitleTextStyle-Wrap="True">
-<TextBoxStyle Width="130px" />
-                    
-</asp:Login>
-                
-</asp:TableCell>
+                        TitleText="Acesse sua conta!" Width="220px" TitleTextStyle-BorderStyle="NotSet" 
+                        Orientation="Vertical" TextBoxStyle-CssClass="campologin" TitleTextStyle-Wrap="True">
+                        <TextBoxStyle Width="130px" />
+                    </asp:Login>
+                </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
     </div>
@@ -46,7 +45,7 @@
                 <asp:Button ID="BotaoRegras" runat="server" Text="Consulte as regras!" OnClick="BotaoRegrasClick" Width="150"/>
             </asp:TableCell>
         </asp:TableRow>
-    </asp:Table>
+    </asp:Table>    
 </form>       
 </div>
 </body>

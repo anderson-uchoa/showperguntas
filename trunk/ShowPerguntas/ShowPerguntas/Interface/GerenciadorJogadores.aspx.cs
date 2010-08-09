@@ -18,5 +18,15 @@ namespace ShowPerguntas.Interface
         {
             Response.Redirect("~/Interface/AdministradorMenu.aspx");
         }
+
+        protected void ListarJogadores_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Interface/ListarJogadores.aspx");
+        }
+
+        protected void Sair_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Interface/logout.aspx");
+        }
     }
 }

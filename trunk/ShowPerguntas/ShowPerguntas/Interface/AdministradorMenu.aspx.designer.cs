@@ -22,21 +22,39 @@ namespace ShowPerguntas.Interface {
         protected global::System.Web.UI.HtmlControls.HtmlForm Administrador;
         
         /// <summary>
-        /// Menu1 control.
+        /// Administrador_Menu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu Menu1;
+        protected global::System.Web.UI.WebControls.Table Administrador_Menu;
         
         /// <summary>
-        /// ShowPerguntasSiteMap control.
+        /// GerenciarPerguntas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SiteMapDataSource ShowPerguntasSiteMap;
+        protected global::System.Web.UI.WebControls.Button GerenciarPerguntas;
+        
+        /// <summary>
+        /// GerenciarJogadores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button GerenciarJogadores;
+        
+        /// <summary>
+        /// Sair control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Sair;
     }
 }
