@@ -57,9 +57,9 @@
    
     <asp:Table runat="server" HorizontalAlign="Center" Height="81px">
     <asp:TableRow>
-        <asp:TableCell><asp:Button ID="NovoJogoB" runat="server" Text="Novo Jogo" onclick="NovoJogo_Click" />
-        <asp:Button ID="ContinuarB" runat="server" onclick="ContinuarResp_Click" Text="Silvio, Proxima Pergunta" />
-        <asp:Button ID="PararB" runat="server" Text="Nah... Sou maricas" onclick="Parar_Click" /></asp:TableCell>
+        <asp:TableCell><asp:Button ID="NovoJogoB" runat="server" Text="Novo jogo" onclick="NovoJogo_Click" />
+        <asp:Button ID="ContinuarB" runat="server" onclick="ContinuarResp_Click" Text="Continuar" />
+        <asp:Button ID="PararB" runat="server" Text="Parar" onclick="Parar_Click" /></asp:TableCell>
     </asp:TableRow>
     </asp:Table>
     </div>
