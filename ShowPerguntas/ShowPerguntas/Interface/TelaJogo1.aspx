@@ -26,19 +26,19 @@
 
                     <asp:TableCell HorizontalAlign="Center">
                 <table width="64" cellspacing="0" cellpadding="0"><tr><td>
-                <asp:ImageButton ID="Facil" runat="server" onclick="Facil_Click" ImageUrl="/Imagens/facil.png" Width="64" Height="64" AlternateText="Jogar" />
+                <asp:ImageButton ID="Facil" runat="server" ImageUrl="/Imagens/facil.png" Width="64" Height="64" AlternateText="Jogar" />
             </td></tr><tr><td style="font-size: 16px; text-align: center;">Fácil</td></tr></table>
             </asp:TableCell>
 
                     <asp:TableCell HorizontalAlign="Center">
                 <table width="64" cellspacing="0" cellpadding="0"><tr><td>
-                <asp:ImageButton ID="Medio" runat="server" onclick="Medio_Click" ImageUrl="/Imagens/medio.png" Width="64" Height="64" AlternateText="Jogar" />
+                <asp:ImageButton ID="Medio" runat="server"  ImageUrl="/Imagens/medio.png" Width="64" Height="64" AlternateText="Jogar" />
             </td></tr><tr><td style="font-size: 16px; text-align: center;">Médio</td></tr></table>
             </asp:TableCell>
 
                     <asp:TableCell HorizontalAlign="Center">
                 <table width="64" cellspacing="0" cellpadding="0"><tr><td>
-                <asp:ImageButton ID="Dificil" runat="server" onclick="Facil_Click" ImageUrl="/Imagens/dificil.png" Width="64" Height="64" AlternateText="Jogar" />
+                <asp:ImageButton ID="Dificil" runat="server" ImageUrl="/Imagens/dificil.png" Width="64" Height="64" AlternateText="Jogar" />
             </td></tr><tr><td style="font-size: 16px; text-align: center;">Difícil</td></tr></table>
             </asp:TableCell>
 
