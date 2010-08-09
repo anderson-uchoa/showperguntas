@@ -18,9 +18,31 @@
         Visible="true" BackColor="#F8F8F8" BorderColor="#F8F8F8" 
             BorderWidth="15px" Width="450">
         <asp:TableRow>
-            <asp:TableCell HorizontalAlign="Center"><asp:Label ID="Dificuldade" runat="server" Text="Dificuldade:"></asp:Label>
+            <asp:TableCell HorizontalAlign="Center" ColumnSpan="3"><asp:Label ID="Dificuldade" runat="server" Text="Dificuldade:"></asp:Label>
             <asp:DropDownList ID="DropDownList1" runat="server" onselectedindexchanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList></asp:TableCell>
         </asp:TableRow>
+
+        <asp:TableRow>
+
+                    <asp:TableCell HorizontalAlign="Center">
+                <table width="64" cellspacing="0" cellpadding="0"><tr><td>
+                <asp:ImageButton ID="Facil" runat="server" onclick="Facil_Click" ImageUrl="/Imagens/facil.png" Width="64" Height="64" AlternateText="Jogar" />
+            </td></tr><tr><td style="font-size: 16px; text-align: center;">Fácil</td></tr></table>
+            </asp:TableCell>
+
+                    <asp:TableCell HorizontalAlign="Center">
+                <table width="64" cellspacing="0" cellpadding="0"><tr><td>
+                <asp:ImageButton ID="Medio" runat="server" onclick="Medio_Click" ImageUrl="/Imagens/medio.png" Width="64" Height="64" AlternateText="Jogar" />
+            </td></tr><tr><td style="font-size: 16px; text-align: center;">Médio</td></tr></table>
+            </asp:TableCell>
+
+                    <asp:TableCell HorizontalAlign="Center">
+                <table width="64" cellspacing="0" cellpadding="0"><tr><td>
+                <asp:ImageButton ID="Dificil" runat="server" onclick="Facil_Click" ImageUrl="/Imagens/dificil.png" Width="64" Height="64" AlternateText="Jogar" />
+            </td></tr><tr><td style="font-size: 16px; text-align: center;">Difícil</td></tr></table>
+            </asp:TableCell>
+
+             </asp:TableRow>
     </asp:Table>
     
     <asp:Table ID="PontuacaoTable" runat="server" HorizontalAlign="Center" Visible="false">
@@ -32,10 +54,7 @@
     </asp:TableRow>
     </asp:Table>
     
-        <asp:Button ID="Button1" runat="server" Text="Fácil" />
-        <asp:Button ID="Button3" runat="server" Text="Médio" />
-        <asp:Button ID="Button2" runat="server" Text="Difícl" />
-    
+   
     <asp:Table runat="server" HorizontalAlign="Center" Height="81px">
     <asp:TableRow>
         <asp:TableCell><asp:Button ID="NovoJogoB" runat="server" Text="Novo Jogo" onclick="NovoJogo_Click" />
