@@ -48,6 +48,9 @@
              </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
+            <asp:TableCell>
+                <asp:Button ID="Zerar" runat="server" Text="Zerar Ranking" />
+            </asp:TableCell>
             <asp:TableCell HorizontalAlign="Center">
                 <br />
                 <asp:Button ID="Voltar" runat="server" Text="Voltar" onclick="Voltar_Click"/>    
