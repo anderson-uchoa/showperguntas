@@ -20,7 +20,7 @@
             <asp:TableCell>
     <div>
         <asp:GridView ID="Ranking" runat="server" AutoGenerateColumns="False" 
-            DataKeyNames="IdRanking" DataSourceID="ShowPerguntas" OnRowDataBound="AtualizarPosicao" HorizontalAlign="Center">
+            DataKeyNames="IdRanking" BorderColor="#F8F8F8" DataSourceID="ShowPerguntas" OnRowDataBound="AtualizarPosicao" HorizontalAlign="Center" Width="350" HeaderStyle-CssClass="header" RowStyle-CssClass="header" HeaderStyle-BackColor="#7A9BC5" HeaderStyle-ForeColor="White" CellSpacing="-1" CellPadding="2">
             <Columns>
                 <asp:TemplateField HeaderText="Posição" >
                     <ItemTemplate>
@@ -28,13 +28,13 @@
                         </asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Usuario" SortExpression="Usuario"> 
+                <asp:TemplateField HeaderText="Jogador" SortExpression="Usuario"> 
                   <ItemTemplate> 
                     <asp:Label ID="Tema" runat="server"  Text='<%# Eval("Usuario.nome") %>' > 
                     </asp:Label> 
                   </ItemTemplate> 
                 </asp:TemplateField> 
-                <asp:BoundField DataField="pontuacaoMaxima" HeaderText="pontuacaoMaxima" 
+                <asp:BoundField DataField="pontuacaoMaxima" HeaderText="Pontuação" 
                     SortExpression="pontuacaoMaxima" ReadOnly="True"/>                
             </Columns>
         </asp:GridView>
@@ -49,6 +49,7 @@
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell HorizontalAlign="Center">
+                <br />
                 <asp:Button ID="Voltar" runat="server" Text="Voltar" onclick="Voltar_Click"/>    
             </asp:TableCell>
         </asp:TableRow>
