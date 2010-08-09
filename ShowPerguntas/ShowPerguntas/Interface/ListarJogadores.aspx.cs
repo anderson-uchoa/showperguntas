@@ -24,5 +24,18 @@ namespace ShowPerguntas.Interface
             Session["id"] = Convert.ToInt32(GridView1.SelectedRow.Cells[1].Text);
             Response.Redirect("~/Interface/Perfil.aspx");
         }
+
+        protected void Buscar_Click(object sender, EventArgs e)
+        {
+            if (Buscar.Text != "")
+            {
+                ShowPerguntas.Where = "it.IdUsuario > 0 and it.nome like '%" + Buscar.Text + "%'";
+            }
+        }
+
+        protected void Limpar_Click(object sender, EventArgs e)
+        {
+            ShowPerguntas.Where = "it.IdUsuario > 0";
+        }
     }
 }
