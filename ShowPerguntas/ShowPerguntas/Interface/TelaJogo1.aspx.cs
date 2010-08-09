@@ -98,7 +98,7 @@ namespace ShowPerguntas.Interface
                 PontuacaoTable.Visible = false;
                 escolhaDificuldadeTable.Visible = true;
                 ContinuarB.Visible = false;
-                PararB.Text = "Menu Anterior";
+                PararB.Text = "Voltar";
             }
         }
 
