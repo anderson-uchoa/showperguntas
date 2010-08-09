@@ -4,25 +4,24 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Regras do Jogo</title>
+    <title>Show de Perguntas - Regras do Jogo</title>
+    <link rel="stylesheet" type="text/css" href="/Estilo.css" />
 </head>
 <body>
+<div style="text-align: center;">
+<img src="/Imagens/logo.png" />
+</div>
+<h1 style="text-align:center">Regras do jogo Show de Perguntas</h1>
     <form id="form1" runat="server">
-    <div>
-        <asp:table ID="TabelaRegras" runat="server" HorizontalAlign="Center" Width="520px">
-            <asp:TableHeaderRow>
-                <asp:TableHeaderCell>
-                    <h1>REGRAS SHOW DE PERGUNTAS</h1><br/>      
-                </asp:TableHeaderCell>
-            </asp:TableHeaderRow>
+    <div class="borda" align="center" style="width: 450px;">
+        <asp:table ID="TabelaRegras" runat="server" Width="450px"
+            HorizontalAlign="Center" BackColor="#F8F8F8" BorderColor="#F8F8F8" 
+            BorderWidth="15px">
             <asp:TableRow>
                 <asp:TableCell>        
                     <asp:Label ID="Label1" runat="server"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
-        </asp:table>                
-    </div>
-    <asp:Table runat="server" HorizontalAlign="Center" Width="520px">
         <asp:TableRow HorizontalAlign="right">
             <asp:TableCell><asp:Button ID="Voltar" runat="server" Text="Voltar" onclick="Voltar_Click"/></asp:TableCell>
         </asp:TableRow>
