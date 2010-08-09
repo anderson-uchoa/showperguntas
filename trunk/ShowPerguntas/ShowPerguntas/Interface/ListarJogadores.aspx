@@ -11,6 +11,10 @@
     <div>
         Buscar: 
         <asp:TextBox ID="Buscar" runat="server"></asp:TextBox>
+        <asp:Button ID="buttonBuscar" runat="server" Text="Buscar" 
+            onclick="Buscar_Click" />
+        <asp:Button ID="buttonLimpar" runat="server" Text="Limpar" 
+            onclick="Limpar_Click" />
     </div>
     <div>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
