@@ -30,7 +30,7 @@ namespace ShowPerguntas.Negocio
                     if (pontuacao > this.pontuacaoMax)
                     {
                         this.pontuacaoMax = pontuacao;
-                        if (!PontuarPorJogador()) ;
+                        if (!PontuarPorJogador());
                             //MENSAGEM DE ERRO - NAO PODE GRAVAR NO RANKIGN
                     }
                     
