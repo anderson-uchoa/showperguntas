@@ -17,7 +17,7 @@
     <form id="Jogador" runat="server">
         <div class="borda" align="center" style="width: 550px;">
     <asp:Table ID="titulo" runat="server" HorizontalAlign="Center" Width="550px" 
-        Height="51px" BackColor="#F8F8F8" BorderColor="#F8F8F8" 
+        BackColor="#F8F8F8" BorderColor="#F8F8F8" 
             BorderWidth="15px">
         <asp:TableRow >
             <asp:TableCell HorizontalAlign="Center">
@@ -28,19 +28,19 @@
             
             <asp:TableCell HorizontalAlign="Center">
                 <table width="64" cellspacing="0" cellpadding="0"><tr><td>
-                <asp:ImageButton ID="mostrarRanking1" runat="server" onclick="mostrarRanking_Click" ImageUrl="/Imagens/raking.png" Width="64" Height="64" AlternateText="Jogar" />
+                <asp:ImageButton ID="mostrarRanking1" runat="server" onclick="mostrarRanking_Click" ImageUrl="/Imagens/raking.png" Width="64" Height="64" AlternateText="Visualizar ranking" />
             </td></tr><tr><td style="font-size: 16px; text-align: center;">Ranking</td></tr></table>
             </asp:TableCell>
 
             <asp:TableCell HorizontalAlign="Center">
                 <table width="64" cellspacing="0" cellpadding="0"><tr><td>
-                <asp:ImageButton ID="VisualizarPerfil1" runat="server" onclick="VisualizarPerfil_Click" ImageUrl="/Imagens/perfil.png" Width="64" Height="64" AlternateText="Jogar" />
+                <asp:ImageButton ID="VisualizarPerfil1" runat="server" onclick="VisualizarPerfil_Click" ImageUrl="/Imagens/perfil.png" Width="64" Height="64" AlternateText="Visualizar perfil" />
             </td></tr><tr><td style="font-size: 16px; text-align: center;">Perfil</td></tr></table>
             </asp:TableCell>
 
              <asp:TableCell HorizontalAlign="Center">
                 <table width="64" cellspacing="0" cellpadding="0"><tr><td>
-                <asp:ImageButton ID="BotaoRegras1" runat="server" onclick="BotaoRegrasClick" ImageUrl="/Imagens/regras.png" Width="64" Height="64" AlternateText="Jogar" />
+                <asp:ImageButton ID="BotaoRegras1" runat="server" onclick="BotaoRegrasClick" ImageUrl="/Imagens/regras.png" Width="64" Height="64" AlternateText="Visualizar regras" />
             </td></tr><tr><td style="font-size: 16px; text-align: center;">Regras</td></tr></table>
             </asp:TableCell>
 
