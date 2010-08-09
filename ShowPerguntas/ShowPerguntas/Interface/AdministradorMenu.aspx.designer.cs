@@ -37,7 +37,7 @@ namespace ShowPerguntas.Interface {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button GerenciarPerguntas;
+        protected global::System.Web.UI.WebControls.ImageButton GerenciarPerguntas;
         
         /// <summary>
         /// GerenciarJogadores control.
@@ -46,7 +46,7 @@ namespace ShowPerguntas.Interface {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button GerenciarJogadores;
+        protected global::System.Web.UI.WebControls.ImageButton GerenciarJogadores;
         
         /// <summary>
         /// Sair control.
