@@ -6,7 +6,6 @@
     color: #4468A3;
     font-family: Tahoma,Arial,sans-serif;
     font-size: 12px;
-    text-align: center;
 }
 input
 {
@@ -18,19 +17,26 @@ input
 h1
 {
     color: #FFFFFF;
+    font-size: 20px;
 }
 .borda
 {
     padding: 5px;
     background-color: #7A9BC5;
-    width: 250px;
     position: relative;
     margin-left: auto;
     margin-right: auto;
+}
+.campologin
+{
+    height: 22px;
+    margin: 3px;
+    text-align: left;
 }
 .campo
 {
     height: 22px;
     margin: 3px;
     text-align: left;
+    width: 280px;
 }
