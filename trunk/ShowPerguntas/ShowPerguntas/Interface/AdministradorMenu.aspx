@@ -5,12 +5,17 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Menu Administrador</title>
+    <title>Show de Perguntas - Menu de administração</title>
+    <link rel="stylesheet" type="text/css" href="/Estilo.css" />
 </head>
 <body>
+<br />
+<div style="text-align: center;">
+<img src="/Imagens/logo.png" />
+</div>
+<h1 style="text-align:center">Menu de administração</h1>
     <form id="Administrador" runat="server">
     <div> 
-    Ola administrador!
     </div>
     <div>
         <asp:Table ID="Administrador_Menu" runat="server">
