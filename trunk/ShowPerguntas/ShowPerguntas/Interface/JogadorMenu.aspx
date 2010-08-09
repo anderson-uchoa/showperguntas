@@ -10,47 +10,44 @@
 </head>
 <body>
 <br />
-<br />
-<br />
+<div style="text-align: center;">
+<img src="/Imagens/logo.png" />
+</div>
+<h1 style="text-align:center">Menu principal</h1>
     <form id="Jogador" runat="server">
-    &nbsp;&nbsp;
-    <asp:Table ID="titulo" runat="server" HorizontalAlign="Center" Width="537px" 
-        Height="51px">
-        <asp:TableRow>
-            <asp:TableCell HorizontalAlign="Center" CssClass="msg">Olá <%Response.Write(Session["nome"]);%>! Divirta-se no jogo!</asp:TableCell>
-            <asp:TableCell Width="30"><a href="logout.aspx">Sair</a></asp:TableCell>
-        </asp:TableRow>
-    </asp:Table>
-
-    <asp:Table BorderStyle="Solid" HorizontalAlign="Center" runat="server" Width="537px">
+        <div class="borda" align="center" style="width: 550px;">
+    <asp:Table ID="titulo" runat="server" HorizontalAlign="Center" Width="550px" 
+        Height="51px" BackColor="#F8F8F8" BorderColor="#F8F8F8" 
+            BorderWidth="15px">
         <asp:TableRow >
             <asp:TableCell HorizontalAlign="Center">
-                <asp:Button ID="novoJogo" runat="server" onclick="novoJogo_Click" Text="Jogar" Width="150px" />
+                <table width="64" cellspacing="0" cellpadding="0"><tr><td>
+                <asp:ImageButton ID="novoJogo1" runat="server" onclick="novoJogo_Click" ImageUrl="/Imagens/jogar.png" Width="64" Height="64" AlternateText="Jogar" />
+            </td></tr><tr><td style="font-size: 16px; text-align: center;">Jogar</td></tr></table>
             </asp:TableCell>
-            <asp:TableCell Width="30"></asp:TableCell>
-        </asp:TableRow>
-        <asp:TableRow>
+            
             <asp:TableCell HorizontalAlign="Center">
-                <asp:Button ID="mostrarRanking" runat="server" onclick="mostrarRanking_Click" Text="Mostrar Ranking" Width="150px" />
+                <table width="64" cellspacing="0" cellpadding="0"><tr><td>
+                <asp:ImageButton ID="mostrarRanking1" runat="server" onclick="mostrarRanking_Click" ImageUrl="/Imagens/raking.png" Width="64" Height="64" AlternateText="Jogar" />
+            </td></tr><tr><td style="font-size: 16px; text-align: center;">Ranking</td></tr></table>
             </asp:TableCell>
-            <asp:TableCell Width="30"></asp:TableCell>
-        </asp:TableRow>
-        <asp:TableRow>
+
             <asp:TableCell HorizontalAlign="Center">
-                <asp:Button ID="VisualizarPerfil" runat="server" Text="Visualizar Perfil" 
-                    onclick="VisualizarPerfil_Click" Width="150px"/>    
+                <table width="64" cellspacing="0" cellpadding="0"><tr><td>
+                <asp:ImageButton ID="VisualizarPerfil1" runat="server" onclick="VisualizarPerfil_Click" ImageUrl="/Imagens/perfil.png" Width="64" Height="64" AlternateText="Jogar" />
+            </td></tr><tr><td style="font-size: 16px; text-align: center;">Perfil</td></tr></table>
             </asp:TableCell>
-            <asp:TableCell Width="30"></asp:TableCell>
-        </asp:TableRow>
-        <asp:TableRow>
-            <asp:TableCell HorizontalAlign="Center">
-                <asp:Button ID="BotaoRegras" runat="server" Text="Visualizar Regras" 
-                    onclick="BotaoRegrasClick" Width="150px"/>    
+
+             <asp:TableCell HorizontalAlign="Center">
+                <table width="64" cellspacing="0" cellpadding="0"><tr><td>
+                <asp:ImageButton ID="BotaoRegras1" runat="server" onclick="BotaoRegrasClick" ImageUrl="/Imagens/regras.png" Width="64" Height="64" AlternateText="Jogar" />
+            </td></tr><tr><td style="font-size: 16px; text-align: center;">Regras</td></tr></table>
             </asp:TableCell>
-            <asp:TableCell Width="30"></asp:TableCell>
+
+
         </asp:TableRow>
     </asp:Table>
-
+    </div>
     </form>
 </body>
 </html>
