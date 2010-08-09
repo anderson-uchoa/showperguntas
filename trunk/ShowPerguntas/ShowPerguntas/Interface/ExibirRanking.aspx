@@ -4,10 +4,20 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Ranking</title>
+    <title>Show de Perguntas - Ranking</title>
+    <link rel="stylesheet" type="text/css" href="/Estilo.css" />
 </head>
 <body>
-    <form id="form1" runat="server">    
+<br />
+<div style="text-align: center;">
+<img src="/Imagens/logo.png" />
+</div>
+<h1 style="text-align:center">Ranking dos jogadores</h1>
+    <form id="form1" runat="server">   
+        <div class="borda" align="center" style="width: 450px;"> 
+        <asp:Table ID="Table1" runat=server HorizontalAlign=Center BackColor="#F8F8F8" BorderColor="#F8F8F8" 
+            BorderWidth="15px" Width="450">  <asp:TableRow>
+            <asp:TableCell>
     <div>
         <asp:GridView ID="Ranking" runat="server" AutoGenerateColumns="False" 
             DataKeyNames="IdRanking" DataSourceID="ShowPerguntas" OnRowDataBound="AtualizarPosicao" HorizontalAlign="Center">
@@ -35,14 +45,15 @@
         </asp:EntityDataSource>
     </div>
 
-    <asp:Table runat=server HorizontalAlign=Center>
+             </asp:TableCell>
+        </asp:TableRow>
         <asp:TableRow>
-            <asp:TableCell>
+            <asp:TableCell HorizontalAlign="Center">
                 <asp:Button ID="Voltar" runat="server" Text="Voltar" onclick="Voltar_Click"/>    
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
-
+    </div>
     </form>
 </body>
 </html>
