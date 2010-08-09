@@ -17,7 +17,7 @@
     <asp:Table ID="titulo" runat="server" HorizontalAlign="Center" Width="537px" 
         Height="51px">
         <asp:TableRow>
-            <asp:TableCell HorizontalAlign="Center">Olá <% Response.Write(Session["nome"]); %> Divirta-se no jogo!</asp:TableCell>
+            <asp:TableCell HorizontalAlign="Center" CssClass="msg">Olá <%Response.Write(Session["nome"]);%>! Divirta-se no jogo!</asp:TableCell>
             <asp:TableCell Width="30"><a href="logout.aspx">Sair</a></asp:TableCell>
         </asp:TableRow>
     </asp:Table>
