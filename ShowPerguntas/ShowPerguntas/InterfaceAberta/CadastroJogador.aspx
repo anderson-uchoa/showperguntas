@@ -52,7 +52,7 @@
             <asp:TableRow ID="Senha">
                 <asp:TableCell HorizontalAlign="Right">Senha: </asp:TableCell>
                     <asp:TableCell> 
-                        <asp:TextBox ID="senhaTextBox" runat="server" TextMode="Password"></asp:TextBox>
+                        <asp:TextBox ID="senhaTextBox" runat="server" TextMode="Password" CssClass="campologin"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="SenhaRequiredFieldValidator" runat="server" ControlToValidate="senhaTextBox" 
                                     ErrorMessage="*"></asp:RequiredFieldValidator> 
                     </asp:TableCell>
