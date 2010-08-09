@@ -31,7 +31,7 @@
         <asp:EntityDataSource ID="ShowPerguntas" runat="server" 
             ConnectionString="name=Show_de_PerguntasEntities" 
             DefaultContainerName="Show_de_PerguntasEntities" EnableFlattening="False" 
-            EntitySetName="Rankings" Include="Usuario" OrderBy="it.pontuacaoMaxima DESC">
+            EntitySetName="Rankings" Include="Usuario" OrderBy="it.pontuacaoMaxima DESC LIMIT 10">
         </asp:EntityDataSource>
     </div>
 
