@@ -12,7 +12,7 @@
 <div style="text-align: center;">
 <img src="/Imagens/logo.png" />
 </div>
-<h1 style="text-align:center">Regras do jogo Show de Perguntas</h1>
+<h1 style="text-align:center">Regras do jogo</h1>
     <form id="form1" runat="server">
     <div class="borda" align="center" style="width: 450px;">
         <asp:table ID="TabelaRegras" runat="server" Width="450px"
