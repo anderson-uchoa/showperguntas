@@ -15,7 +15,7 @@
 <h1 style="text-align:center">Ranking dos jogadores</h1>
     <form id="form1" runat="server">   
         <div class="borda" align="center" style="width: 450px;"> 
-        <asp:Table ID="Table1" runat=server HorizontalAlign=Center BackColor="#F8F8F8" BorderColor="#F8F8F8" 
+        <asp:Table ID="Table1" runat=server HorizontalAlign="Center" BackColor="#F8F8F8" BorderColor="#F8F8F8" 
             BorderWidth="15px" Width="450">  <asp:TableRow>
             <asp:TableCell>
     <div>
