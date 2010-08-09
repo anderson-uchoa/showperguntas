@@ -48,6 +48,19 @@
         </asp:TableRow>
     </asp:Table>
     </div>
+    <br />
+    <div class="borda" align="center" style="width: 550px;">
+       <asp:Table ID="Table2" runat="server" HorizontalAlign="Center" Width="550px" 
+        Height="51px" BackColor="#F8F8F8" BorderColor="#F8F8F8" 
+            BorderWidth="15px">
+        <asp:TableRow >
+
+                    <asp:TableCell HorizontalAlign="Center">Olá <%Response.Write(Session["nome"]);%>! Divirta-se no jogo!</asp:TableCell>
+            <asp:TableCell Width="30"><a href="logout.aspx">Sair</a></asp:TableCell>
+</asp:TableRow>
+    </asp:Table>
+    </div>
+
     </form>
 </body>
 </html>
