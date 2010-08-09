@@ -13,6 +13,7 @@ namespace ShowPerguntas.Interface
     {
         #region Atributos
 
+        public double seconds;
         public String[] perguntaAtr;
         public Partida partida;
         Label[] estat;
@@ -29,6 +30,7 @@ namespace ShowPerguntas.Interface
         {
             verificarUsuario();
             partida = (Partida) Session["partida"];
+            seconds = (GetEndTime() - GetStartTime()).TotalSeconds;
             cronometro = partida.tempo;
             ContadorL.Text = cronometro.ToString();
             tempo = DateTime.Now;
@@ -149,6 +151,15 @@ namespace ShowPerguntas.Interface
         #endregion
 
         #region Metodos
+
+        private DateTime GetStartTime()
+        {
+            return DateTime.Now;
+        }
+        private DateTime GetEndTime()
+        {
+            return DateTime.Now.AddSeconds(partida.tempo);
+        }
 
         public void verificarUsuario()
         {

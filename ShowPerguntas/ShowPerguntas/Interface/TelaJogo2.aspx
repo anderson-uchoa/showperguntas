@@ -26,7 +26,37 @@
                 <asp:Label runat="server" id="ContadorL" />
             </ContentTemplate>
         </asp:UpdatePanel>
+
     
+        <div id="timelabel"></div>
+        <script type="text/javascript">
+
+
+        var leave =<%=seconds %>;
+
+        CounterTimer();
+        var interv=setInterval(CounterTimer,1000);
+
+        function CounterTimer()
+        {
+            var day = Math.floor(leave / ( 60 * 60 * 24))
+            var hour = Math.floor(leave / 3600) - (day * 24)
+            var minute = Math.floor(leave / 60) - (day * 24 *60) - (hour * 60)
+            var second = Math.floor(leave) - (day * 24 *60*60) - (hour * 60 * 60) - (minute*60)
+
+            hour=hour<10 ? "0" + hour : hour;
+            minute=minute<10 ? "0" + minute : minute;
+            second=second<10 ? "0" + second : second;
+
+            var remain=second + "segundo(s)";
+            leave=leave-1;
+
+            document.getElementById("timelabel").innerText=remain;
+
+        }
+
+        </script>
+
     <asp:Table ID="RodadaTable" runat="server" HorizontalAlign="Center" 
             BorderStyle="Solid" Width="511px">
             <asp:TableRow>
