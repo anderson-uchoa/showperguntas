@@ -10,14 +10,17 @@ namespace ShowPerguntas.Negocio
     {
         #region Atributos
 
-        int IdRanking;
         int pontuacaoMax;
         int pontuacaoMin = 0;
-        int IdUsuario;
+        public int IdUsuario;
 
         #endregion
 
         #region Contrutores
+
+        public Ranking()
+        {
+        }
 
         public Ranking (int IdUsuario, int pontuacao){
             this.IdUsuario = IdUsuario;
@@ -70,6 +73,21 @@ namespace ShowPerguntas.Negocio
                 rDAO.IdUsuario = this.IdUsuario;
                 rDAO.pontuacaoMax = this.pontuacaoMax;
                 return rDAO.AtualizarPontuacaoPorJogador();
+            }
+            catch (Exception)
+            {
+                return false;
+                //throw;
+            }
+        }
+
+        public Boolean RemoverJogadorRanking()
+        {
+            try
+            {
+                RankingDAO rDAO = new RankingDAO();
+                rDAO.IdUsuario = this.IdUsuario;
+                return rDAO.RemoverJogadorRanking();
             }
             catch (Exception)
             {
