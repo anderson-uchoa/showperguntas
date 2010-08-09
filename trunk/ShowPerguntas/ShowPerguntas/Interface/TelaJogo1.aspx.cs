@@ -80,7 +80,7 @@ namespace ShowPerguntas.Interface
             DropDownList1.Items.Add("Fácil");
             DropDownList1.Items.Add("Médio");
             DropDownList1.Items.Add("Difícil");
-            Label1.Text = "Antes de iniciar um novo jogo você deve escolher uma dificuldade!";
+            Label1.Text = "Escolha o nível de dificuldade";
             
             if (partida.estadoPartida() == Defines.ATIVO)
             {

@@ -7,15 +7,16 @@
     <link rel="stylesheet" type="text/css" href="/Estilo.css" />
 </head>
 <body>
+<br />
+<div style="text-align: center;">
+<img src="/Imagens/logo.png" />
+</div>
+<h1 style="text-align:center"><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></h1>
     <form id="form1" runat="server">
-    
+    <div class="borda" align="center" style="width: 450px;"> 
     <asp:Table ID="escolhaDificuldadeTable" runat="server" HorizontalAlign="Center" 
-        Visible="true" Height="106px">
-        <asp:TableRow>
-            <asp:TableCell>
-                <h1><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></h1>
-            </asp:TableCell>
-        </asp:TableRow>
+        Visible="true" BackColor="#F8F8F8" BorderColor="#F8F8F8" 
+            BorderWidth="15px" Width="450">
         <asp:TableRow>
             <asp:TableCell HorizontalAlign="Center"><asp:Label ID="Dificuldade" runat="server" Text="Dificuldade:"></asp:Label>
             <asp:DropDownList ID="DropDownList1" runat="server" onselectedindexchanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList></asp:TableCell>
@@ -31,6 +32,10 @@
     </asp:TableRow>
     </asp:Table>
     
+        <asp:Button ID="Button1" runat="server" Text="Fácil" />
+        <asp:Button ID="Button3" runat="server" Text="Médio" />
+        <asp:Button ID="Button2" runat="server" Text="Difícl" />
+    
     <asp:Table runat="server" HorizontalAlign="Center" Height="81px">
     <asp:TableRow>
         <asp:TableCell><asp:Button ID="NovoJogoB" runat="server" Text="Novo Jogo" onclick="NovoJogo_Click" />
@@ -38,6 +43,7 @@
         <asp:Button ID="PararB" runat="server" Text="Nah... Sou maricas" onclick="Parar_Click" /></asp:TableCell>
     </asp:TableRow>
     </asp:Table>
+    </div>
     </form>
 </body>
 </html>
