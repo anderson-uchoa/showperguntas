@@ -15,6 +15,11 @@ namespace ShowPerguntas.Interface
         {
             if(!this.IsPostBack)
             {
+                if (Session["tipo"].Equals("Administrador"))
+                {
+                    Editar.Visible = false;
+                }
+
                 if (jog.BuscarJogadorPorId(Convert.ToInt32(Session["id"])))
                 {
                     nomeTextBox.Text = jog.nome;
@@ -94,7 +99,7 @@ namespace ShowPerguntas.Interface
         }
         protected void Voltar_C(object sender, EventArgs e)
         {
-            Response.Redirect("~/Interface/JogadorMenu.aspx");
+            Response.Redirect("~/Interface/" + Convert.ToString(Session["Tipo"]) + "Menu.aspx");
         }
 
         protected void confirmarRemoverPerfil_C(object sender, EventArgs e)
@@ -104,14 +109,14 @@ namespace ShowPerguntas.Interface
             j.IdUsuario = id;
             Ranking r = new Ranking();
             r.IdUsuario = id;
-            if (r.RemoverJogadorRanking() && j.RemoverJogador())
-                Response.Redirect("~/Interface/Home.aspx");
-            else
-                Response.Redirect("~/Interface/JogadorMenu.aspx");
+            r.RemoverJogadorRanking();
+            j.RemoverJogador();
+            Response.Redirect("~/Interface/" + Convert.ToString(Session["Tipo"]) + "Menu.aspx");
         }
+
         protected void cancelaConfirmarRemoverPerfil_C(object sender, EventArgs e)
         {
-            Response.Redirect("~/Interface/JogadorMenu.aspx");
+            Response.Redirect("~/Interface/" + Convert.ToString(Session["Tipo"]) + "Menu.aspx");
         }
 
         protected void Cancelar_C(object sender, EventArgs e)

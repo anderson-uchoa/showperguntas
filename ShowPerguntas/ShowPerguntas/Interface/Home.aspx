@@ -6,6 +6,23 @@
 <head runat="server">
     <title>Show de Perguntas - Login</title>
     <link rel="stylesheet" type="text/css" href="/Estilo.css" />
+
+    <script type="text/javascript">
+        function loadXMLDoc() {
+            
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+           
+           
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById("myDiv").innerHTML ="abracadabra";
+                }
+            xmlhttp.open("GET", "demo_get.asp", true);
+            xmlhttp.send();
+        }
+</script>
+
+
 </head>
 <body>
 <br />
@@ -47,6 +64,7 @@
         </asp:TableRow>
     </asp:Table>    
 </form>       
+
 </div>
 </body>
 </html>
