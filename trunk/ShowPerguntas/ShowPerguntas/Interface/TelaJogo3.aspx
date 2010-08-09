@@ -9,15 +9,41 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <asp:Table runat="server" HorizontalAlign="Center" ID="imgFimDeJogo">
+        <asp:TableRow>
+            <asp:TableCell>
+                        <asp:Image ID="Imagem" runat="server"/>
+            </asp:TableCell>
+        </asp:TableRow>
+    </asp:Table>
     
-        <asp:Image ID="Imagem" runat="server"/>
-        <br />
-        <br />
-        <asp:Button ID="Continuar" runat="server" onclick="Continuar_Click" Text="Continuar" />
-        <br />
+    <h3>
+    <asp:Table runat="server" ID="dadosFimDaPartida" HorizontalAlign="Center" Visible="false">
+        <asp:TableRow>
+            <asp:TableCell Width="250px">Pontuação Final</asp:TableCell>
+            <asp:TableCell Width="100px"><asp:Label runat="server" ID="pontuacaoFinalLabel"></asp:Label></asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>Sua classificação no ranking é:</asp:TableCell>
+            <asp:TableCell><asp:Label runat="server" ID="posicaoRankingLabel"></asp:Label></asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell><asp:Label runat="server" ID="msgParabensEntroNoRankingLabel" Text="Parabéns você é um dos 20 melhores!" Visible="false"></asp:Label></asp:TableCell>
+            <asp:TableCell></asp:TableCell>
+        </asp:TableRow>
+    </asp:Table>
+    </h3>
+
+    <asp:Table runat="server" ID="ContinuarButton" HorizontalAlign="Center" Visible="false">
+        <asp:TableRow>
+            <asp:TableCell><asp:Button ID="Continuar" runat="server" onclick="Continuar_Click" Text="Continuar"/></asp:TableCell>
+            <asp:TableCell></asp:TableCell>
+        </asp:TableRow>
+    </asp:Table>
+
+
     
-    </div>
+    
     </form>
 </body>
 </html>

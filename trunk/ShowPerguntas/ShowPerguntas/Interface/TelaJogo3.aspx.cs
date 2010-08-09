@@ -27,25 +27,43 @@ namespace ShowPerguntas.Interface
 
             partida = (Partida) Session["partida"];
 
-            if (partida.ganhouPartida())
-            {
-                int numero = rand.Next(1, 1);
-                Imagem.ImageUrl = "~/Imagens/Ganhou" + Convert.ToString(numero) + ".jpg";
-            }
-            else if (partida.estaAtivo())
-            {
-                int numero = rand.Next(1, 1);
-                Imagem.ImageUrl = "~/Imagens/Acertou" + Convert.ToString(numero) + ".jpg";
-                Continuar.Visible = false;
-                Response.AddHeader("REFRESH", "1;URL=TelaJogo1.aspx");
-            }
-            else
-            {
-                int numero = rand.Next(1, 6);
-                Continuar.Visible = true;
-                Imagem.ImageUrl = "~/Imagens/GameOver" + Convert.ToString(numero) + ".jpg";
-            }
+            pontuacaoFinalLabel.Text = Convert.ToString(partida.pontuacao);
 
+            if (Session["decidiuParar"] == null)
+            {
+
+                if (partida.estaAtivo())
+                {
+                    if (partida.ganhouPartida())//GANHOU
+                    {
+                        int numero = rand.Next(1, 1);
+                        Imagem.ImageUrl = "~/Imagens/Ganhou" + Convert.ToString(numero) + ".jpg";
+                        dadosFimDaPartida.Visible = true;
+                        ContinuarButton.Visible = true;
+                    }
+                    else//não ganhou mas ACERTOU
+                    {
+                        int numero = rand.Next(1, 1);
+                        Imagem.ImageUrl = "~/Imagens/Acertou" + Convert.ToString(numero) + ".jpg";
+                        Response.AddHeader("REFRESH", "1;URL=TelaJogo1.aspx");
+                    }
+                }
+                else //ERROU
+                {
+                    int numero = rand.Next(1, 6);
+                    Imagem.ImageUrl = "~/Imagens/GameOver" + Convert.ToString(numero) + ".jpg";
+                    dadosFimDaPartida.Visible = true;
+                    ContinuarButton.Visible = true;
+                }
+            }
+            else if (Session["decidiuParar"].Equals("parou"))
+            {
+                //pediu pra parar
+                int numero = rand.Next(1, 1);
+                Imagem.ImageUrl = "~/Imagens/parar" + Convert.ToString(numero) + ".jpg";
+                dadosFimDaPartida.Visible = true;
+                ContinuarButton.Visible = true;
+            }
 
         }
 
