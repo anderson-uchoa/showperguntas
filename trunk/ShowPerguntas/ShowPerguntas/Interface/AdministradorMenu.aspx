@@ -15,8 +15,8 @@
 </div>
 <h1 style="text-align:center">Menu de administração</h1>
     <form id="Administrador" runat="server">
-        <div class="borda" align="center" style="width: 550px;">
-        <asp:Table ID="Administrador_Menu" runat="server" Width="550px" 
+        <div class="borda" align="center" style="width: 400px;">
+        <asp:Table ID="Administrador_Menu" runat="server" Width="400px" 
         BackColor="#F8F8F8" BorderColor="#F8F8F8" 
             BorderWidth="15px" HorizontalAlign="Center">
          <asp:TableRow>
@@ -35,12 +35,12 @@
         </asp:Table>
     </div>
         <br />
-    <div class="borda" align="center" style="width: 550px;">
-       <asp:Table ID="Table2" runat="server" HorizontalAlign="Center" Width="550px" 
-        Height="51px" BackColor="#F8F8F8" BorderColor="#F8F8F8" 
+    <div class="borda" align="center" style="width: 400px;">
+       <asp:Table ID="Table2" runat="server" HorizontalAlign="Center" Width="400px" 
+        BackColor="#F8F8F8" BorderColor="#F8F8F8" 
             BorderWidth="15px">
         <asp:TableRow >
-                    <asp:TableCell HorizontalAlign="Left">Olá <b>Administrador</b>!</asp:TableCell>
+                    <asp:TableCell HorizontalAlign="Left">Olá, <b>Administrador</b>!</asp:TableCell>
                     <asp:TableCell HorizontalAlign="Right"><asp:Button ID="Sair" runat="server" Text="Sair" OnClick="Sair_Click"/> </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
