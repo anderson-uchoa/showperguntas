@@ -18,5 +18,11 @@ namespace ShowPerguntas.Interface
         {
             Response.Redirect("~/Interface/GerenciadorJogadores.aspx");
         }
+
+        protected void SelecionarJogador(object sender, EventArgs e)
+        {
+            Session["id"] = Convert.ToInt32(GridView1.SelectedRow.Cells[1].Text);
+            Response.Redirect("~/Interface/Perfil.aspx");
+        }
     }
 }
