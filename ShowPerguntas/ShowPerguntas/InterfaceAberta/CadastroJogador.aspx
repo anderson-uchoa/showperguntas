@@ -67,16 +67,13 @@
                     </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
-                <asp:TableCell> </asp:TableCell>
-                <asp:TableCell>
+                <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
                     <asp:CompareValidator ID="ErroConfirmaSenha" ControlToValidate="senhaTextBox" ControlToCompare="confirmeSenhaTextBox" 
                         ForeColor="red" Text="A senha não corresponde à senha de confirmação!" runat="server"></asp:CompareValidator>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
-                <asp:TableCell>
-                </asp:TableCell>
-                <asp:TableCell HorizontalAlign="Right">    
+                <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">    
                     <asp:Button ID="SalvarJogador" runat="server" onclick="SalvarJogador_C" Text="Salvar" />
                     <asp:Button ID="Button1" runat="server" onclick="Cancelar_C" Text="Cancelar" CausesValidation="false" />
                 </asp:TableCell>
