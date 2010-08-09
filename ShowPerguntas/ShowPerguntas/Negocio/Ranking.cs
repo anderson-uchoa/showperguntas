@@ -65,6 +65,21 @@ namespace ShowPerguntas.Negocio
             }
         }
 
+        public int BuscarPosicaoJogador()
+        {
+            try
+            {
+                RankingDAO rDAO = new RankingDAO();
+                rDAO.IdUsuario = this.IdUsuario;
+                return rDAO.BuscarPosicaoJogador();
+            }
+            catch (Exception)
+            {
+                return -1;
+                //throw;
+            }
+        }
+
         public Boolean PontuarPorJogador()
         {
             try

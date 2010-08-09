@@ -35,14 +35,63 @@
             Width="270px" Height="150px" BackColor="#F8F8F8">
             <asp:TableRow HorizontalAlign="Center">
                 <asp:TableCell VerticalAlign="Middle"  HorizontalAlign="Center" >
-                    <asp:Login ID="Login" runat="server" LoginButtonText="Entrar"
+                     <asp:Login ID="Login" runat="server" LoginButtonText="Entrar"
                         OnAuthenticate="Login_Authenticate" UserNameLabelText="Login: " 
                         PasswordLabelText="Senha: " DisplayRememberMe="false" 
                         FailureText="Login ou senha incorretos!" 
                         TitleText="Acesse sua conta!" Width="220px" TitleTextStyle-BorderStyle="NotSet" 
                         Orientation="Vertical" TextBoxStyle-CssClass="campologin" TitleTextStyle-Wrap="True">
+                        <LayoutTemplate>
+                            <table cellpadding="1" cellspacing="0" style="border-collapse:collapse;">
+                                <tr>
+                                    <td>
+                                        <table cellpadding="0" style="width:220px;">
+                                            <tr>
+                                                <td align="center" colspan="2">
+                                                    Acesse sua conta!</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="right">
+                                                    <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">Login: </asp:Label>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox ID="UserName" runat="server" CssClass="campologin" Width="130px"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" 
+                                                        ControlToValidate="UserName" ErrorMessage="User Name is required." 
+                                                        ToolTip="User Name is required." ValidationGroup="Login">*</asp:RequiredFieldValidator>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="right">
+                                                    <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Senha: </asp:Label>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox ID="Password" runat="server" CssClass="campologin" 
+                                                        TextMode="Password" Width="130px"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" 
+                                                        ControlToValidate="Password" ErrorMessage="Password is required." 
+                                                        ToolTip="Password is required." ValidationGroup="Login">*</asp:RequiredFieldValidator>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" colspan="2" style="color:Red;">
+                                                    <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" colspan="2">
+                                                    <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Entrar" 
+                                                        ValidationGroup="Login" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </LayoutTemplate>
                         <TextBoxStyle Width="130px" />
-                    </asp:Login>
+                        <TitleTextStyle Wrap="True"></TitleTextStyle>
+                    </asp:Login> 
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>

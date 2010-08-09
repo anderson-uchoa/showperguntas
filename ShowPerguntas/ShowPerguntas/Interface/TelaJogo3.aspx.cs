@@ -28,6 +28,7 @@ namespace ShowPerguntas.Interface
             partida = (Partida) Session["partida"];
 
             pontuacaoFinalLabel.Text = Convert.ToString(partida.pontuacao);
+            posicaoRankingLabel.Text = Convert.ToString(partida.posicao)+"°";
 
             switch(partida.estadoPartida()){
                 case Defines.GANHOU:

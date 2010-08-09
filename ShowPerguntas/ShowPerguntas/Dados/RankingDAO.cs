@@ -33,6 +33,32 @@ namespace ShowPerguntas.Dados
             }
         }
 
+        public int BuscarPosicaoJogador()
+        {
+            int posicao = 1;
+            try
+            {
+                using (var _context = new Show_de_PerguntasEntities())
+                {
+                    List<Ranking> ranking = _context.Rankings.ToList();
+                    foreach (Ranking r in ranking)
+                    {
+                        if (r.Usuario.IdUsuario.Equals(this.IdUsuario))
+                        {
+                            return posicao;
+                        }
+                        posicao++;
+                    }
+                    return -1;
+                }
+            }
+            catch (Exception)
+            {
+                return -1;
+                //throw;
+            }
+        }
+
         public Boolean InserirPontuacaoPorJogador()
         {
             try
