@@ -51,10 +51,10 @@
     <br />
     <div class="borda" align="center" style="width: 550px;">
        <asp:Table ID="Table2" runat="server" HorizontalAlign="Center" Width="550px" 
-        Height="51px" BackColor="#F8F8F8" BorderColor="#F8F8F8" 
+        BackColor="#F8F8F8" BorderColor="#F8F8F8" 
             BorderWidth="15px">
         <asp:TableRow >
-                    <asp:TableCell HorizontalAlign="Left">Olá <b><%Response.Write(Session["nome"]);%></b>! Divirta-se no jogo!</asp:TableCell>
+                    <asp:TableCell HorizontalAlign="Left">Olá, <b><%Response.Write(Session["nome"]);%></b>! Divirta-se no jogo!</asp:TableCell>
                     <asp:TableCell HorizontalAlign="Right"><asp:Button runat="server" Text="Sair" OnClick="Sair_Click"/></asp:TableCell>
         </asp:TableRow>
     </asp:Table>
