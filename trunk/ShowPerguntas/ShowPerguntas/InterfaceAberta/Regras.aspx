@@ -23,8 +23,8 @@
                     <asp:Label ID="Label1" runat="server"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
-        <asp:TableRow HorizontalAlign="right">
-            <asp:TableCell><asp:Button ID="Voltar" runat="server" Text="Voltar" onclick="Voltar_Click"/></asp:TableCell>
+        <asp:TableRow HorizontalAlign="center">
+            <asp:TableCell><br /><asp:Button ID="Voltar" runat="server" Text="Voltar" onclick="Voltar_Click"/></asp:TableCell>
         </asp:TableRow>
     </asp:Table>
     </form>
