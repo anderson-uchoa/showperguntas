@@ -134,7 +134,7 @@ namespace ShowPerguntas.Interface
             if(tempo.CompareTo(DateTime.Now) > 0)
             {
                 ContadorL.Text = "ACABOU!";
-                partida.pararPartida(true);
+                partida.tempoEsgotado();
                 Response.Redirect("~/Interface/TelaJogo3");
                 
 

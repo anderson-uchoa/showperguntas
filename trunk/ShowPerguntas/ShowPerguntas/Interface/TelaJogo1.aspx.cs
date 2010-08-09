@@ -52,10 +52,9 @@ namespace ShowPerguntas.Interface
         protected void Parar_Click(object sender, EventArgs e)
         {
             // Caso o jogador clique em Parar, pára o jogo
-            if (partida.estaAtivo())
+            if (partida.estadoPartida() == Defines.ATIVO)
             {
-                partida.pararPartida(false);
-                Session["decidiuParar"] = "parou";
+                partida.pararPartida();
                 Response.Redirect("~/Interface/TelaJogo3.aspx");
             }
             // Ou se ele não estiver jogando, e clica no botão, volta para o menu principal
@@ -83,7 +82,7 @@ namespace ShowPerguntas.Interface
             DropDownList1.Items.Add("Difícil");
             Label1.Text = "Antes de iniciar um novo jogo você deve escolher uma dificuldade!";
             
-            if (partida.estaAtivo())
+            if (partida.estadoPartida() == Defines.ATIVO)
             {
                 Dificuldade.Visible = false;
                 PontuacaoL.Text = "Você já ganhou: D$ " + (partida.mostrarPontuacao()).ToString();
