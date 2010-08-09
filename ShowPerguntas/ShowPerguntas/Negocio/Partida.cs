@@ -155,10 +155,7 @@ namespace ShowPerguntas.Negocio
         public void colocarIdUsuario(int id) { IdUsuario = id; }
         public bool ganhouPartida() { return ganhou; }
         public int mostrarPontuacao() {
-            Random rand = new Random();
-            // Isso é uma bricandeira com a pontuacao
-            // A pontuacao basica é sempre multiplo de 100, mas um valor randômico é adicionado somente para amostragem...
-            return pontuacao + rand.Next(1,100); 
+            return pontuacao; 
         }
         public bool estaAtivo() { return status; }
 
