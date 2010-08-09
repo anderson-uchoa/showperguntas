@@ -31,39 +31,39 @@ namespace ShowPerguntas.Interface {
         protected global::System.Web.UI.WebControls.Table titulo;
         
         /// <summary>
-        /// novoJogo control.
+        /// novoJogo1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button novoJogo;
+        protected global::System.Web.UI.WebControls.ImageButton novoJogo1;
         
         /// <summary>
-        /// mostrarRanking control.
+        /// mostrarRanking1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button mostrarRanking;
+        protected global::System.Web.UI.WebControls.ImageButton mostrarRanking1;
         
         /// <summary>
-        /// VisualizarPerfil control.
+        /// VisualizarPerfil1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button VisualizarPerfil;
+        protected global::System.Web.UI.WebControls.ImageButton VisualizarPerfil1;
         
         /// <summary>
-        /// BotaoRegras control.
+        /// BotaoRegras1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BotaoRegras;
+        protected global::System.Web.UI.WebControls.ImageButton BotaoRegras1;
     }
 }
