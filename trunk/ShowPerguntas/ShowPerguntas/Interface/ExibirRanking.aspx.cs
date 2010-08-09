@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using ShowPerguntas.Negocio;
 
 namespace ShowPerguntas.Interface
 {
@@ -19,6 +20,14 @@ namespace ShowPerguntas.Interface
         public void AtualizarPosicao(object sender, EventArgs e)
         {
             posicao++;
+        }
+
+        protected void ZerarRanking_Click(object sender, EventArgs e)
+        {
+            if(new Ranking().ZerarRanking())
+                Response.Redirect("~/Interface/GerenciadorRanking.aspx");
+            else
+                Response.Redirect("~/Interface/Home.aspx");
         }
 
         protected void Voltar_Click(object sender, EventArgs e)
