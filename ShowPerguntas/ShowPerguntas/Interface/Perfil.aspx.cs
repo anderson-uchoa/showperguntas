@@ -20,8 +20,15 @@ namespace ShowPerguntas.Interface
                     nomeTextBox.Text = jog.nome;
                     sobrenomeTextBox.Text = jog.sobrenome;
                     loginTextBox.Text = jog.login;
-                    //if(!jog.dataCadastroString.Equals(""))
-                        //usuarioDesdeLabel.Text = jog.dataCadastroString;
+                    String data1 = jog.dataCadatro.ToShortDateString();
+                    String[] data2 = data1.Split('/');
+                    if (data2.Length >= 3)
+                    {
+                        data1 = data2[1] + "/" + data2[0] + "/" + data2[2];
+                        UsuarioDesdeTextBox.Text = data1;
+                    }
+                    else
+                        UsuarioDesdeTextBox.Text = "Ocorreu uma excessão não prevista";
                     Session["senha"] = jog.senha;
                 }
             }
