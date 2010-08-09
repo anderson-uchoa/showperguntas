@@ -14,8 +14,10 @@
     </div>
     <div>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-            DataKeyNames="IdUsuario" DataSourceID="ShowPerguntas">
+            DataKeyNames="IdUsuario" DataSourceID="ShowPerguntas" AllowPaging="True" 
+            AllowSorting="True" onselectedindexchanged="SelecionarJogador">
             <Columns>
+                <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="IdUsuario" HeaderText="IdUsuario" ReadOnly="True" 
                     SortExpression="IdUsuario" />
                 <asp:BoundField DataField="nome" HeaderText="nome" SortExpression="nome" />
