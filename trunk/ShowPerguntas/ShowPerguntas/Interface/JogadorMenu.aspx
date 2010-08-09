@@ -5,7 +5,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Menu Jogador</title>
+    <title>Show de Perguntas - Menu principal</title>
     <link rel="stylesheet" type="text/css" href="/Estilo.css" />
 </head>
 <body>
