@@ -29,7 +29,7 @@ namespace ShowPerguntas.Interface
                 {
                     e.Authenticated = true;
                     if (usr.getID() == 0)
-                    {                        
+                    {
                         Session["tipo"] = "Administrador";
                         Login.DestinationPageUrl = "~/Interface/AdministradorMenu.aspx";
                     }
@@ -40,7 +40,11 @@ namespace ShowPerguntas.Interface
                         Session["Id"] = Convert.ToString(usr.getID());
                         Login.DestinationPageUrl = "~/Interface/JogadorMenu.aspx";
                     }
-                    FormsAuthentication.RedirectFromLoginPage("tietadoagreste", true);
+                    FormsAuthentication.RedirectFromLoginPage(usr.nome, false);
+                }
+                else
+                {
+                    e.Authenticated = false;
                 }
             }
             catch
