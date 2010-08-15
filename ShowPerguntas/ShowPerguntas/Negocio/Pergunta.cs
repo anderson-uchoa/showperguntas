@@ -251,7 +251,7 @@ namespace ShowPerguntas.Negocio
                 this.alternativas[2] = p.alternativaIncorreta2;
                 this.alternativas[3] = p.alternativaIncorreta3;
                 this.alternativas[4] = p.alternativaIncorreta4;
-
+                this.dificuldade = Convert.ToString(p.dificuldade);
                 this.estatisticas[0] = p.vezesRespondidaAltCorreta;
                 this.estatisticas[1] = p.vezesRespondidaAltIncorreta1;
                 this.estatisticas[2] = p.vezesRespondidaAltIncorreta2;
