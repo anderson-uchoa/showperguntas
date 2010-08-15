@@ -14,6 +14,7 @@ namespace ShowPerguntas.Interface
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            verificarUsuario();
             if (Session["Tipo"].Equals("Administrador"))
                 Zerar.Visible = true;
         }
@@ -34,6 +35,16 @@ namespace ShowPerguntas.Interface
         protected void Voltar_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Interface/" + Convert.ToString(Session["Tipo"]) + "Menu.aspx");
+        }
+        public void verificarUsuario()
+        {
+            String nome = (String)Session["nome"];
+            String tipo = (String)Session["tipo"];
+            if (tipo == null)
+                Response.Redirect("~/Interface/Home.aspx");
+            else if (nome == null)
+                Response.Redirect("~/Interface/Home.aspx");
+
         }
     }
 }

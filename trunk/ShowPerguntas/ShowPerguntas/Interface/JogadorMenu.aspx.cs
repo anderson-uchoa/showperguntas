@@ -12,7 +12,7 @@ namespace ShowPerguntas.Interface
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            verificarUsuario();
         }
 
         protected void novoJogo_Click(object sender, EventArgs e)
@@ -39,6 +39,18 @@ namespace ShowPerguntas.Interface
         protected void Sair_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Interface/logout.aspx");
+        }
+
+        public void verificarUsuario()
+        {
+            String nome = (String)Session["nome"];
+            String tipo = (String)Session["tipo"];
+            if (tipo == null)
+                Response.Redirect("~/Interface/Home.aspx");
+            else if (!tipo.Equals("Jogador"))
+                Response.Redirect("~/Interface/Home.aspx");
+            else if (nome == null)
+                Response.Redirect("~/Interface/Home.aspx");
         }
 
     }

@@ -14,6 +14,7 @@ namespace ShowPerguntas.Interface
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            verificarUsuario();
             if (!this.IsPostBack)
             {
                 string[] names = Enum.GetNames(typeof(Dificuldades));
@@ -44,5 +45,19 @@ namespace ShowPerguntas.Interface
         {
             Response.Redirect("~/Interface/GerenciadorPerguntas.aspx");
         }
+
+        public void verificarUsuario()
+        {
+            String nome = (String)Session["nome"];
+            String tipo = (String)Session["tipo"];
+            if (tipo == null)
+                Response.Redirect("~/Interface/Home.aspx");
+            else if (!tipo.Equals("Administrador"))
+                Response.Redirect("~/Interface/Home.aspx");
+            else if (nome == null)
+                Response.Redirect("~/Interface/Home.aspx");
+
+        }
     }
+
 }
