@@ -28,6 +28,7 @@ namespace ShowPerguntas.Interface
                 if (usr.LoginUsuario())
                 {
                     e.Authenticated = true;
+                    Session["nome"] = usr.nome;
                     if (usr.getID() == 0)
                     {
                         Session["tipo"] = "Administrador";
@@ -35,7 +36,6 @@ namespace ShowPerguntas.Interface
                     }
                     else
                     {
-                        Session["nome"] = usr.nome;
                         Session["tipo"] = "Jogador";
                         Session["Id"] = Convert.ToString(usr.getID());
                         Login.DestinationPageUrl = "~/Interface/JogadorMenu.aspx";
