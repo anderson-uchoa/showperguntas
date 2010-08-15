@@ -13,7 +13,6 @@ namespace ShowPerguntas.Interface
     {
         #region Atributos
 
-
         public double seconds;
         public String[] perguntaAtr;
         public Partida partida;
@@ -35,7 +34,8 @@ namespace ShowPerguntas.Interface
             
             cronometro = partida.tempo;
             perguntaAtr = partida.colocarPergunta();
-
+            ResponderButton.Enabled = true;
+           
             MostrarEstatisticasB.Visible = (new Ajuda()).ajudasRestantes(partida, Defines.ESTAT);
             PularB.Visible = (new Ajuda()).ajudasRestantes (partida, Defines.PULAR);
             RemoverAlternativasB.Visible = (new Ajuda()).ajudasRestantes(partida, Defines.REMOV);
@@ -66,11 +66,6 @@ namespace ShowPerguntas.Interface
             }
         }
 
-        protected void ativarResposta(object sender, EventArgs e)
-        {
-            ResponderButton.Enabled = true;
-        }
-
 
         protected void Responder_Click(object sender, EventArgs e)
         {
@@ -82,14 +77,16 @@ namespace ShowPerguntas.Interface
                     if (alternativa[i].Equals(alternativas.SelectedItem))
                         partida.responder(i);
                 }
-
                 Response.Redirect("~/Interface/TelaJogo3.aspx");
             }
+            else
+                MsgErroLabel.Text = "Escolha uma alternativa";
         }
 
         protected void MostrarEstatisticas_Click(object sender, EventArgs e)
         {
             int i;
+            MsgErroLabel.Text = "";
             estat = new Label[5];
             estatisticas = (new Ajuda()).mostrarEstatisticas(partida);
             for(i = 0; i < estat.Length; ++i){
@@ -107,6 +104,7 @@ namespace ShowPerguntas.Interface
 
         protected void Pular_Click(object sender, EventArgs e)
         {
+            MsgErroLabel.Text = "";
             (new Ajuda()).pularPergunta(partida);
             Response.Redirect(Request.RawUrl);
             auxiliarTable.Visible = false;
@@ -119,6 +117,7 @@ namespace ShowPerguntas.Interface
         protected void RemoverAlternativas_Click(object sender, EventArgs e)
         {
             int i;
+            MsgErroLabel.Text = "";
             bool[] alt = (new Ajuda()).removerAlternativas(partida);
             
             for (i = 0; i < alt.Length; ++i)

@@ -78,14 +78,13 @@
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
-                <asp:TableCell></asp:TableCell>
+                <asp:TableCell><font color="red"><asp:Label ID="MsgErroLabel" runat="server" ></asp:Label></font></asp:TableCell>
                 <asp:TableCell>Pontuação atual: <asp:Label runat="server" ID="pontuacao"></asp:Label></asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
-                <asp:TableCell ID="celulaAlternativas"><asp:RadioButtonList ID="alternativas" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ativarResposta"></asp:RadioButtonList></asp:TableCell>
+                <asp:TableCell ID="celulaAlternativas"><asp:RadioButtonList ID="alternativas" runat="server" ></asp:RadioButtonList></asp:TableCell>
                 <asp:TableCell>        
                     <asp:Table ID="auxiliarTable" runat="server">
-                        
                         <asp:TableRow>
                             <asp:TableCell></asp:TableCell>
                         </asp:TableRow>
@@ -102,7 +101,7 @@
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
-                <asp:TableCell><asp:Button ID="ResponderButton" runat="server" onclick="Responder_Click" Text="Responder" Enabled="false" Width="280px" /></asp:TableCell>
+                <asp:TableCell><asp:Button ID="ResponderButton" runat="server" onclick="Responder_Click" Text="Responder" Width="280px" /></asp:TableCell>
             </asp:TableRow>
 
         </asp:Table>

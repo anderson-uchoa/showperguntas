@@ -125,7 +125,7 @@ namespace ShowPerguntas.Negocio
 
         #region Metodos
         /*
-         * Coloque a explicação AQUI POR FAVOR
+         * 
          */
         public Boolean InserirNovaPergunta()
         {
@@ -151,7 +151,7 @@ namespace ShowPerguntas.Negocio
         }
 
         /*
-         * Coloque a explicação AQUI POR FAVOR
+         * 
          */
         public Boolean AtualizarPergunta()
         {
@@ -182,7 +182,7 @@ namespace ShowPerguntas.Negocio
         }
 
         /*
-         * Coloque a explicação AQUI POR FAVOR
+         * 
          */
         public Boolean DeletarPergunta()
         {
@@ -199,7 +199,7 @@ namespace ShowPerguntas.Negocio
             }
         }
         /*
-         * Coloque a explicação AQUI POR FAVOR
+         * 
          */
         public Boolean BuscarPerguntaPorId(int id)
         {
@@ -236,7 +236,8 @@ namespace ShowPerguntas.Negocio
         }
 
         /*
-         * Dada uma 
+         * Dada uma pergunta, este metodo seta os dados desta intancia com os dados da pergunta
+         * 
          */
         public void setarAtributos(Dados.Pergunta p)
         {
@@ -251,7 +252,9 @@ namespace ShowPerguntas.Negocio
                 this.alternativas[2] = p.alternativaIncorreta2;
                 this.alternativas[3] = p.alternativaIncorreta3;
                 this.alternativas[4] = p.alternativaIncorreta4;
+
                 this.dificuldade = Convert.ToString(p.dificuldade);
+
                 this.estatisticas[0] = p.vezesRespondidaAltCorreta;
                 this.estatisticas[1] = p.vezesRespondidaAltIncorreta1;
                 this.estatisticas[2] = p.vezesRespondidaAltIncorreta2;
