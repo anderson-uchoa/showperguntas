@@ -12,6 +12,9 @@ namespace ShowPerguntas.Interface
     { 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session.Abandon();
+            Session.Clear();
+            Session.RemoveAll();
             FormsAuthentication.SignOut();
             Response.Redirect("~/Interface/Home.aspx");
         }

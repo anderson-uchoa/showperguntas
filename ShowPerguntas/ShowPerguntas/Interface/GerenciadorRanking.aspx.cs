@@ -11,7 +11,7 @@ namespace ShowPerguntas.Interface
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            verificarUsuario();
         }
 
         protected void Voltar(object sender, EventArgs e)
@@ -22,6 +22,18 @@ namespace ShowPerguntas.Interface
         protected void Ranking_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Interface/ExibirRanking.aspx");
+        }
+        public void verificarUsuario()
+        {
+            String nome = (String)Session["nome"];
+            String tipo = (String)Session["tipo"];
+            if (tipo == null)
+                Response.Redirect("~/Interface/Home.aspx");
+            else if (!tipo.Equals("Administrador"))
+                Response.Redirect("~/Interface/Home.aspx");
+            else if (nome == null)
+                Response.Redirect("~/Interface/Home.aspx");
+
         }
     }
 }

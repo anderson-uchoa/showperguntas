@@ -13,6 +13,7 @@ namespace ShowPerguntas.Interface
         Jogador jog = new Jogador();
         protected void Page_Load(object sender, EventArgs e)
         {
+            verificarUsuario();
             if(!this.IsPostBack)
             {
                 if (Session["tipo"].Equals("Administrador"))
@@ -143,6 +144,17 @@ namespace ShowPerguntas.Interface
             }
         }
 
+
+        public void verificarUsuario()
+        {
+            String nome = (String)Session["nome"];
+            String tipo = (String)Session["tipo"];
+            if (tipo == null)
+                Response.Redirect("~/Interface/Home.aspx");
+            else if (nome == null)
+                Response.Redirect("~/Interface/Home.aspx");
+
+        }
 
     }
 }
