@@ -50,7 +50,7 @@
     </asp:TableRow>
     <asp:TableRow>
             <asp:TableCell>
-                <asp:Button ID="Zerar" runat="server" Text="Zerar Ranking" Visible="false"/>
+                <asp:Button ID="Zerar" runat="server" Text="Zerar Ranking" OnClick="ZerarRanking_Click" Visible="false"/>
             </asp:TableCell>
             <asp:TableCell HorizontalAlign="Center">
                 <br />
