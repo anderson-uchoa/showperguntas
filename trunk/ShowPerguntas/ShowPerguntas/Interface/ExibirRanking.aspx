@@ -15,8 +15,9 @@
 <h1 style="text-align:center">Ranking dos jogadores</h1>
     <form id="form1" runat="server">   
         <div class="borda" align="center" style="width: 450px;"> 
-        <asp:Table ID="Table1" runat=server HorizontalAlign="Center" BackColor="#F8F8F8" BorderColor="#F8F8F8" 
-            BorderWidth="15px" Width="450">  <asp:TableRow>
+        <asp:Table ID="Table1" runat="server" HorizontalAlign="Center" BackColor="#F8F8F8" BorderColor="#F8F8F8" 
+            BorderWidth="15px" Width="450">  
+    <asp:TableRow>
             <asp:TableCell>
     <div>
         <asp:GridView ID="Ranking" runat="server" AutoGenerateColumns="False" 
@@ -45,11 +46,11 @@
         </asp:EntityDataSource>
     </div>
 
-             </asp:TableCell>
-        </asp:TableRow>
-        <asp:TableRow>
+            </asp:TableCell>
+    </asp:TableRow>
+    <asp:TableRow>
             <asp:TableCell>
-                <asp:Button ID="Zerar" runat="server" Text="Zerar Ranking" />
+                <asp:Button ID="Zerar" runat="server" Text="Zerar Ranking" Visible="false"/>
             </asp:TableCell>
             <asp:TableCell HorizontalAlign="Center">
                 <br />

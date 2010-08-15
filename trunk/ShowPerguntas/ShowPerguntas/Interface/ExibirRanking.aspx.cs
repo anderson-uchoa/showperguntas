@@ -13,8 +13,9 @@ namespace ShowPerguntas.Interface
         public int posicao = 0;
 
         protected void Page_Load(object sender, EventArgs e)
-        { 
-            
+        {
+            if (Session["Tipo"].Equals("Administrador"))
+                Zerar.Visible = true;
         }
 
         public void AtualizarPosicao(object sender, EventArgs e)
@@ -32,7 +33,7 @@ namespace ShowPerguntas.Interface
 
         protected void Voltar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Interface/JogadorMenu.aspx");
+            Response.Redirect("~/Interface/" + Convert.ToString(Session["Tipo"]) + "Menu.aspx");
         }
     }
 }
