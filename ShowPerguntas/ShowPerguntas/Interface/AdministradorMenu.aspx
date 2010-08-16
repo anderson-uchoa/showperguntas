@@ -33,7 +33,7 @@
             </asp:TableCell>
                         <asp:TableCell HorizontalAlign="Center">
                 <table width="64" cellspacing="0" cellpadding="0"><tr><td>
-                <asp:ImageButton ID="GerenciarRanking" runat="server" onclick="GerenciadorRanking_Click" ImageUrl="/Imagens/jogadores.png" Width="64" Height="64" AlternateText="Gerenciar ranking" />
+                <asp:ImageButton ID="GerenciarRanking" runat="server" onclick="GerenciadorRanking_Click" ImageUrl="/Imagens/raking.png" Width="64" Height="64" AlternateText="Gerenciar ranking" />
             </td></tr><tr><td style="font-size: 16px; text-align: center;">Ranking</td></tr></table>
             </asp:TableCell>
          </asp:TableRow>
