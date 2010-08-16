@@ -4,9 +4,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Show de Perguntas - Gerenciador de Ranking</title>
+    <link rel="stylesheet" type="text/css" href="/Estilo.css" />
 </head>
 <body>
+<br />
+<div style="text-align: center;">
+<img src="/Imagens/logo.png" />
+</div>
+<h1 style="text-align:center">Administração de ranking</h1>
+
      <form id="form1" runat="server">
      <div class="borda" align="center" style="width: 250px;">
         <asp:Table ID="Gerenciar_Ranking" runat="server" Width="250px" 
