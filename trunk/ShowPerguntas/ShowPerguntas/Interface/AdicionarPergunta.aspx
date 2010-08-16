@@ -5,16 +5,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title>Adicionar Nova Pergunta</title>
+        <link rel="stylesheet" type="text/css" href="/Estilo.css" />
 </head>
 <body>
-    
+<body>
+<br />
+<div style="text-align: center;">
+<img src="/Imagens/logo.png" />
+</div>
+<h1 style="text-align:center">Preencha todos os campos para adicionar uma nova pergunta</h1>
+
+
     <form id="Formulario" runat="server">
-        <div>
-            <div>
-                Preencha todos os campos para adicionar uma nova pergunta:
-            </div>
+            <div class="borda" align="center" style="width: 635px;">
             <div>                
-                <asp:Table ID="Table" runat="server" Width="835px">
+                <asp:Table ID="Table" runat="server" Width="635px" BackColor="#F8F8F8" BorderColor="#F8F8F8" 
+            BorderWidth="15px" Height="152px">
                     <asp:TableRow ID="Enunciado">
                         <asp:TableCell>Enunciado</asp:TableCell>
                         <asp:TableCell ID="Collum1">
