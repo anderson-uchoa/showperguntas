@@ -3,7 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Show de Perguntas - Escolha de dificuldade</title>
     <link rel="stylesheet" type="text/css" href="/Estilo.css" />
 </head>
 <body>
@@ -40,12 +40,13 @@
              </asp:TableRow>
     </asp:Table>
     
-    <asp:Table ID="PontuacaoTable" runat="server" HorizontalAlign="Center" Visible="false">
+    <asp:Table ID="PontuacaoTable" runat="server" HorizontalAlign="Center" Visible="false" BackColor="#F8F8F8" BorderColor="#F8F8F8" 
+            BorderWidth="15px" Width="450">
     <asp:TableRow>
-        <asp:TableCell><h1><asp:Label ID="RodadaL" runat="server" Text=""></asp:Label> </h1></asp:TableCell>
+        <asp:TableCell><h3><asp:Label ID="RodadaL" runat="server" Text=""></asp:Label> </h3></asp:TableCell>
     </asp:TableRow>
     <asp:TableRow>
-        <asp:TableCell><h1><asp:Label ID="PontuacaoL" runat="server" Text=""></asp:Label></h1></asp:TableCell>
+        <asp:TableCell><h3><asp:Label ID="PontuacaoL" runat="server" Text=""></asp:Label></h3></asp:TableCell>
     </asp:TableRow>
     </asp:Table>
     
