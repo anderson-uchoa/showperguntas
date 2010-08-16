@@ -14,14 +14,17 @@
     <link rel="stylesheet" type="text/css" href="/Estilo.css" />
 </head>
 <body style="height: 271px">
+<br />
+<div style="text-align: center;">
+<img src="/Imagens/logo.png" />
+<br /><br />
     <form id="form1" runat="server">
-    <div>    
-        
-
-    <asp:Table ID="RodadaTable" runat="server" HorizontalAlign="Center" 
-            BorderStyle="Solid" Width="511px">
+   <div class="borda" align="center" style="width: 600px;">   
+     <asp:Table ID="RodadaTable" runat="server" HorizontalAlign="Center" 
+        Visible="true" BackColor="#F8F8F8" BorderColor="#F8F8F8" 
+            BorderWidth="15px" Width="600" CellPadding="3" CellSpacing="3">
             <asp:TableRow>
-                <asp:TableCell BorderStyle="Solid" Width="280px" Height="80" VerticalAlign="Top" HorizontalAlign="Left"><asp:Label ID="enunciado" runat="server" Text="Label"></asp:Label></asp:TableCell>
+                <asp:TableCell Width="280px" Height="80" VerticalAlign="Top" HorizontalAlign="Left"><h3><asp:Label ID="enunciado" runat="server" Text="Label"></asp:Label></h3></asp:TableCell>
                 <asp:TableCell Width="155px"><div id="timelabel"></div>
                 <script type="text/javascript">
 
@@ -108,5 +111,6 @@
 
     </div>
     </form>
+    </div>
 </body>
 </html>
