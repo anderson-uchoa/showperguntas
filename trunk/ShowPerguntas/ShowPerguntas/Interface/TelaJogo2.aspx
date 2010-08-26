@@ -33,7 +33,6 @@
 
         CounterTimer();
         var interv=setInterval(CounterTimer,1000);
-        //var interv2=setInterval(TempoAcabou,1000);
 
         function CounterTimer()
         {         
@@ -52,29 +51,6 @@
             document.getElementById("timelabel").innerHTML=remain;
             
         }
-        /*
-        function TempoAcabou()
-        {
-            if (window.XMLHttpRequest)
-                {// code for IE7+, Firefox, Chrome, Opera, Safari
-                    xmlhttp=new XMLHttpRequest();
-                }
-            else
-            {// code for IE6, IE5
-                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange=function()
-            {
-                if (xmlhttp.readyState==4 && xmlhttp.status==200)
-                {
-                    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
-                }
-            }
-            xmlhttp.open("POST","TelaJogo2.aspx",true);
-            xmlhttp.setRequestHeader("Content-type","Sistema de Perguntas/Nao sei");
-            xmlhttp.send("status=true");
-        }   */
-        
 
         </script>
                 
