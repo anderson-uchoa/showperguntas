@@ -1,0 +1,1 @@
+Projeto desenvolvido para a disciplina Laboratório de Engenharia de Software (PCS2034) do curso de Engenharia de Computação da Escola Politécnica da USP.
